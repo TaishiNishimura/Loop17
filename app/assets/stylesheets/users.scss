@@ -1,3 +1,220 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+
+//ランダムに動くユーザーアイコン
+html,body {
+    height: 100%;
+}
+#canvas-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#canvas-txt {
+    display: flex;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+@supports (-webkit-background-clip: text) {
+  #canvas-txt p {
+    font-size: 40px;
+    background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+//ハンバーガーメニュー
+#hamburger-menu {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}
+#hamburger {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+#hamburger::after {
+  border-radius: 40%;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(
+    to bottom,
+    #ee88aa,
+    rgba(250, 238, 255, 0.3) 90%,
+    rgba(250, 238, 255, 0.5)
+  );
+  animation: color-fade 3s infinite linear;
+}
+#circle1,
+#circle2,
+#circle3 {
+  opacity: 0.4;
+  position: absolute;
+  background: #0af;
+  width: 100px;
+  height: 100px;
+  transform-origin: 50% 47%;
+  border-radius: 40%;
+  animation: rotation 3s infinite linear;
+}
+#circle2 {
+  opacity: 0.2;
+  background: #ff0;
+  animation: rotation 5s infinite linear;
+}
+#circle3 {
+  animation: rotation 2.5s infinite linear;
+}
+#hamburger-title {
+  position: absolute;
+  top: 33px;
+  width: 100%;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  animation: text-fade 300ms infinite linear;
+}
+/* 回転アニメーション */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ピンク色の背景のアニメーション */
+@keyframes color-fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+/* 点滅のアニメーション */
+@keyframes text-fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.6;
+  }
+}
+
+//SPメニュー
+#sp-hamburger {
+  display: none;
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+#sp-hamburger::after {
+  border-radius: 40%;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(
+    to bottom,
+    #ee88aa,
+    rgba(250, 238, 255, 0.3) 90%,
+    rgba(250, 238, 255, 0.5)
+  );
+  animation: color-fade 3s infinite linear;
+}
+#sp-circle1,
+#sp-circle2,
+#sp-circle3 {
+  opacity: 0.4;
+  position: absolute;
+  background: #0af;
+  width: 400px;
+  height: 400px;
+  transform-origin: 50% 47%;
+  border-radius: 40%;
+  animation: rotation 3s infinite linear;
+}
+#sp-circle2 {
+  opacity: 0.2;
+  background: #ff0;
+  animation: rotation 5s infinite linear;
+}
+#sp-circle3 {
+  animation: rotation 2.5s infinite linear;
+}
+#sp-hamburger-title {
+  position: absolute;
+  top: 23px;
+  width: 100%;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  animation: text-fade 300ms infinite linear;
+}
+#sp-hamburger-title li {
+  text-align: center;
+  margin: 30px;
+}
+#sp-hamburger-title a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* 回転アニメーション */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ピンク色の背景のアニメーション */
+@keyframes color-fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+/* 点滅のアニメーション */
+@keyframes text-fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.6;
+  }
+}
