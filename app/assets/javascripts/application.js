@@ -15,6 +15,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
 //トップページのモーダル
 $(function(){
     $('.js-modal-open').each(function(){
@@ -127,9 +128,12 @@ $(function(){
   //ハンバーガーメニュー
   $(function() {
       $('#hamburger').on('click',function(event) {
-          $('#hamburger').hide();
+          $('#hamburger').fadeOut(1000);
           $(this).toggleClass('active');
-          $('#sp-hamburger').fadeToggle(1000);
+          setTimeout(timer1, 1000);
+          function timer1() {
+            $('#sp-hamburger').fadeToggle(1000);
+          }
           event.preventDefault();
       });
   });
