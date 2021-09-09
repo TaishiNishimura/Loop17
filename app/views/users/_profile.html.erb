@@ -1,7 +1,13 @@
-<body>
-  <div>
-    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-    <%= current_user.name %>
-   Keepされた数<%= %>
+<div id="my-profile-box">
+  <div class="my-profile-image">
+    <%= attachment_image_tag current_user, :profile_image, :fill, 1000, 1000, format: 'jpeg', fallback: "no_image.jpg" %>
   </div>
-</body>
+
+  <span id="my-profile-txt">
+    <ul style="list-style: none;">
+      <li><%= current_user.name %></li>
+      <li>キープされた数<%= %></li>
+    </ul>
+  </span>
+  <span id="sp-circle4"></span>
+</div>

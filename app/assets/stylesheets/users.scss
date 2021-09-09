@@ -43,7 +43,7 @@ html,body {
 }
 @supports (-webkit-background-clip: text) {
   #canvas-txt p {
-    font-size: 40px;
+    font-size: 100px;
     background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -55,8 +55,8 @@ html,body {
   position: relative;
   width: 100px;
   height: 100px;
-  left: 80%;
-  top: 20px;
+  left: 67%;
+  top: 10px;
   z-index: 10;
 }
 #hamburger::after {
@@ -145,7 +145,7 @@ html,body {
   position: relative;
   width: 400px;
   height: 400px;
-  left: 60%;
+  left: 45%;
   top: 40px;
   z-index: 10;
 }
@@ -249,6 +249,61 @@ html,body {
 .profile_image {
   border-radius: 50%;
   position: absolute;
-  left: 80%;
+  left: 90%;
   top: 80%;
+}
+//マイプロフィールの顔丸
+.my-profile-image {
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+
+//マイプロフィールの文字欄
+#my-profile-box {
+  display: none;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  left: 45%;
+  top: 40px;
+  z-index: 10;
+}
+
+//マイプロフィールの顔丸横の回転アニメーション
+#sp-circle4 {
+  left: 35%;
+  top: 100px;
+  z-index: 10;
+  opacity: 0.4;
+  position: absolute;
+  background: #0af;
+  width: 400px;
+  height: 400px;
+  transform-origin: 50% 47%;
+  border-radius: 40%;
+  animation: rotation 3s infinite linear;
+  animation: rotation 2.5s infinite linear;
+}
+
+//マイプロフィールのテキスト
+#my-profile-txt {
+  position: absolute;
+  top: 23px;
+  width: 100%;
+  z-index: 1;
+  color: #999999;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  animation: text-fade 300ms infinite linear;
+}
+#my-profile-txt li {
+  text-align: center;
+  margin: 30px;
+  color: #999999;
+  text-decoration: none;
+  font-weight: bold;
 }
