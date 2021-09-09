@@ -8,6 +8,9 @@
         <div id="canvas-txt">
           <p>Loop17</p>
           <%= render'users/hamburger' %>
+          <div class="profile_image">
+            <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+          </div>
           <i class="fas fa-chevron-down fa-2x jump"></i>
         </div>
       </div>
@@ -27,7 +30,10 @@
 
     <section id="profile" class="section section4">
       <div id="canvas-wrap">
-        <p>第4エリア（マイプロフィール）</p>
+        <div id="canvas-txt">
+          <p>マイプロフィール</p>
+          <%= render'users/profile' %>
+        </div>
       </div>
     </section>
 

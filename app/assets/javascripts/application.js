@@ -153,9 +153,9 @@ $(function(){
   //ハンバーガーメニュー
   $(function() {
       $('#hamburger').on('click',function(event) {
-          $('#hamburger').fadeOut(1000);
+          $('#hamburger').fadeOut(500);
           $(this).toggleClass('active');
-          setTimeout(timer1, 1000);
+          setTimeout(timer1, 500);
           function timer1() {
             $('#sp-hamburger').fadeToggle(1000);
           }
