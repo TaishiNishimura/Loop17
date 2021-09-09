@@ -5,8 +5,8 @@
 
   <span id="my-profile-txt">
     <ul style="list-style: none;">
-      <li>name: <%= current_user.name %></li>
-      <li>キープされた数: <%= %></li>
+      <li>なまえ: <%= current_user.name %></li>
+      <li>キープされている数: <%= current_user.followers.count %></li>
     </ul>
   </span>
   <span id="sp-circle4"></span>
