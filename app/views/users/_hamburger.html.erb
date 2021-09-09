@@ -1,11 +1,11 @@
   <div id="sp-hamburger">
     <span id="sp-hamburger-title">
       <ul style="list-style: none;">
-        <li><a href="#">マイプロフィール</a></li>
+        <li><a href="#profile">マイプロフィール</a></li>
         <li><a href="#">プロフィールを編集</a></li>
         <li><a href="#">ジャンル検索</a></li>
-        <li><a href="#">このサイトについて</a></li>
-        <li><a href="#"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a></li>
+        <li><a href="#about">このサイトについて</a></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
     </span>
     <span id="sp-circle1"></span>

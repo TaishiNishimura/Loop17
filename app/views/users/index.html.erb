@@ -1,31 +1,47 @@
+<script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
 
-<%# 第1エリア %>
-<div id="canvas-wrap">
-  <canvas id="canvas-container"></canvas>
-  <div id="canvas-txt">
-    <p>Loop17</p>
-    <div id="hamburger-menu">
-      <%= render'users/hamburger' %>
-    </div>
+  <div class="fullPageScroll">
+
+    <section id="section1" class="section section1">
+      <div id="canvas-wrap">
+        <canvas id="canvas-container"></canvas>
+        <div id="canvas-txt">
+          <p>Loop17</p>
+          <%= render'users/hamburger' %>
+          <i class="fas fa-chevron-down fa-2x jump"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="section2" class="section section2">
+      <div id="canvas-wrap">
+        <p>第2エリア</p>
+      </div>
+    </section>
+
+    <section id="section3" class="section section3">
+      <div id="canvas-wrap">
+        <p>第3エリア</p>
+      </div>
+    </section>
+
+    <section id="profile" class="section section4">
+      <div id="canvas-wrap">
+        <p>第4エリア（マイプロフィール）</p>
+      </div>
+    </section>
+
+    <section id="about" class="section section5">
+      <div id="canvas-wrap">
+        <p>第5エリア（このサイトについて）</p>
+
+        <%# トップに戻る %>
+        <span id="back">
+          <a href="#">
+            <i class="fas fa-chevron-circle-up fa-2x jump"></i>
+          </a>
+        </span>
+      </div>
+    </section>
+
   </div>
-</div>
-
-<%# 第2エリア %>
-<div id="canvas-wrap">
-  <p>第2エリア</p>
-</div>
-
-<%# 第3エリア %>
-<div id="canvas-wrap">
-  <p>第3エリア</p>
-</div>
-
-<%# 第4エリア（マイプロフィール） %>
-<div id="canvas-wrap">
-  <p>第4エリア（マイプロフィール）</p>
-</div>
-
-<%# 第5エリア（このサイトについて） %>
-<div id="canvas-wrap">
-  <p>第5エリア（このサイトについて）</p>
-</div>

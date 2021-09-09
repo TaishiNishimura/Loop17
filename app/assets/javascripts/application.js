@@ -32,6 +32,31 @@ $(function(){
     });
   });
 
+
+  // スクロール
+  // Intersection Observer
+  const sections = document.querySelectorAll(".section");
+  const observerRoot = document.querySelector(".fullPageScroll");
+  const options = {
+    root: observerRoot,
+    rootMargin: "-50% 0px",
+    threshold: 0
+  };
+  const observer = new IntersectionObserver(doWhenIntersect, options);
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // 交差したときに呼び出す関数
+  function doWhenIntersect(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activatePagination(entry.target);
+      }
+    });
+  }
+
+
   //ランダムに動くユーザーアイコン
   window.requestAnimFrame = (function () {
   return window.requestAnimationFrame ||
@@ -137,3 +162,13 @@ $(function(){
           event.preventDefault();
       });
   });
+
+  //トップに戻る
+  $(function() {
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
+});
