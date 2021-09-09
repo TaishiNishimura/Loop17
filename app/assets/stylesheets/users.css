@@ -1,78 +1,58 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @charset "UTF-8";
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:900');
-
-//スクロール
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
 .fullPageScroll {
   width: 100%;
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
+  -webkit-overflow-scrolling: touch; }
 
 .section {
   width: 100%;
   height: 100vh;
-  scroll-snap-align: start;
-}
+  scroll-snap-align: start; }
 
-//ランダムに動くユーザーアイコン
-html,body {
-    height: 100%;
-}
+html, body {
+  height: 100%; }
 
 #canvas-wrap {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
+  width: 100%;
+  height: 100vh;
+  position: relative; }
 
 #canvas-txt {
-    display: flex;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    width: 100%;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-}
+  display: flex;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; }
+
 @supports (-webkit-background-clip: text) {
   #canvas-txt p {
     font-size: 100px;
     background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-//ハンバーガーメニュー
+    -webkit-text-fill-color: transparent; } }
 #hamburger {
   position: relative;
   width: 100px;
   height: 100px;
   left: 67%;
   top: 10px;
-  z-index: 10;
-}
+  z-index: 10; }
+
 #hamburger::after {
   border-radius: 40%;
   content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background:linear-gradient(
-    to bottom,
-    #ee88aa,
-    rgba(250, 238, 255, 0.3) 90%,
-    rgba(250, 238, 255, 0.5)
-  );
-  animation: color-fade 3s infinite linear;
-}
+  background: linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(250, 238, 255, 0.5));
+  animation: color-fade 3s infinite linear; }
+
 #circle1,
 #circle2,
 #circle3 {
@@ -83,16 +63,16 @@ html,body {
   height: 100px;
   transform-origin: 50% 47%;
   border-radius: 40%;
-  animation: rotation 3s infinite linear;
-}
+  animation: rotation 3s infinite linear; }
+
 #circle2 {
   opacity: 0.2;
   background: #ff0;
-  animation: rotation 5s infinite linear;
-}
+  animation: rotation 5s infinite linear; }
+
 #circle3 {
-  animation: rotation 2.5s infinite linear;
-}
+  animation: rotation 2.5s infinite linear; }
+
 #hamburger-title {
   position: absolute;
   top: 33px;
@@ -103,43 +83,30 @@ html,body {
   font-size: 0.7rem;
   line-height: 2rem;
   letter-spacing: 0.15em;
-  animation: text-fade 300ms infinite linear;
-}
+  animation: text-fade 300ms infinite linear; }
+
 /* 回転アニメーション */
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   to {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 /* ピンク色の背景のアニメーション */
 @keyframes color-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   50% {
-    opacity: 0.7;
-  }
-}
+    opacity: 0.7; } }
 /* 点滅のアニメーション */
 @keyframes text-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   25% {
-    opacity: 0.8;
-  }
+    opacity: 0.8; }
   50% {
-    opacity: 0.9;
-  }
+    opacity: 0.9; }
   75% {
-    opacity: 0.6;
-  }
-}
-
-//SPメニュー
+    opacity: 0.6; } }
 #sp-hamburger {
   display: none;
   position: relative;
@@ -147,22 +114,17 @@ html,body {
   height: 400px;
   left: 45%;
   top: 40px;
-  z-index: 10;
-}
+  z-index: 10; }
+
 #sp-hamburger::after {
   border-radius: 40%;
   content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background:linear-gradient(
-    to bottom,
-    #ee88aa,
-    rgba(250, 238, 255, 0.3) 90%,
-    rgba(250, 238, 255, 0.5)
-  );
-  animation: color-fade 3s infinite linear;
-}
+  background: linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(250, 238, 255, 0.5));
+  animation: color-fade 3s infinite linear; }
+
 #sp-circle1,
 #sp-circle2,
 #sp-circle3 {
@@ -173,16 +135,16 @@ html,body {
   height: 400px;
   transform-origin: 50% 47%;
   border-radius: 40%;
-  animation: rotation 3s infinite linear;
-}
+  animation: rotation 3s infinite linear; }
+
 #sp-circle2 {
   opacity: 0.2;
   background: #ff0;
-  animation: rotation 5s infinite linear;
-}
+  animation: rotation 5s infinite linear; }
+
 #sp-circle3 {
-  animation: rotation 2.5s infinite linear;
-}
+  animation: rotation 2.5s infinite linear; }
+
 #sp-hamburger-title {
   position: absolute;
   top: 23px;
@@ -193,88 +155,67 @@ html,body {
   font-size: 0.7rem;
   line-height: 2rem;
   letter-spacing: 0.15em;
-  animation: text-fade 300ms infinite linear;
-}
+  animation: text-fade 300ms infinite linear; }
+
 #sp-hamburger-title li {
   text-align: center;
-  margin: 30px;
-}
+  margin: 30px; }
+
 #sp-hamburger-title a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-}
+  font-weight: bold; }
+
 /* 回転アニメーション */
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   to {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 /* ピンク色の背景のアニメーション */
 @keyframes color-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   50% {
-    opacity: 0.7;
-  }
-}
+    opacity: 0.7; } }
 /* 点滅のアニメーション */
 @keyframes text-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   25% {
-    opacity: 0.8;
-  }
+    opacity: 0.8; }
   50% {
-    opacity: 0.9;
-  }
+    opacity: 0.9; }
   75% {
-    opacity: 0.6;
-  }
-}
-
-//ページ内移動
+    opacity: 0.6; } }
 .jump {
   position: absolute;
   left: 50%;
-  top: 93%;
-}
+  top: 93%; }
 
-//顔丸
 .profile_image {
   border-radius: 50%;
   position: absolute;
   left: 90%;
-  top: 80%;
-}
-//マイプロフィールの顔丸
+  top: 80%; }
+
 .my-profile-image {
+  z-index: 1;
   border-radius: 50%;
   position: absolute;
   left: 50%;
-  top: 10%;
-}
+  top: 10%; }
 
-//マイプロフィールの文字欄
 #my-profile-box {
   position: relative;
   width: 400px;
   height: 400px;
-  left: 45%;
-  top: 40px;
-  z-index: 10;
-}
-
-//マイプロフィールの顔丸横の回転アニメーション
-#sp-circle4 {
   left: 35%;
   top: 100px;
-  z-index: 10;
+  z-index: 10; }
+
+#sp-circle4 {
+  z-index: 3;
   opacity: 0.4;
   position: absolute;
   background: #0af;
@@ -283,25 +224,23 @@ html,body {
   transform-origin: 50% 47%;
   border-radius: 40%;
   animation: rotation 3s infinite linear;
-  animation: rotation 2.5s infinite linear;
-}
-//マイプロフィールのテキスト
+  animation: rotation 2.5s infinite linear; }
+
 #my-profile-txt {
   position: absolute;
-  top: 23px;
   width: 100%;
-  z-index: 1;
   color: #999999;
   text-align: center;
   font-size: 0.7rem;
-  line-height: 2rem;
+  line-height: 4rem;
   letter-spacing: 0.15em;
-  animation: text-fade 300ms infinite linear;
-}
+  animation: text-fade 300ms infinite linear; }
+
 #my-profile-txt li {
   text-align: center;
   margin: 30px;
   color: #999999;
   text-decoration: none;
-  font-weight: bold;
-}
+  font-weight: bold; }
+
+/*# sourceMappingURL=users.css.map */
