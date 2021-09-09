@@ -265,16 +265,14 @@ html,body {
   position: relative;
   width: 400px;
   height: 400px;
-  left: 45%;
-  top: 40px;
+  left: 35%;
+  top: 100px;
   z-index: 10;
 }
 
 //マイプロフィールの顔丸横の回転アニメーション
 #sp-circle4 {
-  left: 35%;
-  top: 100px;
-  z-index: 10;
+  z-index: 1;
   opacity: 0.4;
   position: absolute;
   background: #0af;
@@ -288,13 +286,12 @@ html,body {
 //マイプロフィールのテキスト
 #my-profile-txt {
   position: absolute;
-  top: 23px;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   color: #999999;
   text-align: center;
   font-size: 0.7rem;
-  line-height: 2rem;
+  line-height: 4rem;
   letter-spacing: 0.15em;
   animation: text-fade 300ms infinite linear;
 }
