@@ -3,8 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @charset "UTF-8";
 
+.top-img {
+  background-image: url("/images/top-img.jpg");
+  background-size: cover;
+}
+
 .main-title {
-  font-size: 200px;
+  font-size: 300px;
+  font-family: 'Josefin Sans', sans-serif;
+  background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 *{
