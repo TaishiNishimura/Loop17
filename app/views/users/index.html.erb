@@ -8,7 +8,6 @@
         <div id="canvas-txt">
           <p>Loop17</p>
           <%= render'users/hamburger' %>
-          <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
           <i class="fas fa-chevron-down fa-2x jump"></i>
         </div>
       </div>
@@ -16,7 +15,12 @@
 
     <section id="section2" class="section section2">
       <div id="canvas-wrap">
-        <p>第2エリア</p>
+          <% @users.shuffle.first(17).each do |user| %>
+            <span class="dots-img">
+              <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+              <i class="fas fa-play-circle fa-3x play-btn"></i>
+            </span>
+          <% end %>
       </div>
     </section>
 

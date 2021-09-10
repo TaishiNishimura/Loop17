@@ -245,13 +245,26 @@ html,body {
   top: 93%;
 }
 
-//顔丸
+.dots-img {
+  position: relative;
+}
+
+//一覧トップのユーザー顔丸
 .profile_image {
   border-radius: 50%;
-  position: absolute;
-  left: 90%;
-  top: 80%;
+  z-index: 2;
 }
+
+.play-btn {
+  color: #eb6100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+
 //マイプロフィールの顔丸
 .my-profile-image {
   border-radius: 50%;
