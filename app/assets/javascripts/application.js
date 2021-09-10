@@ -63,6 +63,7 @@ $(function(){
     });
     $('.profile_image').mouseout(function(){
       $('.profile_image').removeClass('play-btn');
+    });
   });
 
 
