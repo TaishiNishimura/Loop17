@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @charset "UTF-8";
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:900');
+
+
 
 //スクロール
 .fullPageScroll {
@@ -19,6 +20,16 @@
   height: 100vh;
   scroll-snap-align: start;
 }
+
+
+//ページ内移動
+.jump {
+  position: absolute;
+  left: 50%;
+  top: 93%;
+}
+
+
 
 //ランダムに動くユーザーアイコン
 html,body {
@@ -41,6 +52,7 @@ html,body {
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
+
 @supports (-webkit-background-clip: text) {
   #canvas-txt p {
     font-size: 100px;
@@ -49,6 +61,8 @@ html,body {
     -webkit-text-fill-color: transparent;
   }
 }
+
+
 
 //ハンバーガーメニュー
 #hamburger {
@@ -238,12 +252,7 @@ html,body {
   }
 }
 
-//ページ内移動
-.jump {
-  position: absolute;
-  left: 50%;
-  top: 93%;
-}
+
 
 .dots-img {
   position: relative;
@@ -255,6 +264,7 @@ html,body {
   z-index: 2;
 }
 
+//ユーザー顔丸ホバーボタン
 .play-btn {
   color: #eb6100;
   display: flex;
@@ -264,6 +274,8 @@ html,body {
   position: absolute;
   z-index: 1;
 }
+
+
 
 //マイプロフィールの顔丸
 .my-profile-image {
@@ -299,6 +311,7 @@ html,body {
   animation: rotation 3s infinite linear;
   animation: rotation 2.5s infinite linear;
 }
+
 //マイプロフィールのテキスト
 #my-profile-txt {
   position: absolute;
@@ -315,4 +328,20 @@ html,body {
   color: #999999;
   text-decoration: none;
   font-weight: bold;
+}
+
+
+
+//編集ページのビデオ
+#edit-canvas {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.video-content {
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  position: absolute;
 }
