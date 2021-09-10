@@ -22,12 +22,22 @@ $(function(){
       $(this).on('click',function(){
         var target = $(this).data('target');
         var modal = document.getElementById(target);
-        $(modal).fadeIn();
+        $('.main-title').slideUp();
+        setTimeout(timer1, 500);
+        function timer1() {
+        $('.content').fadeOut(1000);
+        $(modal).fadeIn(1000);
+        }
         return false;
       });
     });
     $('.js-modal-close').on('click',function(){
       $('.js-modal').fadeOut();
+      setTimeout(timer1, 1000);
+      function timer1() {
+      $('.main-title').slideDown();
+      $('.content').fadeIn();
+      }
       return false;
     });
   });
