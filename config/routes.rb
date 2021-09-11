@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
+
+  resources :audios, only: [:new, :create, :update, :destroy]
+
 end

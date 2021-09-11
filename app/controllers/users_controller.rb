@@ -6,12 +6,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @audio = Audio.where(user_id: @user.id).first
   end
 
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to users_path(@user.id)
+    redirect_to request.referer
   end
 
   private
