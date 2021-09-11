@@ -17,13 +17,13 @@
       <%= f.file_field :audio , :size => 140 %>
       <label for="inputTitle">タイトル</label>
       <%= f.text_field :title %>
-      <%= f.submit "変更を保存" %>
+      <%= f.submit "Go!" %>
     <% end %>
 
     <% if @audio.present? %>
-    <audio src="<%= @audio.audio %>" controls="">
-      <a src="<%= @audio.audio %>">ダウンロード</a>
-    </audio>
+      <audio src="<%= @audio.audio %>" controls="">
+        <a src="<%= @audio.audio %>">ダウンロード</a>
+      </audio>
     <% end %>
 
     <%=link_to "もどる", users_path %>

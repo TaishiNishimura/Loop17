@@ -1,13 +1,29 @@
-<div id="my-profile-box">
   <div class="my-profile-image">
     <%= attachment_image_tag current_user, :profile_image, :fill, 1000, 1000, format: 'jpeg' %>
   </div>
 
-  <span id="my-profile-txt">
-    <ul style="list-style: none;">
-      <li>なまえ: <%= current_user.name %></li>
-      <li>キープされている数: <%= current_user.followers.count %></li>
-    </ul>
-  </span>
-  <span id="sp-circle4"></span>
-</div>
+  <div id="my-profile-box">
+    <span id="sp-circle4"></span>
+    <span id="my-profile-txt">
+      <ul style="list-style: none;">
+        <li>なまえ: <%= current_user.name %></li>
+        <li>キープされている数: <%= current_user.followers.count %></li>
+      </ul>
+    </span>
+  </div>
+
+    <% if @audio.present? %>
+      <div id="audio-player-box">
+        <audio src="<%= @audio.audio %>" controls="">
+          <a src="<%= @audio.audio %>">ダウンロード</a>
+        </audio>
+      </div>
+    <% end %>
+
+    <span id="sp-circle5">
+      <% if @audio.present? %>
+        ♪<%= @audio.title %>
+      <% else %>
+        <p>オーディオを登録するとここで再生できます</p>
+      <% end %>
+    </span>

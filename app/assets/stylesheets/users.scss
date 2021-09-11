@@ -284,7 +284,7 @@ html,body {
   position: absolute;
   left: 50%;
   top: 10%;
-  z-index: 2;
+  z-index: 1;
 }
 
 //マイプロフィールの文字欄
@@ -292,7 +292,7 @@ html,body {
   position: relative;
   width: 400px;
   height: 400px;
-  left: 35%;
+  left: 30%;
   top: 100px;
   display: flex;
   justify-content: center;
@@ -301,7 +301,7 @@ html,body {
 
 //マイプロフィールの顔丸横の回転アニメーション
 #sp-circle4 {
-  z-index: 10;
+  z-index: 2;
   opacity: 0.4;
   position: absolute;
   background: #0af;
@@ -318,7 +318,6 @@ html,body {
   position: absolute;
   width: 100%;
   z-index: 3;
-  color: #999999;
   font-size: 0.7rem;
   line-height: 2rem;
   letter-spacing: 0.15em;
@@ -329,6 +328,35 @@ html,body {
   color: #999999;
   text-decoration: none;
   font-weight: bold;
+}
+
+
+
+#canvas-wrap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#audio-player-box {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+//マイプロフィールの音声回転アニメーション
+#sp-circle5 {
+  left: -10%;
+  top: 70%;
+  z-index: 10;
+  opacity: 0.4;
+  position: absolute;
+  background: #5aa5f8;
+  width: 600px;
+  height: 600px;
+  transform-origin: 50% 47%;
+  border-radius: 50%;
+  animation: rotation 10s infinite linear;
 }
 
 
