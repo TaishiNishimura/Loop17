@@ -70,7 +70,7 @@ html,body {
   position: relative;
   width: 100px;
   height: 100px;
-  left: 67%;
+  left: 75%;
   top: 10px;
   z-index: 10;
 }
@@ -347,13 +347,13 @@ html,body {
 //マイプロフィールの音声回転アニメーション
 #sp-circle5 {
   left: -10%;
-  top: 70%;
+  top: 60%;
   z-index: 10;
   opacity: 0.4;
   position: absolute;
   background: #5aa5f8;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   transform-origin: 50% 47%;
   border-radius: 50%;
   animation: rotation 10s infinite linear;
