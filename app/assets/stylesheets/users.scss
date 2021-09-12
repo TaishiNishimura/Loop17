@@ -294,9 +294,6 @@ html,body {
   height: 400px;
   left: 30%;
   top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 //マイプロフィールの顔丸横の回転アニメーション
@@ -316,18 +313,41 @@ html,body {
 //マイプロフィールのテキスト
 #my-profile-txt {
   position: absolute;
+  top: 30%;
   width: 100%;
   z-index: 3;
-  font-size: 0.7rem;
-  line-height: 2rem;
-  letter-spacing: 0.15em;
-  animation: text-fade 300ms infinite linear;
-}
-#my-profile-txt li {
   text-align: center;
   color: #999999;
   text-decoration: none;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
   font-weight: bold;
+  animation: text-fade 300ms infinite linear;
+}
+
+#my-sns-box {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+//マイSNS
+.profile-links {
+  list-style: none;
+  padding-right: 40px;
+  .profile-link {
+    font-size: 50px;
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    .fa-twitter-square {color:#1da1f2;}
+    .fa-facebook{color:#3b5998;}
+    .fa-instagram{color:#e1306c;}
+    .fa-youtube{color:#cd201f;}
+  }
 }
 
 

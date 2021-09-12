@@ -5,25 +5,26 @@
   <div id="my-profile-box">
     <span id="sp-circle4"></span>
     <span id="my-profile-txt">
-      <ul style="list-style: none;">
-        <li>なまえ: <%= current_user.name %></li>
-        <li>キープされている数: <%= current_user.followers.count %></li>
-      </ul>
+      なまえ: <%= current_user.name %><br>
+      キープされている数: <%= current_user.followers.count %>
+    </span>
+    <span id="my-sns-box">
+      <%= render'users/mysns' %>
     </span>
   </div>
 
-    <% if @audio.present? %>
-      <div id="audio-player-box">
-        <audio src="<%= @audio.audio %>" controls="">
-          <a src="<%= @audio.audio %>">ダウンロード</a>
-        </audio>
-      </div>
-    <% end %>
+  <% if @audio.present? %>
+    <div id="audio-player-box">
+      <audio src="<%= @audio.audio %>" controls="">
+        <a src="<%= @audio.audio %>">ダウンロード</a>
+      </audio>
+    </div>
+  <% end %>
 
-    <span id="sp-circle5">
-      <% if @audio.present? %>
-        ♪<%= @audio.title %>
-      <% else %>
-        <p>オーディオを登録するとここで再生できます</p>
-      <% end %>
-    </span>
+  <span id="sp-circle5">
+    <% if @audio.present? %>
+      ♪<%= @audio.title %>
+    <% else %>
+      <p>オーディオを登録するとここで再生できます</p>
+    <% end %>
+  </span

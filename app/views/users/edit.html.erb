@@ -9,7 +9,28 @@
       <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
       <label for="inputImage"></label>
       <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-      <%= f.submit "変更を保存" %>
+
+      <div class = "sns-link">
+        <h2> SNS URL </h2>
+        <h4>(Optional)</h4>
+        <div class="form-group">
+          <%= f.label :twitter, 'Twitter URL', class: 'form-control' %>
+          <%= f.text_field :twitter, placeholder: "Optional", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :facebook, 'Facebook URL', class: 'form-control' %>
+          <%= f.text_field :facebook, placeholder: "Optional", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :instagram, 'Instagram URL', class: 'form-control' %>
+          <%= f.text_field :instagram, placeholder: "Optional", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :youtube, 'Youtube URL', class: 'form-control' %>
+          <%= f.text_field :youtube, placeholder: "Optional", class: "form-control" %>
+        </div>
+      </div>
+      <%= f.submit "update" %>
     <% end %>
 
     <%= form_with model: @audio, local: true do |f| %>

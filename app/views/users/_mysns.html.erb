@@ -1,0 +1,32 @@
+  <div class = "sns-link">
+    <ul class="profile-links">
+      <% if current_user.twitter.present? %>
+        <li class="profile-link">
+          <%= link_to current_user.twitter, target: :_blank do %>
+            <i class="fab fa-twitter-square"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <% if current_user.facebook.present? %>
+        <li class="profile-link">
+          <%= link_to current_user.facebook, target: :_blank do %>
+            <i class="fab fa-facebook"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <% if current_user.instagram.present? %>
+        <li class="profile-link">
+          <%= link_to current_user.instagram, target: :_blank do %>
+            <i class="fab fa-instagram"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <% if current_user.youtube.present? %>
+        <li class="profile-link">
+          <%= link_to current_user.youtube, target: :_blank do %>
+            <i class="fab fa-youtube"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
