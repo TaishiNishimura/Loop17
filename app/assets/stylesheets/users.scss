@@ -250,17 +250,14 @@ html,body {
   }
 }
 
-.dots {
+
+
+//ユーザー顔丸
+.user-dots {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-//ユーザー顔丸
-.dots-img {
-  position: absolute;
-  z-index: 1;
 }
 
 //ユーザー顔丸ホバーボタン

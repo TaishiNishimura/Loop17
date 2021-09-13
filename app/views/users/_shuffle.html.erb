@@ -1,61 +1,8 @@
   <% @users.shuffle.first(17).each do |user| %>
-  <div class="dots">
-    <div class="dots-img">
+    <div id="" class="user-dots">
       <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-    </div>
-    <div class="play-btn">
-      <i class="fas fa-play-circle fa-3x"></i>
-    </div>
-  </div>
-
-    <div class="audio-card">
-      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-      Name: <%= user.name %><br>
-      Keepされている数: <%= user.followers.count %>
-      <% if current_user.following?(user) %>
-        <%= link_to "キープをやめる", user_relationships_path(user.id), method: :delete %>
-      <% else %>
-        <%= link_to "キープする", user_relationships_path(user.id), method: :post %>
-      <% end %>
-      <% if @audio.present? %>
-        ♪<%= @audio.title %>
-        <div id="audio-player-box">
-          <audio src="<%= @audio.audio %>" controls="">
-            <a src="<%= @audio.audio %>">ダウンロード</a>
-          </audio>
-        </div>
-      <% end %>
-      <div class = "sns-link">
-        <ul class="profile-links">
-          <% if user.twitter.present? %>
-            <li class="profile-link">
-              <%= link_to user.twitter, target: :_blank do %>
-                <i class="fab fa-twitter-square"></i>
-              <% end %>
-            </li>
-          <% end %>
-          <% if current_user.facebook.present? %>
-            <li class="profile-link">
-              <%= link_to user.facebook, target: :_blank do %>
-                <i class="fab fa-facebook"></i>
-              <% end %>
-            </li>
-          <% end %>
-          <% if current_user.instagram.present? %>
-            <li class="profile-link">
-              <%= link_to user.instagram, target: :_blank do %>
-                <i class="fab fa-instagram"></i>
-              <% end %>
-            </li>
-          <% end %>
-          <% if current_user.youtube.present? %>
-            <li class="profile-link">
-              <%= link_to current_user.youtube, target: :_blank do %>
-                <i class="fab fa-youtube"></i>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+      <div class="play-btn">
+        <i class="fas fa-play-circle fa-3x"></i>
       </div>
     </div>
   <% end %>
