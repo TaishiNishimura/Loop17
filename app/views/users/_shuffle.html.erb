@@ -1,0 +1,52 @@
+  <% @users.shuffle.first(17).each do |user| %>
+    <div class="dots-img">
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+      <i class="fas fa-play-circle fa-3x play-btn"></i>
+    </div>
+
+    <div class="audio-card">
+      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+      なまえ: <%= user.name %><br>
+      キープされている数: <%= user.followers.count %>
+      <% if @audio.present? %>
+        ♪<%= @audio.title %>
+        <div id="audio-player-box">
+          <audio src="<%= @audio.audio %>" controls="">
+            <a src="<%= @audio.audio %>">ダウンロード</a>
+          </audio>
+        </div>
+      <% end %>
+      <div class = "sns-link">
+        <ul class="profile-links">
+          <% if user.twitter.present? %>
+            <li class="profile-link">
+              <%= link_to user.twitter, target: :_blank do %>
+                <i class="fab fa-twitter-square"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <% if current_user.facebook.present? %>
+            <li class="profile-link">
+              <%= link_to user.facebook, target: :_blank do %>
+                <i class="fab fa-facebook"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <% if current_user.instagram.present? %>
+            <li class="profile-link">
+              <%= link_to user.instagram, target: :_blank do %>
+                <i class="fab fa-instagram"></i>
+              <% end %>
+            </li>
+          <% end %>
+          <% if current_user.youtube.present? %>
+            <li class="profile-link">
+              <%= link_to current_user.youtube, target: :_blank do %>
+                <i class="fab fa-youtube"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+        <% end %>

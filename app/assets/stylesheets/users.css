@@ -1,93 +1,64 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
-
-
-//スクロール
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 .fullPageScroll {
   width: 100%;
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
+  -webkit-overflow-scrolling: touch; }
 
 .section {
   width: 100%;
   height: 100vh;
-  scroll-snap-align: start;
-}
+  scroll-snap-align: start; }
 
-
-//ページ内移動
 .jump {
   position: absolute;
   left: 50%;
-  top: 93%;
-}
+  top: 93%; }
 
-
-
-//ランダムに動くユーザーアイコン
-html,body {
-    height: 100%;
-}
+html, body {
+  height: 100%; }
 
 #canvas-wrap {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
+  width: 100%;
+  height: 100vh;
+  position: relative; }
 
 #canvas-txt {
-    display: flex;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    width: 100%;
-    height: 100%;
-    letter-spacing: -5px;
-    font-family: 'Josefin Sans', sans-serif;
-    overflow: hidden;
-}
+  display: flex;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 100%;
+  height: 100%;
+  letter-spacing: -5px;
+  font-family: 'Josefin Sans', sans-serif;
+  overflow: hidden; }
 
 @supports (-webkit-background-clip: text) {
   #canvas-txt p {
     font-size: 80px;
     background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-
-
-//ハンバーガーメニュー
+    -webkit-text-fill-color: transparent; } }
 #hamburger {
   position: relative;
   width: 100px;
   height: 100px;
   left: 75%;
   top: 10px;
-  z-index: 10;
-}
+  z-index: 10; }
+
 #hamburger::after {
   border-radius: 40%;
   content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background:linear-gradient(
-    to bottom,
-    #ee88aa,
-    rgba(250, 238, 255, 0.3) 90%,
-    rgba(250, 238, 255, 0.5)
-  );
-  animation: color-fade 3s infinite linear;
-}
+  background: linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(250, 238, 255, 0.5));
+  animation: color-fade 3s infinite linear; }
+
 #circle1,
 #circle2,
 #circle3 {
@@ -98,16 +69,16 @@ html,body {
   height: 100px;
   transform-origin: 50% 47%;
   border-radius: 40%;
-  animation: rotation 3s infinite linear;
-}
+  animation: rotation 3s infinite linear; }
+
 #circle2 {
   opacity: 0.2;
   background: #ff0;
-  animation: rotation 5s infinite linear;
-}
+  animation: rotation 5s infinite linear; }
+
 #circle3 {
-  animation: rotation 2.5s infinite linear;
-}
+  animation: rotation 2.5s infinite linear; }
+
 #hamburger-title {
   position: absolute;
   top: 33px;
@@ -118,43 +89,30 @@ html,body {
   font-size: 0.7rem;
   line-height: 2rem;
   letter-spacing: 0.15em;
-  animation: text-fade 300ms infinite linear;
-}
+  animation: text-fade 300ms infinite linear; }
+
 /* 回転アニメーション */
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   to {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 /* ピンク色の背景のアニメーション */
 @keyframes color-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   50% {
-    opacity: 0.7;
-  }
-}
+    opacity: 0.7; } }
 /* 点滅のアニメーション */
 @keyframes text-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   25% {
-    opacity: 0.8;
-  }
+    opacity: 0.8; }
   50% {
-    opacity: 0.9;
-  }
+    opacity: 0.9; }
   75% {
-    opacity: 0.6;
-  }
-}
-
-//SPメニュー
+    opacity: 0.6; } }
 #sp-hamburger {
   display: none;
   position: relative;
@@ -162,22 +120,17 @@ html,body {
   height: 400px;
   left: 45%;
   top: 40px;
-  z-index: 10;
-}
+  z-index: 10; }
+
 #sp-hamburger::after {
   border-radius: 40%;
   content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background:linear-gradient(
-    to bottom,
-    #ee88aa,
-    rgba(250, 238, 255, 0.3) 90%,
-    rgba(250, 238, 255, 0.5)
-  );
-  animation: color-fade 3s infinite linear;
-}
+  background: linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(250, 238, 255, 0.5));
+  animation: color-fade 3s infinite linear; }
+
 #sp-circle1,
 #sp-circle2,
 #sp-circle3 {
@@ -188,16 +141,16 @@ html,body {
   height: 400px;
   transform-origin: 50% 47%;
   border-radius: 40%;
-  animation: rotation 3s infinite linear;
-}
+  animation: rotation 3s infinite linear; }
+
 #sp-circle2 {
   opacity: 0.2;
   background: #ff0;
-  animation: rotation 5s infinite linear;
-}
+  animation: rotation 5s infinite linear; }
+
 #sp-circle3 {
-  animation: rotation 2.5s infinite linear;
-}
+  animation: rotation 2.5s infinite linear; }
+
 #sp-hamburger-title {
   position: absolute;
   top: 23px;
@@ -208,96 +161,71 @@ html,body {
   font-size: 0.7rem;
   line-height: 2rem;
   letter-spacing: 0.15em;
-  animation: text-fade 300ms infinite linear;
-}
+  animation: text-fade 300ms infinite linear; }
+
 #sp-hamburger-title li {
   text-align: center;
-  margin: 30px;
-}
+  margin: 30px; }
+
 #sp-hamburger-title a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-}
+  font-weight: bold; }
+
 /* 回転アニメーション */
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   to {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 /* ピンク色の背景のアニメーション */
 @keyframes color-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   50% {
-    opacity: 0.7;
-  }
-}
+    opacity: 0.7; } }
 /* 点滅のアニメーション */
 @keyframes text-fade {
   0% {
-    opacity: 1;
-  }
+    opacity: 1; }
   25% {
-    opacity: 0.8;
-  }
+    opacity: 0.8; }
   50% {
-    opacity: 0.9;
-  }
+    opacity: 0.9; }
   75% {
-    opacity: 0.6;
-  }
-}
-
-
-
-.dots-img {
+    opacity: 0.6; } }
+.dots {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 
-//一覧トップのユーザー顔丸
-.profile_image {
-  border-radius: 50%;
+.dots-img {
   position: absolute;
-  z-index: 1;
-}
+  border-radius: 50%;
+  z-index: 1; }
 
-//ユーザー顔丸ホバーボタン
 .play-btn {
+  display: none;
   position: absolute;
   color: #eb6100;
   cursor: pointer;
-  z-index: 2;
-}
+  z-index: 2; }
 
-
-
-//マイプロフィールの顔丸
 .my-profile-image {
   border-radius: 50%;
   position: absolute;
   left: 50%;
   top: 10%;
-  z-index: 1;
-}
+  z-index: 1; }
 
-//マイプロフィールの文字欄
 #my-profile-box {
   position: relative;
   width: 400px;
   height: 400px;
   left: 30%;
-  top: 100px;
-}
+  top: 100px; }
 
-//マイプロフィールの顔丸横の回転アニメーション
 #sp-circle4 {
   z-index: 2;
   opacity: 0.4;
@@ -308,10 +236,8 @@ html,body {
   transform-origin: 50% 47%;
   border-radius: 40%;
   animation: rotation 3s infinite linear;
-  animation: rotation 2.5s infinite linear;
-}
+  animation: rotation 2.5s infinite linear; }
 
-//マイプロフィールのテキスト
 #my-profile-txt {
   position: absolute;
   top: 30%;
@@ -324,48 +250,42 @@ html,body {
   line-height: 2rem;
   letter-spacing: 0.15em;
   font-weight: bold;
-  animation: text-fade 300ms infinite linear;
-}
+  animation: text-fade 300ms infinite linear; }
 
 #my-sns-box {
   position: absolute;
   top: 50%;
   width: 100%;
   text-align: center;
-  z-index: 10;
-}
+  z-index: 10; }
 
-//マイSNS
 .profile-links {
   list-style: none;
-  padding-right: 40px;
-  .profile-link {
+  padding-right: 40px; }
+  .profile-links .profile-link {
     font-size: 50px;
     display: inline-block;
     width: 20%;
-    text-align: right;
-    .fa-twitter-square {color:#1da1f2;}
-    .fa-facebook{color:#3b5998;}
-    .fa-instagram{color:#e1306c;}
-    .fa-youtube{color:#cd201f;}
-  }
-}
-
-
+    text-align: right; }
+    .profile-links .profile-link .fa-twitter-square {
+      color: #1da1f2; }
+    .profile-links .profile-link .fa-facebook {
+      color: #3b5998; }
+    .profile-links .profile-link .fa-instagram {
+      color: #e1306c; }
+    .profile-links .profile-link .fa-youtube {
+      color: #cd201f; }
 
 #canvas-wrap {
   width: 100%;
   height: 100vh;
-  position: relative;
-}
+  position: relative; }
 
 #audio-player-box {
   position: absolute;
   top: 50%;
-  left: 5%;
-}
+  left: 5%; }
 
-//マイプロフィールの音声回転アニメーション
 #sp-circle5 {
   left: -10%;
   top: 60%;
@@ -377,35 +297,26 @@ html,body {
   height: 500px;
   transform-origin: 50% 47%;
   border-radius: 50%;
-  animation: rotation 10s infinite linear;
-}
+  animation: rotation 10s infinite linear; }
 
-
-
-//編集ページのビデオ
 #edit-canvas {
   width: 100%;
   height: 100%;
-  position: relative;
-}
+  position: relative; }
 
 .video-content {
   width: 100%;
   height: 100%;
   z-index: -100;
-  position: absolute;
-}
+  position: absolute; }
 
-//編集ページのボックス
 .box1 {
   width: 400px;
   height: 400px;
   color: #999999;
   position: absolute;
-  z-index: 1;
-}
+  z-index: 1; }
 
-//ユーザーポップアップ
 .popup {
   position: fixed;
   left: 0;
@@ -415,26 +326,26 @@ html,body {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: .6s;
-}
+  transition: .6s; }
+
 .popup.is-show {
   opacity: 1;
-  visibility: visible;
-}
+  visibility: visible; }
+
 .popup-inner {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 80%;
   max-width: 600px;
   padding: 50px;
   background-color: #fff;
-  z-index: 2;
-}
+  z-index: 2; }
+
 .popup-inner img {
-  width: 100%;
-}
+  width: 100%; }
+
 .close-btn {
   position: absolute;
   right: 0;
@@ -443,19 +354,20 @@ html,body {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  cursor: pointer;
-}
+  cursor: pointer; }
+
 .close-btn i {
   font-size: 20px;
-  color: #333;
-}
+  color: #333; }
+
 .black-background {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
-  cursor: pointer;
-}
+  cursor: pointer; }
+
+/*# sourceMappingURL=users.css.map */

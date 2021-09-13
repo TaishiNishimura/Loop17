@@ -68,14 +68,14 @@ $(function(){
   }
 
   //ユーザーアイコンにマウスオーバーした時
-  //$(function(){
-    //$('.profile_image').mouseover(function(){
-      //$('.profile_image').addClass('play-btn');
-    //});
-    //$('.profile_image').mouseout(function(){
-      //$('.profile_image').removeClass('play-btn');
-    //});
-  //});
+  $(function(){
+    $('.profile_image').mouseover(function(){
+      $('.profile_image').addClass('play-btn');
+    });
+    $('.profile_image').mouseout(function(){
+      $('.profile_image').removeClass('play-btn');
+    });
+  });
 
 
   //ランダムに動くユーザーアイコン

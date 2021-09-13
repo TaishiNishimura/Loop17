@@ -15,18 +15,12 @@
 
     <section id="section2" class="section section2">
       <div id="canvas-wrap">
-          <% @users.shuffle.first(17).each do |user| %>
-            <span class="dots-img">
-              <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-              <i class="fas fa-play-circle fa-3x play-btn"></i>
-            </span>
-          <% end %>
+        <%= render'users/shuffle' %>
       </div>
     </section>
 
     <section id="section3" class="section section3">
       <div id="canvas-wrap">
-        <p>第3エリア</p>
       </div>
     </section>
 
