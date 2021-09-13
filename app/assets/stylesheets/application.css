@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ .profile_image {
+   border-radius: 50%;
+ }

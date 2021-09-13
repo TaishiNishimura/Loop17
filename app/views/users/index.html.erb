@@ -35,6 +35,19 @@
 
     <section id="profile" class="section section5">
       <div id="canvas-wrap">
+        <div id="my-keeper-box">
+        <span id="sp-circle6"></span>
+        <span id="my-keeper-list">
+          <div id="my-keeper-text">キープしている人</div>
+          <% current_user.followings.each do |user| %>
+            <div>
+              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+              <span id="my-keeper-text">
+                <%= user.name %>
+              </span>
+            </div>
+          <% end %>
+        </span>
       </div>
     </section>
 

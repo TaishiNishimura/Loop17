@@ -69,11 +69,11 @@ $(function(){
 
   //ユーザーアイコンにマウスオーバーした時
   $(function(){
-    $('.profile_image').mouseover(function(){
-      $('.profile_image').addClass('play-btn');
+    $('.dots-img').mouseover(function(){
+      $('.dots-img').addClass('play-btn');
     });
-    $('.profile_image').mouseout(function(){
-      $('.profile_image').removeClass('play-btn');
+    $('.dots-img').mouseout(function(){
+      $('.dots-img').removeClass('play-btn');
     });
   });
 

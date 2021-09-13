@@ -1,13 +1,22 @@
   <% @users.shuffle.first(17).each do |user| %>
+  <div class="dots">
     <div class="dots-img">
       <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-      <i class="fas fa-play-circle fa-3x play-btn"></i>
     </div>
+    <div class="play-btn">
+      <i class="fas fa-play-circle fa-3x"></i>
+    </div>
+  </div>
 
     <div class="audio-card">
       <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-      なまえ: <%= user.name %><br>
-      キープされている数: <%= user.followers.count %>
+      Name: <%= user.name %><br>
+      Keepされている数: <%= user.followers.count %>
+      <% if current_user.following?(user) %>
+        <%= link_to "キープをやめる", user_relationships_path(user.id), method: :delete %>
+      <% else %>
+        <%= link_to "キープする", user_relationships_path(user.id), method: :post %>
+      <% end %>
       <% if @audio.present? %>
         ♪<%= @audio.title %>
         <div id="audio-player-box">
@@ -49,4 +58,4 @@
         </ul>
       </div>
     </div>
-        <% end %>
+  <% end %>
