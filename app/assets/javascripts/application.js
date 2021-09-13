@@ -17,6 +17,7 @@
 //= require_tree .
 //= require audiojs
 
+
 //トップページのモーダル
 $(function(){
     $('.js-modal-open').each(function(){
@@ -184,14 +185,12 @@ $(function(){
       });
   });
 
-  //トップに戻る
-  $(function() {
-  $('#back a').on('click',function(event){
-    $('body, html').animate({
-      scrollTop:0
-    }, 800);
-    event.preventDefault();
-  });
+// #トップに戻る
+$('#back').click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 1500);
+    return false;
 });
 
 
