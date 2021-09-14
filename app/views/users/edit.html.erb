@@ -33,6 +33,7 @@
       <%= f.submit "update" %>
     <% end %>
 
+    <div id="audio-edit-slide">
     <%= form_with model: @audio, local: true do |f| %>
       <%= f.label :"17秒以内のmp3音源をアップロード" %>
       <%= f.file_field :audio , :size => 140 %>
@@ -47,6 +48,7 @@
         <a src="<%= @audio.audio %>">ダウンロード</a>
       </audio>
     <% end %>
+    </div>
 
       <div class="return-zone">
         <div class="return-bar"></div>

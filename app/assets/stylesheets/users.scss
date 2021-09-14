@@ -386,12 +386,26 @@ html,body {
   position: absolute;
 }
 
+//オーディオ編集スライド
+#audio-edit-slide {
+  z-index: 99;
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  right: -800px;
+  background: #0DCEA8;
+  width: 1000px;
+  height: 250px;
+  color: #fff;
+  font-size: 16px;
+}
+
 //編集ページの戻るボタン
 .return-zone {
   position: absolute;
   width: 80%;
-  height: 5%;
-  top: 85%;
+  height: 3%;
+  top: 90%;
   left: 0;
   display: flex;
   justify-content: center;

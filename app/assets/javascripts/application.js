@@ -202,3 +202,14 @@ $('#back').click(function () {
 });
 
 
+//編集ページのaudioスライド
+$(function() {
+    $('#audio-edit-slide').hover(
+    function(){
+      $(this).animate({'marginRight':'800px'},500);
+    },
+    function () {
+      $(this).animate({'marginRight':'0'},500);
+    }
+  );
+});
