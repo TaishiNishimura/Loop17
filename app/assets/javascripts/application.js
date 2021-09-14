@@ -69,22 +69,22 @@ $(function(){
   }
 
   //ユーザーアイコンにマウスオーバーした時
-  $(function(){
-    $('.user-dots').mouseover(function(){
-      this.id
-      if (){
-      $('.user-dots').addClass('play-btn');
-      }
-    });
-    $('.user-dots').mouseout(function(){
-      $('.user-dots').removeClass('play-btn');
-    });
-  });
-  
+  // $(function(){
+  //   $('.user-dots').mouseover(function(){
+  //     this.id
+  //     if (){
+  //     $('.user-dots').addClass('play-btn');
+  //   }
+  //   });
+  //   $('.user-dots').mouseout(function(){
+  //     $('.user-dots').removeClass('play-btn');
+  //   });
+  // });
+
   //引数を追加するid属性
   //引数のid=ホバーしたidだったらaddclassする
-  
-  
+
+
 
 
   //ランダムに動くユーザーアイコン
