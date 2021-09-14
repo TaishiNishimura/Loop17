@@ -260,12 +260,18 @@ html,body {
   align-items: center;
 }
 
+.user-image {
+  cursor: pointer;
+}
+
 //ユーザー顔丸ホバーボタン
 .play-btn {
   position: absolute;
   color: #eb6100;
-  cursor: pointer;
   z-index: 2;
+}
+.fa-play-circle,.play-btn {
+  pointer-events: none;
 }
 
 
@@ -386,6 +392,20 @@ html,body {
   position: absolute;
 }
 
+//ユーザー編集スライド
+#user-edit-slide {
+  z-index: 99;
+  cursor: pointer;
+  position: relative;
+  top: 10%;
+  left: -850px;
+  background: #a99e93;
+  width: 1000px;
+  height: 250px;
+  color: #fff;
+  font-size: 16px;
+}
+
 //オーディオ編集スライド
 #audio-edit-slide {
   z-index: 99;
@@ -398,6 +418,21 @@ html,body {
   height: 250px;
   color: #fff;
   font-size: 16px;
+}
+
+#audio-edit-box1 {
+  width: 150px;
+  height: 250px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#audio-edit-box2 {
+  width: 850px;
+  height: 250px;
+  left: 150px;
 }
 
 //編集ページの戻るボタン

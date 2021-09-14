@@ -69,17 +69,25 @@ $(function(){
   }
 
   //ユーザーアイコンにマウスオーバーした時
-  // $(function(){
-  //   $('.user-dots').mouseover(function(){
-  //     this.id
-  //     if (){
-  //     $('.user-dots').addClass('play-btn');
-  //   }
-  //   });
-  //   $('.user-dots').mouseout(function(){
-  //     $('.user-dots').removeClass('play-btn');
-  //   });
-  // });
+  $(function(){
+    $('.user-image').on('click', function(){
+      alert('click')
+    })
+    $('.user-image').mouseover(function(e){
+       var btns = $(e.target).parent().children('.play-btn')
+       if ( btns.css('display') =='none'){
+         btns.show()
+       }
+
+    })
+    $('.user-image').mouseout(function(e){
+      var btns = $(e.target).parent().children('.play-btn')
+       if ( btns.css('display') =='block'){
+         btns.hide()
+       }
+
+    });
+  });
 
   //引数を追加するid属性
   //引数のid=ホバーしたidだったらaddclassする
@@ -201,7 +209,17 @@ $('#back').click(function () {
     return false;
 });
 
-
+//編集ページのuserスライド
+$(function() {
+      $('#user-edit-slide').hover(
+      function(){
+        $(this).animate({'marginLeft':'850px'},500);
+      },
+      function () {
+        $(this).animate({'marginLeft':'0'},500);
+      }
+    );
+});
 //編集ページのaudioスライド
 $(function() {
     $('#audio-edit-slide').hover(
