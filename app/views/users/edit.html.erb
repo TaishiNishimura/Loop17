@@ -1,3 +1,6 @@
+<script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
+
+
 <div id="edit-canvas">
   <div class="video-content">
     <%= video_tag("/videos/bg-movie.mp4", width: "100%", autoplay: :true, loop: :true, muted: :true) %>
@@ -34,6 +37,7 @@
     <% end %>
 
     <div id="audio-edit-slide">
+    <i class="fas fa-music fa-3x"></i>
     <%= form_with model: @audio, local: true do |f| %>
       <%= f.label :"17秒以内のmp3音源をアップロード" %>
       <%= f.file_field :audio , :size => 140 %>

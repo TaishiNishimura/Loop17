@@ -206,7 +206,7 @@ $('#back').click(function () {
 $(function() {
     $('#audio-edit-slide').hover(
     function(){
-      $(this).animate({'marginRight':'800px'},500);
+      $(this).animate({'marginRight':'850px'},500);
     },
     function () {
       $(this).animate({'marginRight':'0'},500);
