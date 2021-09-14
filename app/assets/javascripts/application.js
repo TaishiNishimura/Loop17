@@ -45,6 +45,7 @@ $(function(){
   });
 
 
+
   // スクロール
   // Intersection Observer
   const sections = document.querySelectorAll(".section");
@@ -68,6 +69,8 @@ $(function(){
     });
   }
 
+
+
   //ユーザーアイコンにマウスオーバーした時
   $(function(){
     $('.user-image').on('click', function(){
@@ -78,20 +81,14 @@ $(function(){
        if ( btns.css('display') =='none'){
          btns.show()
        }
-
     })
     $('.user-image').mouseout(function(e){
       var btns = $(e.target).parent().children('.play-btn')
        if ( btns.css('display') =='block'){
          btns.hide()
        }
-
     });
   });
-
-  //引数を追加するid属性
-  //引数のid=ホバーしたidだったらaddclassする
-
 
 
 
@@ -188,6 +185,8 @@ $(function(){
       init();
   }
 
+
+
   //ハンバーガーメニュー
   $(function() {
       $('#hamburger').on('click',function(event) {
@@ -201,6 +200,8 @@ $(function(){
       });
   });
 
+
+
 // #トップに戻る
 $('#back').click(function () {
     $('body,html').animate({
@@ -208,6 +209,8 @@ $('#back').click(function () {
     }, 1500);
     return false;
 });
+
+
 
 //編集ページのuserスライド
 $(function() {

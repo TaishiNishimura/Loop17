@@ -1,6 +1,6 @@
   <% @users.shuffle.first(17).each do |user| %>
     <div id="user-icon-<%= user.id %>" class="user-dots">
-      <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class:"user-image" %>
+      <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image" %>
       <div class="play-btn" style="display:none">
         <i class="fas fa-play-circle fa-3x"></i>
       </div>

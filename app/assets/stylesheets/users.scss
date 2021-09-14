@@ -20,6 +20,7 @@
 }
 
 
+
 //ページ内移動
 .jump {
   position: absolute;
@@ -28,7 +29,8 @@
 }
 
 
-//ランダムに動くユーザーアイコン
+
+//indexページ先頭
 html,body {
   height: 100%;
 }
@@ -39,6 +41,8 @@ html,body {
   position: relative;
 }
 
+
+//indexページ題字
 #canvas-txt {
   display: flex;
   position: absolute;
@@ -151,7 +155,7 @@ html,body {
   }
 }
 
-//SPメニュー
+//ハンバーガーメニュー（SPメニュー）
 #sp-hamburger {
   display: none;
   position: relative;
@@ -252,6 +256,7 @@ html,body {
 
 
 
+//ランダムに動くユーザーアイコン
 //ユーザー顔丸
 .user-dots {
   position: relative;
@@ -259,12 +264,11 @@ html,body {
   justify-content: center;
   align-items: center;
 }
-
 .user-image {
   cursor: pointer;
 }
 
-//ユーザー顔丸ホバーボタン
+//ユーザー顔丸上の再生ボタン
 .play-btn {
   position: absolute;
   color: #eb6100;
@@ -331,7 +335,7 @@ html,body {
   z-index: 10;
 }
 
-//マイSNS
+//マイSNSリスト
 .profile-links {
   list-style: none;
   padding-right: 40px;
@@ -348,7 +352,7 @@ html,body {
 }
 
 
-
+//マイプロフィールの音声再生機能
 #canvas-wrap {
   width: 100%;
   height: 100vh;
@@ -361,7 +365,7 @@ html,body {
   left: 5%;
 }
 
-//マイプロフィールの音声回転アニメーション
+//マイプロフィールの音声タイトル回転アニメーション
 #sp-circle5 {
   left: -10%;
   top: 60%;
@@ -376,9 +380,52 @@ html,body {
   animation: rotation 10s infinite linear;
 }
 
+#my-keeper-box {
+  position: relative;
+  left: 15%;
+  bottom: -15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+}
+
+//マイプロフィールのkeeper回転アニメーション
+#sp-circle6 {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.4;
+  background: #5aa5f8;
+  width: 600px;
+  height: 600px;
+  transform-origin: 50% 47%;
+  border-radius: 50%;
+  animation: rotation 10s infinite linear;
+}
+
+#my-keeper-list {
+  position: absolute;
+  z-index: 3;
+  overflow: scroll;
+  width: 200px;
+  height: 400px;
+}
+
+#my-keeper-text {
+  text-align: center;
+  color: #999999;
+  text-decoration: none;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  animation: text-fade 300ms infinite linear;
+}
 
 
-//編集ページのビデオ
+
+//編集ページの背景ビデオ
 #edit-canvas {
   width: 100%;
   height: 100%;
@@ -392,7 +439,7 @@ html,body {
   position: absolute;
 }
 
-//ユーザー編集スライド
+//ユーザー情報編集スライド
 #user-edit-slide {
   z-index: 99;
   cursor: pointer;
@@ -406,7 +453,7 @@ html,body {
   font-size: 16px;
 }
 
-//オーディオ編集スライド
+//オーディオ情報編集スライド
 #audio-edit-slide {
   z-index: 99;
   cursor: pointer;
@@ -465,49 +512,3 @@ html,body {
   letter-spacing: 0.15em;
   animation: text-fade 300ms infinite linear;
 }
-
-
-
-#my-keeper-box {
-  position: relative;
-  left: 15%;
-  bottom: -15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  height: 600px;
-}
-
-//マイプロフィールのkeeper回転アニメーション
-#sp-circle6 {
-  position: absolute;
-  z-index: 1;
-  opacity: 0.4;
-  background: #5aa5f8;
-  width: 600px;
-  height: 600px;
-  transform-origin: 50% 47%;
-  border-radius: 50%;
-  animation: rotation 10s infinite linear;
-}
-
-#my-keeper-list {
-  position: absolute;
-  z-index: 3;
-  overflow: scroll;
-  width: 200px;
-  height: 400px;
-}
-
-#my-keeper-text {
-  text-align: center;
-  color: #999999;
-  text-decoration: none;
-  font-size: 0.7rem;
-  line-height: 2rem;
-  letter-spacing: 0.15em;
-  font-weight: bold;
-  animation: text-fade 300ms infinite linear;
-}
-
