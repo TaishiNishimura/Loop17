@@ -1,7 +1,7 @@
   <body>
     <% @users.shuffle.first(17).each do |user| %>
 
-    <%# ランダムに選んだ17個のユーザーアイコン %>
+    <%# ユーザーアイコン %>
       <div id="user-icon-<%= user.id %>" class="user-dots">
         <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", class:"user-image" %>
         <div class="play-btn" style="display:none">
@@ -14,6 +14,7 @@
         <div class="modal___bg profile-modal-close"></div>
         <div class="modal___content">
           <div class="audio-card">
+            <%# プロフィール %>
             <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
             Name: <%= user.name %><br>
             Keepされている数: <%= user.followers.count %>
@@ -22,6 +23,7 @@
             <% else %>
               <%= link_to "キープする", user_relationships_path(user.id), method: :post %>
             <% end %>
+            <%# オーディオプレイヤー %>
             <% if @audio.present? %>
               ♪<%= @audio.title %>
               <div id="audio-player-box">
@@ -30,6 +32,7 @@
                 </audio>
               </div>
             <% end %>
+            <%# 登録済みのSNS %>
             <div class = "sns-link">
               <ul class="profile-links">
                 <% if user.twitter.present? %>
@@ -39,23 +42,23 @@
                     <% end %>
                   </li>
                 <% end %>
-                <% if current_user.facebook.present? %>
+                <% if user.facebook.present? %>
                   <li class="profile-link">
                     <%= link_to user.facebook, target: :_blank do %>
                       <i class="fab fa-facebook"></i>
                     <% end %>
                   </li>
                 <% end %>
-                <% if current_user.instagram.present? %>
+                <% if user.instagram.present? %>
                   <li class="profile-link">
                     <%= link_to user.instagram, target: :_blank do %>
                       <i class="fab fa-instagram"></i>
                     <% end %>
                   </li>
                 <% end %>
-                <% if current_user.youtube.present? %>
+                <% if user.youtube.present? %>
                   <li class="profile-link">
-                    <%= link_to current_user.youtube, target: :_blank do %>
+                    <%= link_to user.youtube, target: :_blank do %>
                       <i class="fab fa-youtube"></i>
                     <% end %>
                   </li>
@@ -63,6 +66,7 @@
               </ul>
             </div><%# sns-link %>
           </div><%# audio card %>
+
           <a class="profile-modal-close" href="">閉じる</a>
         </div><%# modal___content %>
       </div><%# modal profile-modal %>
