@@ -266,6 +266,10 @@ html,body {
 }
 .user-image {
   cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 //ユーザー顔丸上の再生ボタン
@@ -278,6 +282,31 @@ html,body {
   pointer-events: none;
 }
 
+//ユーザーのプロフィールモーダル
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal___bg{
+    background: #c9c9c4;
+    opacity: 0.8;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal___content{
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    height: 60%;
+}
 
 
 //マイプロフィールの顔丸

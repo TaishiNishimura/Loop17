@@ -71,11 +71,16 @@ $(function(){
 
 
 
-  //ユーザーアイコンにマウスオーバーした時
+  //ユーザーアイコンにマウスオーバー・クリックした時
   $(function(){
     $('.user-image').on('click', function(){
-      alert('click')
-    })
+      $('.profile-modal').fadeIn();
+      return false;
+    });
+    $('.profile-modal-close').on('click',function(){
+        $('.profile-modal').fadeOut();
+        return false;
+    });
     $('.user-image').mouseover(function(e){
        var btns = $(e.target).parent().children('.play-btn')
        if ( btns.css('display') =='none'){
