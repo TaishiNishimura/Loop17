@@ -72,27 +72,32 @@ $(function(){
 
 
   //ユーザーアイコンにマウスオーバー・クリックした時
-  $(function(){
-    $('.user-image').on('click', function(){
-      $('.profile-modal').fadeIn();
-      return false;
-    });
-    $('.profile-modal-close').on('click',function(){
-        $('.profile-modal').fadeOut();
-        return false;
-    });
-    $('.user-image').mouseover(function(e){
-       var btns = $(e.target).parent().children('.play-btn')
-       if ( btns.css('display') =='none'){
-         btns.show()
-       }
-    })
-    $('.user-image').mouseout(function(e){
-      var btns = $(e.target).parent().children('.play-btn')
-       if ( btns.css('display') =='block'){
-         btns.hide()
-       }
-    });
+  $(document).on('turbolinks:load', function() {
+
+    // $('.profile-modal-close').on('click', function(){
+    //   alert("")
+    //   $('.profile-modal').css("display: none");
+
+    // });
+    
+    $(document).on('click', '.modal___bg', function(){
+       $('.profile-modal').fadeOut();
+ 　　 });
+
+    
+
+    // $('.user-image').mouseover(function(e){
+    //   var btns = $(e.target).parent().children('.play-btn')
+    //   if ( btns.css('display') =='none'){
+    //     btns.show()
+    //   }
+    // })
+    // $('.user-image').mouseout(function(e){
+    //   var btns = $(e.target).parent().children('.play-btn')
+    //   if ( btns.css('display') =='block'){
+    //     btns.hide()
+    //   }
+    // });
   });
 
 
@@ -204,7 +209,7 @@ $(function(){
             }
             event.preventDefault();
         });
-        $('#bg-content').on('click',function(event) {
+        $('').on('click',function(event) {
             $('#sp-hamburger').fadeOut(500);
             $(this).toggleClass('active');
             setTimeout(timer1, 500);

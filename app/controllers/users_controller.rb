@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to request.referer
   end
+  
+  def show
+    @user = User.find(params[:id])
+  end
 
   private
 
