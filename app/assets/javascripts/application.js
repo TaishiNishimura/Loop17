@@ -193,16 +193,27 @@ $(function(){
 
 
   //ハンバーガーメニュー
-  $(function() {
-      $('#hamburger').on('click',function(event) {
-          $('#hamburger').fadeOut(500);
-          $(this).toggleClass('active');
-          setTimeout(timer1, 500);
-          function timer1() {
-            $('#sp-hamburger').fadeToggle(1000);
-          }
-          event.preventDefault();
-      });
+  $(document).on('turbolinks:load', function() {
+    $(function() {
+        $('#hamburger').on('click',function(event) {
+            $('#hamburger').fadeOut(500);
+            $(this).toggleClass('active');
+            setTimeout(timer1, 500);
+            function timer1() {
+              $('#sp-hamburger').fadeToggle(1000);
+            }
+            event.preventDefault();
+        });
+        $('#bg-content').on('click',function(event) {
+            $('#sp-hamburger').fadeOut(500);
+            $(this).toggleClass('active');
+            setTimeout(timer1, 500);
+            function timer1() {
+              $('#hamburger').fadeToggle(1000);
+            }
+            event.preventDefault();
+        });
+    });
   });
 
 
@@ -218,6 +229,7 @@ $('#back').click(function () {
 
 
 //編集ページのuserスライド
+$(document).on('turbolinks:load', function() {
 $(function() {
       $('#user-edit-slide').hover(
       function(){
@@ -238,4 +250,5 @@ $(function() {
       $(this).animate({'marginRight':'0'},500);
     }
   );
+});
 });
