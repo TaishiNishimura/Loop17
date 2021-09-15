@@ -4,30 +4,31 @@
 
     <section id="section1" class="section section1">
       <div id="canvas-wrap">
-        <canvas id="canvas-container"></canvas>
         <div id="canvas-txt">
           <p>Loop17</p>
           <i class="fas fa-chevron-down fa-2x jump"></i>
           <%= render'users/hamburger' %>
         </div>
+        <%= render'users/shuffle' %>
       </div>
     </section>
 
     <section id="section2" class="section section2">
       <div id="canvas-wrap">
-        <%= render'users/shuffle' %>
+        <canvas id="canvas-container"></canvas>
       </div>
     </section>
 
     <section id="section3" class="section section3">
       <div id="canvas-wrap">
+        <%= image_tag 'tori.jpg', class: 'bg-img' %>
       </div>
     </section>
 
     <section id="profile" class="section section4">
       <div id="canvas-wrap">
         <div id="canvas-txt">
-          <p>マイプロフィール</p>
+          <p>My Profile</p>
         </div>
         <%= render'users/profile' %>
       </div>

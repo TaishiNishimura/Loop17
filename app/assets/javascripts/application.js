@@ -73,33 +73,10 @@ $(function(){
 
   //ユーザーアイコンにマウスオーバー・クリックした時
   $(document).on('turbolinks:load', function() {
-
-    // $('.profile-modal-close').on('click', function(){
-    //   alert("")
-    //   $('.profile-modal').css("display: none");
-
-    // });
-    
     $(document).on('click', '.modal___bg', function(){
        $('.profile-modal').fadeOut();
- 　　 });
-
-    
-
-    // $('.user-image').mouseover(function(e){
-    //   var btns = $(e.target).parent().children('.play-btn')
-    //   if ( btns.css('display') =='none'){
-    //     btns.show()
-    //   }
-    // })
-    // $('.user-image').mouseout(function(e){
-    //   var btns = $(e.target).parent().children('.play-btn')
-    //   if ( btns.css('display') =='block'){
-    //     btns.hide()
-    //   }
-    // });
+    });
   });
-
 
 
   //ランダムに動くユーザーアイコン
