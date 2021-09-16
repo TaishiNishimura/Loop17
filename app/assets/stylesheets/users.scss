@@ -504,7 +504,7 @@ html,body {
 #user-edit-slide {
   z-index: 99;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   top: 10%;
   left: -850px;
   background: #a99e93;
@@ -518,7 +518,7 @@ html,body {
 #audio-edit-slide {
   z-index: 99;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 50%;
   right: -850px;
   background: #c9c9c4;
@@ -528,6 +528,42 @@ html,body {
   font-size: 16px;
 }
 
+#user-edit-box1 {
+  width: 150px;
+  height: 250px;
+  left: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+#user-edit-box2 {
+  width: 400px;
+  height: 250px;
+  left: 450px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#user-edit-box3 {
+  width: 450px;
+  height: 250px;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-user-profile {
+  position: absolute;
+}
+
+.edit-sns-link {
+  position: absolute;
+}
+
 #audio-edit-box1 {
   width: 150px;
   height: 250px;
@@ -535,12 +571,25 @@ html,body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
 #audio-edit-box2 {
-  width: 850px;
+  width: 500px;
   height: 250px;
   left: 150px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#audio-edit-box3 {
+  width: 350px;
+  height: 250px;
+  left: 650px;
+  position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 //編集ページの戻るボタン

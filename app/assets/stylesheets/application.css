@@ -25,3 +25,10 @@
   font-weight: bold;
   animation: text-fade 300ms infinite linear;
  }
+  .txt2 {
+  color: #fff;
+  text-decoration: none;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  animation: text-fade 300ms infinite linear;
+ }

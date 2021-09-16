@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
   $('.main-title').animate({'left':'0'},1000);
   setTimeout(timer1, 1000);
   function timer1() {
-        $('.content').fadeIn(1000);
+        $('.content').fadeIn(1500);
   }
   $(function(){
     $('.js-modal-open').each(function(){
@@ -219,25 +219,25 @@ $('#back').click(function () {
 
 //編集ページのuserスライド
 $(document).on('turbolinks:load', function() {
-$(function() {
-      $('#user-edit-slide').hover(
+  $(function() {
+        $('#user-edit-slide').hover(
+        function(){
+          $(this).animate({'marginLeft':'850px'},500);
+        },
+        function () {
+          $(this).animate({'marginLeft':'0'},500);
+        }
+      );
+  });
+  //編集ページのaudioスライド
+  $(function() {
+      $('#audio-edit-slide').hover(
       function(){
-        $(this).animate({'marginLeft':'850px'},500);
+        $(this).animate({'marginRight':'850px'},500);
       },
       function () {
-        $(this).animate({'marginLeft':'0'},500);
+        $(this).animate({'marginRight':'0'},500);
       }
     );
-});
-//編集ページのaudioスライド
-$(function() {
-    $('#audio-edit-slide').hover(
-    function(){
-      $(this).animate({'marginRight':'850px'},500);
-    },
-    function () {
-      $(this).animate({'marginRight':'0'},500);
-    }
-  );
-});
+  });
 });

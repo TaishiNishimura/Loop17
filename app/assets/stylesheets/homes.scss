@@ -29,10 +29,10 @@
 }
 
 .content{
-    display: none;
-    top: 80%;
-    left: 50%;
-    position: absolute;
+  position: absolute;
+  display: none;
+  top: 80%;
+  left: 60%;
 }
 
 .top-modal{
@@ -46,12 +46,12 @@
 .js-modal-open {
   font-size: 1.6rem;
   font-weight: 700;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: #5aa5f8;
+  color: #FFCD58;
 }
 
 .modal__bg{

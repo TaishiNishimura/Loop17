@@ -7,34 +7,55 @@
   </div>
 
   <div id="user-edit-slide">
-    <i class="fas fa-user-alt fa-3x"></i>
+    <div id="user-edit-box1">
+      <i class="fas fa-user-alt fa-3x"></i>
+    </div>
     <%= form_with model: @user, local: true do |f| %>
-      <label for="inputName">なまえ</label>
-      <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-      <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-      <label for="inputImage"></label>
-      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-
-      <div class = "sns-link">
-        <h2> SNS URL </h2>
-        <div class="form-group">
-          <%= f.label :twitter, 'Twitter URL', class: 'form-control' %>
-          <%= f.text_field :twitter, placeholder: "Optional", class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :facebook, 'Facebook URL', class: 'form-control' %>
-          <%= f.text_field :facebook, placeholder: "Optional", class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :instagram, 'Instagram URL', class: 'form-control' %>
-          <%= f.text_field :instagram, placeholder: "Optional", class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :youtube, 'Youtube URL', class: 'form-control' %>
-          <%= f.text_field :youtube, placeholder: "Optional", class: "form-control" %>
+      <div id="user-edit-box2">
+        <div class ="edit-user-profile">
+          <div class="txt2">
+            <label for="inputName">なまえとアイコン</label>
+          </div>
+          <div class="txt">
+            <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+          </div>
+          <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+          <div class="txt">
+            <label for="inputImage"></label>
+            <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+          </div>
+          <div class="txt">
+            <%= f.submit "update" %>
+          </div>
         </div>
       </div>
-      <%= f.submit "update" %>
+
+      <div id="user-edit-box3">
+        <div class ="edit-sns-link">
+          <div class="txt2">
+            SNS URL
+          </div>
+          <div class="txt">
+            <div class="form-group">
+              <%= f.label :twitter, 'Twitter URL', class: 'form-control' %>
+              <%= f.text_field :twitter, placeholder: "Optional", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :facebook, 'Facebook URL', class: 'form-control' %>
+              <%= f.text_field :facebook, placeholder: "Optional", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :instagram, 'Instagram URL', class: 'form-control' %>
+              <%= f.text_field :instagram, placeholder: "Optional", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :youtube, 'Youtube URL', class: 'form-control' %>
+              <%= f.text_field :youtube, placeholder: "Optional", class: "form-control" %>
+            </div>
+            <%= f.submit "update" %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 
@@ -44,20 +65,33 @@
     </div>
     <div id="audio-edit-box2">
       <%= form_with model: @audio, local: true do |f| %>
+      <div class="txt2">
         <%= f.label :"17秒以内のmp3音源をアップロード" %>
-        <%= f.file_field :audio , :size => 140 %>
+      </div>
+      <div class="txt">
         <label for="inputTitle">タイトル</label>
         <%= f.text_field :title %>
+      </div>
+      <div class="txt">
+        <%= f.file_field :audio %>
+      </div>
+      <div class="txt">
         <%= f.select :genre_id, [ ["Music",1], ["Vocal",2], ["Spoken & Audio", 3], ["Other", 4 ] ], prompt: "ジャンルを選択してください" %>
+      </div>
+      <div class="txt">
         <%= f.submit "Go!" %>
+      </div>
       <% end %>
-  
+    </div>
+
+    <div id="audio-edit-box3">
       <% if @audio.present? %>
         <audio src="<%= @audio.audio %>" controls="">
           <a src="<%= @audio.audio %>">ダウンロード</a>
         </audio>
       <% end %>
     </div>
+
   </div>
 
   <div class="return-zone">
