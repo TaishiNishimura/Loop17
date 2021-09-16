@@ -1,5 +1,4 @@
 class Audio < ApplicationRecord
-
   belongs_to :user
 
   mount_uploader :audio, AudiofileUploader
@@ -11,5 +10,4 @@ class Audio < ApplicationRecord
   #     errors.add(:audio, "17秒以内のファイルにしてください")
   #   end
   # end
-
 end

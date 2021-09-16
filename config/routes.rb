@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   end
 
   resources :audios, only: [:new, :create, :update, :destroy]
-
 end

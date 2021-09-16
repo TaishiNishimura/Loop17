@@ -67,3 +67,4 @@ gem "refile-mini_magick"
 gem 'carrierwave'
 gem 'audiojs-rails'
 gem 'pry-rails'
+gem 'rubocop-airbnb'
