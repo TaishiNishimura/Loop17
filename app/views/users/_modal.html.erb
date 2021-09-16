@@ -4,49 +4,64 @@
         <div class="modal___bg profile-modal-close"></div>
         <div class="modal___content">
           <%# プロフィール %>
-          <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-          Name: <%= user.name %><br>
-          Keepされている数: <%= user.followers.count %>
-          <% if current_user.following?(user) %>
-            <%= link_to "キープをやめる", user_relationships_path(user.id), method: :delete %>
-          <% else %>
-            <%= link_to "キープする", user_relationships_path(user.id), method: :post %>
-          <% end %>
-          <%# オーディオプレイヤー %>
-          <% if @audio.present? %>
-            ♪<%= @audio.title %>
-            <div id="audio-player-box">
-              <audio src="<%= @audio.audio %>" controls="">
-                <a src="<%= @audio.audio %>">ダウンロード</a>
-              </audio>
+          <div class= "namespace">
+            <div>
+              <%= attachment_image_tag user, :profile_image, :fill, 150, 150, format: 'jpeg', fallback: "no_image.jpg" %>
             </div>
-          <% end %>
+            <p class="underbar"></p>
+            <div class="txt">
+              name: <%= user.name %>
+            </div>
+            <div class="txt">
+              Keepされている数: <%= user.followers.count %>
+            </div>
+            <button class>
+              <% if current_user.following?(user) %>
+                <%= link_to "Keepをやめる", user_relationships_path(user.id), method: :delete %>
+              <% else %>
+                <%= link_to "Keep", user_relationships_path(user.id), method: :post %>
+              <% end %>
+            </button>
+          </div>
+          <%# オーディオプレイヤー %>
+          <div class="audiospace">
+            <% if @audio.present? %>
+            <div id="audio-player-box">
+              <div class="txt">
+                ♪<%= @audio.title %>
+              </div>
+                <audio src="<%= @audio.audio %>" controls="">
+                  <a src="<%= @audio.audio %>">ダウンロード</a>
+                </audio>
+              </div>
+            <% end %>
+          </div>
           <%# 登録済みのSNS %>
           <div class = "sns-link">
-            <ul class="profile-links">
+            <ul class="sns-profile-links">
               <% if user.twitter.present? %>
-                <li class="profile-link">
+                <li class="sns-profile-link">
                   <%= link_to user.twitter, target: :_blank do %>
                     <i class="fab fa-twitter-square"></i>
                   <% end %>
                 </li>
               <% end %>
               <% if user.facebook.present? %>
-                <li class="profile-link">
+                <li class="sns-profile-link">
                   <%= link_to user.facebook, target: :_blank do %>
                     <i class="fab fa-facebook"></i>
                   <% end %>
                 </li>
               <% end %>
               <% if user.instagram.present? %>
-                <li class="profile-link">
+                <li class="sns-profile-link">
                   <%= link_to user.instagram, target: :_blank do %>
                     <i class="fab fa-instagram"></i>
                   <% end %>
                 </li>
               <% end %>
               <% if user.youtube.present? %>
-                <li class="profile-link">
+                <li class="sns-profile-link">
                   <%= link_to user.youtube, target: :_blank do %>
                     <i class="fab fa-youtube"></i>
                   <% end %>

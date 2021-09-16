@@ -288,22 +288,61 @@ html,body {
     width: 100%;
 }
 .modal___bg{
-    background: #c9c9c4;
-    opacity: 0.8;
+    background: #fff;
+    opacity: 0.6;
     height: 100vh;
     position: absolute;
     width: 100%;
 }
 .modal___content{
-    background: #fff;
+    background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
     left: 50%;
     padding: 40px;
-    position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
     width: 60%;
     height: 60%;
+    position: relative;
+    z-index: 1;
 }
+.namespace {
+  position: absolute;
+  margin: 20px;
+  padding: 20px;
+  z-index: 2;
+}
+.underbar {
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  z-index: 2;
+}
+.audiospace {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 2;
+}
+.sns-link {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  z-index: 2;
+}
+.sns-profile-links {
+  list-style: none;
+  .sns-profile-link {
+    font-size: 50px;
+    display: inline-block;
+    margin: 15px;
+    .fa-twitter-square {color:#D7F3FF;}
+    .fa-facebook{color:#D7F3FF;}
+    .fa-instagram{color:#D7F3FF;}
+    .fa-youtube{color:#D7F3FF;}
+  }
+}
+
 
 
 //マイプロフィールの顔丸
@@ -333,7 +372,6 @@ html,body {
   height: 400px;
   transform-origin: 50% 47%;
   border-radius: 40%;
-  animation: rotation 3s infinite linear;
   animation: rotation 2.5s infinite linear;
 }
 
@@ -344,7 +382,7 @@ html,body {
   width: 100%;
   z-index: 3;
   text-align: center;
-  color: #999999;
+  color: #fff;
   text-decoration: none;
   font-size: 0.7rem;
   line-height: 2rem;
@@ -356,7 +394,7 @@ html,body {
 #my-sns-box {
   position: absolute;
   top: 50%;
-  width: 100%;
+  left: 50%;
   text-align: center;
   z-index: 10;
 }
@@ -364,16 +402,13 @@ html,body {
 //マイSNSリスト
 .profile-links {
   list-style: none;
-  padding-right: 40px;
   .profile-link {
     font-size: 50px;
     display: inline-block;
-    width: 20%;
-    text-align: right;
-    .fa-twitter-square {color:#1da1f2;}
-    .fa-facebook{color:#3b5998;}
-    .fa-instagram{color:#e1306c;}
-    .fa-youtube{color:#cd201f;}
+    .fa-twitter-square {color:#D7F3FF;}
+    .fa-facebook{color:#D7F3FF;}
+    .fa-instagram{color:#D7F3FF;}
+    .fa-youtube{color:#D7F3FF;}
   }
 }
 
@@ -440,7 +475,7 @@ html,body {
 
 #my-keeper-text {
   text-align: center;
-  color: #999999;
+  color: #fff;
   text-decoration: none;
   font-size: 0.7rem;
   line-height: 2rem;

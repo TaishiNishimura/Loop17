@@ -16,3 +16,12 @@
  .profile_image {
    border-radius: 50%;
  }
+ .txt {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  animation: text-fade 300ms infinite linear;
+ }
