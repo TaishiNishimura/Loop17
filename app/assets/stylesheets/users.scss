@@ -506,7 +506,7 @@ html,body {
   cursor: pointer;
   position: absolute;
   top: 10%;
-  left: -850px;
+  left: 0px;
   background: #a99e93;
   width: 1000px;
   height: 250px;
@@ -520,8 +520,8 @@ html,body {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  right: -850px;
-  background: #c9c9c4;
+  right: 0px;
+  background: #a99e93;;
   width: 1000px;
   height: 250px;
   color: #fff;
@@ -598,7 +598,7 @@ html,body {
   width: 80%;
   height: 3%;
   top: 90%;
-  left: 0;
+  left: -1000px;
   display: flex;
   justify-content: center;
   align-items: center;

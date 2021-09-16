@@ -219,6 +219,9 @@ $('#back').click(function () {
 
 //編集ページのuserスライド
 $(document).on('turbolinks:load', function() {
+  $('#user-edit-slide').animate({left:-850}, 2000);
+  $('#audio-edit-slide').animate({right:-850}, 2000);
+  $('.return-zone').animate({left: 0}, 2000);
   $(function() {
         $('#user-edit-slide').hover(
         function(){
