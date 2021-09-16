@@ -19,7 +19,13 @@
 
 
 //トップページのモーダル
-$(function(){
+$(document).on('turbolinks:load', function() {
+  $('.main-title').animate({'left':'0'},1000);
+  setTimeout(timer1, 1000);
+  function timer1() {
+        $('.content').fadeIn(1000);
+  }
+  $(function(){
     $('.js-modal-open').each(function(){
       $(this).on('click',function(){
         var target = $(this).data('target');
@@ -43,6 +49,7 @@ $(function(){
       return false;
     });
   });
+});
 
 
 
