@@ -80,9 +80,9 @@ $(document).on('turbolinks:load', function() {
 
   //ユーザーアイコンにマウスオーバー・クリックした時
   $(document).on('turbolinks:load', function() {
-    $(document).on('click', '.modal___bg', function(){
-       $('.profile-modal').fadeOut();
-    });
+    $(document).on('click', '.modal___bg', function() {
+      $('.profile-modal').fadeOut();
+    })
   });
 
 
