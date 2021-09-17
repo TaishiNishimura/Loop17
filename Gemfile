@@ -68,3 +68,7 @@ gem 'carrierwave'
 gem 'audiojs-rails'
 gem 'pry-rails'
 gem 'rubocop-airbnb'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
