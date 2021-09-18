@@ -508,11 +508,9 @@ html,body {
 
 //ユーザー情報編集スライド
 #user-edit-slide {
-  z-index: 99;
-  cursor: pointer;
   position: absolute;
   top: 10%;
-  left: 0px;
+  left: 0;
   background: #a99e93;
   width: 1000px;
   height: 250px;
@@ -522,8 +520,6 @@ html,body {
 
 //オーディオ情報編集スライド
 #audio-edit-slide {
-  z-index: 99;
-  cursor: pointer;
   position: absolute;
   top: 50%;
   right: 0px;
@@ -570,6 +566,11 @@ html,body {
   position: absolute;
 }
 
+.user-alt {
+  cursor: pointer;
+  color: #fff;
+}
+
 #audio-edit-box1 {
   width: 150px;
   height: 250px;
@@ -596,6 +597,10 @@ html,body {
   position: absolute;
   display: flex;
   align-items: center;
+}
+
+.audio-alt {
+  cursor: pointer;
 }
 
 //編集ページの戻るボタン
