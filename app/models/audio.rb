@@ -6,8 +6,11 @@ class Audio < ApplicationRecord
   validate :audio_validate
 
   def audio_validate
-    if time < 17
-      errors.add(:audio, "17秒以内のファイルにしてください")
+    Mp3Info.open(current_path) do |mp3|
+      if mp3.length < 17
+        errors.add(:audio, "17秒以内のファイルにしてください")
+      end
     end
   end
+
 end
