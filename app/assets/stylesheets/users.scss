@@ -287,13 +287,10 @@ html,body {
     position: fixed;
     top: 0;
     width: 100%;
-    // background: #000;
-    // opacity: 0.1;
     z-index: 7777;
 }
 .modal___bg{
     background: #fff;
-    // background: rgba(255, 255, 255, 0.3);
     opacity: 0.1;
     height: 100vh;
     position: absolute;
@@ -637,14 +634,14 @@ html,body {
 //アバウトページのテキスト
 .about-box {
   position: absolute;
-  right: 50%;
-  top: 20%;
+  left: 50%;
+  padding: 10%;
   writing-mode: vertical-rl;
   text-orientation: upright;
   color: #FFFFFF;
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   line-height: 2rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.30em;
   font-weight: bold;
   animation: text-fade 300ms infinite linear;
 }
@@ -654,3 +651,48 @@ html,body {
   width: 100%;
   height: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        #sample1 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            border-radius: 100px;
+        }
+        #sample2 {
+            width: 100px;
+            height: 100px;
+            background-color: darkred;
+            position: fixed;
+            top: 150px;
+            left: 50%;
+            border-radius: 100px;
+        }
+        #sample3 {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            position: fixed;
+            top: 300px;
+            left: 50%;
+            border-radius: 100px;
+        }
+        #container {
+            width: 100%;
+            height: 100vh;
+        }
