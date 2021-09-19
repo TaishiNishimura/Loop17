@@ -85,10 +85,11 @@
     </div>
 
     <div id="audio-edit-box3">
-      <% if @audio.present? %>
+        <% if @audio.present? %>
+      <div class="txt">
+        ♪<%= @audio.title %>
         <audio src="<%= @audio.audio %>" controls="">
-          <a src="<%= @audio.audio %>">ダウンロード</a>
-        </audio>
+      </div>
       <% end %>
     </div>
 

@@ -74,7 +74,7 @@ html,body {
   height: 100px;
   left: 75%;
   top: 10px;
-  z-index: 10;
+  z-index: 99999;
   cursor: pointer;
 }
 #hamburger::after {
@@ -355,6 +355,7 @@ html,body {
   top: 10%;
   z-index: 1;
 }
+
 
 //マイプロフィールの文字欄
 #my-profile-box {
@@ -639,7 +640,7 @@ html,body {
   writing-mode: vertical-rl;
   text-orientation: upright;
   color: #FFFFFF;
-  font-size: 1.2rem;
+  font-size: 0.7rem;
   line-height: 2rem;
   letter-spacing: 0.30em;
   font-weight: bold;

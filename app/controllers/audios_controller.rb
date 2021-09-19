@@ -5,8 +5,7 @@ class AudiosController < ApplicationController
 
   def create
     @audio = Audio.new(audio_params)
-    @audio.user_id = @user.id
-    @audio.genre_id = genre.id
+    @audio.user_id = current_user.id
     @audio.save
     redirect_to request.referer
   end

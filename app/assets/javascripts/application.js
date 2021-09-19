@@ -53,67 +53,71 @@ $(document).on('turbolinks:load', function() {
 
 
 
-  // スクロール
-  // Intersection Observer
-  const sections = document.querySelectorAll(".section");
-  const observerRoot = document.querySelector(".fullPageScroll");
-  const options = {
-    root: observerRoot,
-    rootMargin: "-50% 0px",
-    threshold: 0
-  };
-  const observer = new IntersectionObserver(doWhenIntersect, options);
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+// スクロール
+// Intersection Observer
+const sections = document.querySelectorAll(".section");
+const observerRoot = document.querySelector(".fullPageScroll");
+const options = {
+  root: observerRoot,
+  rootMargin: "-50% 0px",
+  threshold: 0
+};
+const observer = new IntersectionObserver(doWhenIntersect, options);
+sections.forEach(section => {
+  observer.observe(section);
+});
 
-  // 交差したときに呼び出す関数
-  function doWhenIntersect(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activatePagination(entry.target);
-      }
-    });
+// 交差したときに呼び出す関数
+function doWhenIntersect(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      activatePagination(entry.target);
+    }
+  });
+}
+
+
+
+//ユーザーアイコンにマウスオーバー・クリックした時
+$(document).on('turbolinks:load', function() {
+  $(document).on('click', '.modal___bg', function() {
+    $('.profile-modal').fadeOut();
+  });
+});
+
+
+//ランダムに動くユーザーアイコン
+window.requestAnimFrame = (function () {
+return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+    };
+})();
+
+window.onload = function() {
+
+  var baseSpeed = 100;//0.5; // スピード
+  var user_icon = document.getElementsByClassName('user-dots');
+
+  for (var i = 0; i < user_icon.length;i++) {
+    var rot = Math.random() * 360;  // ランダムな角度
+    var angle = rot * Math.PI / 180;
+    user_icon[i].startTime = Date.now(); // 開始時間を覚える
+    user_icon[i].vec = {    // 移動方向
+        x: Math.cos(angle),
+        y: Math.sin(angle)
+    };
+    console.log(i)
   }
 
-
-
-  //ユーザーアイコンにマウスオーバー・クリックした時
-  $(document).on('turbolinks:load', function() {
-    $(document).on('click', '.modal___bg', function() {
-      $('.profile-modal').fadeOut();
-    })
-  });
-
-
-  //ランダムに動くユーザーアイコン
-  window.requestAnimFrame = (function () {
-  return window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function (callback) {
-          window.setTimeout(callback, 1000 / 60);
-      };
-  })();
-
-  window.onload = function() {
-    var baseSpeed = 100;//0.5; // スピード
-    var user_icon = document.getElementsByClassName('user-dots');
-    for (var i = 0; i < user_icon.length;i++) {
-      var rot = Math.random() * 360;  // ランダムな角度
-      var angle = rot * Math.PI / 180;
-      user_icon[i].startTime = Date.now(); // 開始時間を覚える
-      user_icon[i].vec = {    // 移動方向
-          x: Math.cos(angle),
-          y: Math.sin(angle)
-      };
-    }
-
-    var timer = setInterval(function() {
+  var timer = setInterval(function() {
       for (var i = 0; i < user_icon.length;i++) {
         // 開始からの経過時間は？
+        // console.log(user_icon[i].vec)
         var timePassed = Date.now() - user_icon[i].startTime;
         // timePassed 時点のアニメーションを描画
         draw(user_icon[i],timePassed);
@@ -138,29 +142,36 @@ $(document).on('turbolinks:load', function() {
   }
 
 
+
   //ハンバーガーメニュー
-  $(document).on('turbolinks:load', function() {
-    $(function() {
-        $('#hamburger').on('click',function(event) {
-            $('#hamburger').fadeOut(500);
-            $(this).toggleClass('active');
-            setTimeout(timer1, 500);
-            function timer1() {
-              $('#sp-hamburger').fadeToggle(1000);
-            }
-            event.preventDefault();
-        });
-        $('').on('click',function(event) {
-            $('#sp-hamburger').fadeOut(500);
-            $(this).toggleClass('active');
-            setTimeout(timer1, 500);
-            function timer1() {
-              $('#hamburger').fadeToggle(1000);
-            }
-            event.preventDefault();
-        });
-    });
+  // $(document).on('turbolinks:load', function() {
+  $(function() {
+      //HIRAKU
+      $('#hamburger').on('click',function(event) {
+          $('#hamburger').fadeOut(500);
+          $(this).toggleClass('active');
+          setTimeout(timer1, 500);
+          function timer1() {
+            $('#sp-hamburger').fadeToggle(1000);
+          }
+          event.preventDefault();
+      });
+      //TOJIRU
+      $('#sp-hamburger').on('click',function(event) {
+          $('#sp-hamburger').fadeOut(500);
+          $(this).toggleClass('active');
+          setTimeout(timer1, 500);
+          function timer1() {
+            $('#hamburger').fadeToggle(1000);
+          }
+          event.preventDefault();
+      });
+
+      $('.stop-propagation').on('click', function(event){
+        event.stopPropagation()
+      })
   });
+  // });
 
 
 
@@ -175,7 +186,7 @@ $('#back').click(function () {
 
 
 //編集ページ
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
   $('#user-edit-slide').animate({left:-850}, 2000);
   $('#audio-edit-slide').animate({right:-850}, 2000);
   $('.return-zone').animate({left: 0}, 2000);
@@ -219,88 +230,88 @@ $(document).on('turbolinks:load', function() {
       }
       });
   });
-});
+// });
 
 
 
 
-      //アバウトページのパーティクル
-      var canvasWrap = document.querySelector('#canvas-wrap');
-      var canvas = document.querySelector('#canvas-container');
-      var ctx = canvas.getContext('2d');
+  //アバウトページのパーティクル
+  var canvasWrap = document.querySelector('#canvas-wrap');
+  var canvas = document.querySelector('#canvas-container');
+  var ctx = canvas.getContext('2d');
 
-      var center = {};    // Canvas中央
-      var dots = [];      // パーティクル配列
-      var density = 17;  //パーティクルの数
-      var colors = ['#eeb900', '#6DD0A5', '#f799db'];
-      var baseSize = 60;   // 大きさ
+  var center = {};    // Canvas中央
+  var dots = [];      // パーティクル配列
+  var density = 17;  //パーティクルの数
+  var colors = ['#eeb900', '#6DD0A5', '#f799db'];
+  var baseSize = 60;   // 大きさ
 
-      var Dot = function() {
-          this.size = Math.floor( Math.random() * 6 ) + baseSize; //大きさ
-          this.color = colors[~~(Math.random() * 3)]; //色
-          this.speed = this.size / baseSpeed; // 大きさによって速度変更
-          this.pos = {   // 位置
-              x: Math.random() * canvas.width,
-              y: Math.random() * canvas.height
-          };
-          var rot = Math.random() * 360;  // ランダムな角度
-          var angle = rot * Math.PI / 180;
-
-          this.vec = {    // 移動方向
-              x: Math.cos(angle) * this.speed,
-              y: Math.sin(angle) * this.speed
-          };
+  var Dot = function() {
+      this.size = Math.floor( Math.random() * 6 ) + baseSize; //大きさ
+      this.color = colors[~~(Math.random() * 3)]; //色
+      this.speed = this.size / baseSpeed; // 大きさによって速度変更
+      this.pos = {   // 位置
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height
       };
-      Dot.prototype = {
-          update: function() {
-              this.draw();
+      var rot = Math.random() * 360;  // ランダムな角度
+      var angle = rot * Math.PI / 180;
 
-              this.pos.x += this.vec.x;
-              this.pos.y += this.vec.y;
-
-              // 画面外に出たら反対へ再配置
-              if(this.pos.x > canvas.width + 10) {
-                  this.pos.x = -5;
-              } else if(this.pos.x < 0 - 10) {
-                  this.pos.x = canvas.width + 5;
-              } else if(this.pos.y > canvas.height + 10) {
-                  this.pos.y = -5;
-              } else if(this.pos.y < 0 - 10) {
-                  this.pos.y = canvas.height + 5;
-              }
-          },
-
-          draw: function() {
-              ctx.fillStyle = this.color;
-              ctx.beginPath();
-              ctx.arc(this.pos.x, this.pos.y, this.size, 0, 2 * Math.PI, false);
-              ctx.fill();
-          }
+      this.vec = {    // 移動方向
+          x: Math.cos(angle) * this.speed,
+          y: Math.sin(angle) * this.speed
       };
+  };
+  Dot.prototype = {
+      update: function() {
+          this.draw();
 
-      function update() {
-          requestAnimFrame(update);
-          // 描画をクリアー
+          this.pos.x += this.vec.x;
+          this.pos.y += this.vec.y;
 
-          for (var i = 0; i < density; i++) {
-              dots[i].update();
+          // 画面外に出たら反対へ再配置
+          if(this.pos.x > canvas.width + 10) {
+              this.pos.x = -5;
+          } else if(this.pos.x < 0 - 10) {
+              this.pos.x = canvas.width + 5;
+          } else if(this.pos.y > canvas.height + 10) {
+              this.pos.y = -5;
+          } else if(this.pos.y < 0 - 10) {
+              this.pos.y = canvas.height + 5;
           }
+      },
+
+      draw: function() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.pos.x, this.pos.y, this.size, 0, 2 * Math.PI, false);
+          ctx.fill();
       }
+  };
 
-      function init() {
-          // canvasにコンテンツサイズをセット
-          canvas.setAttribute("width", canvasWrap.offsetWidth);
-          canvas.setAttribute("height", canvasWrap.offsetHeight);
+  function update() {
+      requestAnimFrame(update);
+      // 描画をクリアー
 
-          // canvas中央をセット
-          center.x = canvas.width / 2;
-          center.y = canvas.height / 2;
-
-          // densityの数だけパーティクルを生成
-          for (var i = 0; i < density; i++) {
-              dots.push(new Dot());
-          }
-          update();
+      for (var i = 0; i < density; i++) {
+          dots[i].update();
       }
-      init();
   }
+
+  function init() {
+      // canvasにコンテンツサイズをセット
+      canvas.setAttribute("width", canvasWrap.offsetWidth);
+      canvas.setAttribute("height", canvasWrap.offsetHeight);
+
+      // canvas中央をセット
+      center.x = canvas.width / 2;
+      center.y = canvas.height / 2;
+
+      // densityの数だけパーティクルを生成
+      for (var i = 0; i < density; i++) {
+          dots.push(new Dot());
+      }
+      update();
+  }
+  init();
+};
