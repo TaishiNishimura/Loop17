@@ -192,23 +192,23 @@ $('#back').click(function () {
   $('.return-zone').animate({left: 0}, 2000);
   $(function() {
       $('.user-alt').on('mouseover',function() {
-        $(this).css({'color':'#ff3cac'},500);
+        $(this).css({'color':'#fff'},500);
       });
       $('.user-alt').on('mouseout',function() {
-        $(this).css({'color':'#ffffff'},500);
+        $(this).css({'color':'#7a7c7d'},500);
       });
   });
   $(function() {
       $('.audio-alt').on('mouseover',function() {
-        $(this).css({'color':'#ff3cac'},500);
+        $(this).css({'color':'#fff'},500);
       });
       $('.audio-alt').on('mouseout',function() {
-        $(this).css({'color':'#ffffff'},500);
+        $(this).css({'color':'#7a7c7d'},500);
       });
   });
   //編集ページのuserスライド
   $(function() {
-      $('.user-alt').on('click',function(){
+      $('.user-alt').on('click',function() {
       if($('#user-edit-slide').hasClass('off')){
         $('#user-edit-slide').removeClass('off');
         $('#user-edit-slide').animate({'marginLeft':'850px'},500).addClass('on');

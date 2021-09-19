@@ -291,7 +291,7 @@ html,body {
 }
 .modal___bg{
     background: #fff;
-    opacity: 0.1;
+    opacity: 0.6;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -509,7 +509,7 @@ html,body {
   position: absolute;
   top: 10%;
   left: 0;
-  background: #a99e93;
+  background: #afafb0;
   width: 1000px;
   height: 250px;
   color: #fff;
@@ -521,7 +521,7 @@ html,body {
   position: absolute;
   top: 50%;
   right: 0px;
-  background: #a99e93;;
+  background: #afafb0;
   width: 1000px;
   height: 250px;
   color: #fff;
@@ -566,7 +566,7 @@ html,body {
 
 .user-alt {
   cursor: pointer;
-  color: #fff;
+  color: #7a7c7d;
 }
 
 #audio-edit-box1 {
@@ -599,6 +599,7 @@ html,body {
 
 .audio-alt {
   cursor: pointer;
+  color: #7a7c7d;
 }
 
 //編集ページの戻るボタン
