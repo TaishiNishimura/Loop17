@@ -566,7 +566,7 @@ html,body {
 
 .user-alt {
   cursor: pointer;
-  color: #7a7c7d;
+  color: #fff;
 }
 
 #audio-edit-box1 {
@@ -599,14 +599,14 @@ html,body {
 
 .audio-alt {
   cursor: pointer;
-  color: #7a7c7d;
+  color: #fff;
 }
 
 //編集ページの戻るボタン
 .return-zone {
   position: absolute;
-  width: 80%;
-  height: 5%;
+  width: 70%;
+  height: 3%;
   top: 90%;
   left: -1000px;
   display: flex;

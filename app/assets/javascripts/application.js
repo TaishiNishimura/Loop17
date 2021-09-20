@@ -24,6 +24,8 @@ $(document).on('turbolinks:load', function() {
   setTimeout(timer1, 1000);
   function timer1() {
         $('.content').fadeIn(1500);
+        $('.top-img').animate({'top':'30%'},1500);
+        $('.sub-title-box').animate({'left':'30%'},1500);
   }
   $(function(){
     $('.js-modal-open').each(function(){
@@ -32,6 +34,8 @@ $(document).on('turbolinks:load', function() {
         var modal = document.getElementById(target);
         $('.main-title').slideUp();
         setTimeout(timer1, 500);
+        $('.top-img').animate({'top':'100%'},500);
+        $('.sub-title-box').animate({'left':'100%'},500);
         function timer1() {
         $('.content').fadeOut(1000);
         $(modal).fadeIn(1000);
@@ -44,6 +48,8 @@ $(document).on('turbolinks:load', function() {
       setTimeout(timer1, 1000);
       function timer1() {
       $('.main-title').slideDown();
+      $('.top-img').animate({'top':'30%'},500);
+      $('.sub-title-box').animate({'left':'30%'},500);
       $('.content').fadeIn();
       }
       return false;
@@ -192,18 +198,18 @@ $('#back').click(function () {
   $('.return-zone').animate({left: 0}, 2000);
   $(function() {
       $('.user-alt').on('mouseover',function() {
-        $(this).css({'color':'#fff'},500);
+        $(this).css({'color':'#7a7c7d'},500);
       });
       $('.user-alt').on('mouseout',function() {
-        $(this).css({'color':'#7a7c7d'},500);
+        $(this).css({'color':'#fff'},500);
       });
   });
   $(function() {
       $('.audio-alt').on('mouseover',function() {
-        $(this).css({'color':'#fff'},500);
+        $(this).css({'color':'#7a7c7d'},500);
       });
       $('.audio-alt').on('mouseout',function() {
-        $(this).css({'color':'#7a7c7d'},500);
+        $(this).css({'color':'#fff'},500);
       });
   });
   //編集ページのuserスライド
