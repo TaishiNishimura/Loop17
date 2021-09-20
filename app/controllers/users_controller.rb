@@ -7,7 +7,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @audio = Audio.where(user_id: @user.id).first
+    audio = @user.audio
+    if audio.present?
+      @audio = Audio.where(user_id: @user.id).first
+    else
+      @audio = Audio.new
+    end
   end
 
   def update
