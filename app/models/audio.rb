@@ -1,6 +1,9 @@
 class Audio < ApplicationRecord
   belongs_to :user
 
+  def self.search(select)
+  end
+
   mount_uploader :audio, AudiofileUploader
 
   validate :audio_validate

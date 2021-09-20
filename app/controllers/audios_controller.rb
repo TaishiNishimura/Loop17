@@ -19,6 +19,11 @@ class AudiosController < ApplicationController
   def destroy
   end
 
+  def search
+    @audio = Audio.search(params[:genre_id])
+    redirect_to request.referer
+  end
+
   private
 
   def audio_params

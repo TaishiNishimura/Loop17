@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :audios, only: [:new, :create, :update, :destroy]
+
+  get 'search' => 'audios#search'
+
 end

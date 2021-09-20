@@ -76,7 +76,7 @@
         <%= f.file_field :audio %>
       </div>
       <div class="txt">
-        <%= f.select :genre_id, [ ["Music",1], ["Vocal",2], ["Spoken & Audio", 3], ["Other", 4 ] ], prompt: "ジャンルを選択してください" %>
+        <%= f.select :genre_id, [ ["Music",1], ["Vocal",2], ["Spoken & Audio", 3], ["Other", 4] ], prompt: "ジャンルを選択してください" %>
       </div>
       <div class="txt">
         <%= f.submit "Go!" %>
@@ -85,11 +85,11 @@
     </div>
 
     <div id="audio-edit-box3">
-        <% if @audio.present? %>
-      <div class="txt">
-        ♪<%= @audio.title %>
-        <audio src="<%= @audio.audio %>" controls="">
-      </div>
+      <% if @audio.present? %>
+        <div class="txt">
+          ♪<%= @audio.title %>
+          <audio src="<%= @audio.audio %>" controls="">
+        </div>
       <% end %>
     </div>
 

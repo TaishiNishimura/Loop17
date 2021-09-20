@@ -3,7 +3,15 @@
       <ul style="list-style: none;">
         <li><a href="#profile" class="stop-propagation">マイプロフィール</a></li>
         <li><%= link_to "プロフィールを編集", edit_user_path(current_user), class: "stop-propagation"%></li>
-        <li><a  href="#" class="stop-propagation">ジャンル検索</a></li>
+        <li>
+          <a>ジャンル検索</a>
+          <div class="search-form stop-propagation" >
+            <%= form_with url: search_path, method: :get, local: true do |f| %>
+              <%= f.select :genre_id, [ ["Music",1], ["Vocal",2], ["Spoken & Audio", 3], ["Other", 4] ] %>
+              <%= f.submit "検索" %>
+            <% end %>
+          </div>
+        </li>
         <li><a href="#about" class="stop-propagation">このサイトについて</a></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>

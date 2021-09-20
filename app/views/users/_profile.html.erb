@@ -13,7 +13,7 @@
     </span>
   </div>
 
-  <% if @audio.present? %>
+  <% if @audio_id.present? %>
     <div id="audio-player-box">
       <audio src="<%= @audio.audio %>" controls="">
         <a src="<%= @audio.audio %>">ダウンロード</a>
