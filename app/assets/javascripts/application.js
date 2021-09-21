@@ -18,6 +18,63 @@
 //= require audiojs
 
 
+// //ランダムに動くユーザーアイコン
+// window.requestAnimFrame = (function () {
+// return window.requestAnimationFrame ||
+//     window.webkitRequestAnimationFrame ||
+//     window.mozRequestAnimationFrame ||
+//     window.oRequestAnimationFrame ||
+//     window.msRequestAnimationFrame ||
+//     function (callback) {
+//         window.setTimeout(callback, 1000 / 60);
+//     };
+// })();
+
+// window.onload = function() {
+
+//   var baseSpeed = 100;//0.5; // スピード
+//   var user_icon = document.getElementsByClassName('user-dots');
+
+//   for (var i = 0; i < user_icon.length;i++) {
+//     var rot = Math.random() * 360;  // ランダムな角度
+//     var angle = rot * Math.PI / 180;
+//     user_icon[i].startTime = Date.now(); // 開始時間を覚える
+//     user_icon[i].vec = {    // 移動方向
+//         x: Math.cos(angle),
+//         y: Math.sin(angle)
+//     };
+//     console.log(i)
+//   }
+
+//   var timer = setInterval(function() {
+//       for (var i = 0; i < user_icon.length;i++) {
+//         // 開始からの経過時間は？
+//         // console.log(user_icon[i].vec)
+//         var timePassed = Date.now() - user_icon[i].startTime;
+//         // timePassed 時点のアニメーションを描画
+//         draw(user_icon[i],timePassed);
+//       }
+//     //var start = Date.now(); // 開始時間を覚える
+//   }, 10);
+
+//   // timePassed は 0 から 2000 まで進む
+//   // なので、left は 0px から 400px になります
+//   function draw(obj,timePassed) {
+//     obj.style.top = timePassed / baseSpeed * obj.vec.y + 'px';
+//     obj.style.left = timePassed / baseSpeed * obj.vec.x + 'px';
+//     if(obj.clientWidth+Number(obj.style.left.slice(0,-2)) > section1.clientWidth + 10) {
+//         document.getElementById(obj.id).startTime = Date.now();
+//     } else if(obj.clientWidth+Number(obj.style.left.slice(0,-2)) < 0 - 10) {
+//         document.getElementById(obj.id).startTime = Date.now();
+//     } else if(obj.clientHeight+Number(obj.style.top.slice(0,-2)) > section1.clientHeight + 10) {
+//         document.getElementById(obj.id).startTime = Date.now();
+//     } else if(obj.clientHeight+Number(obj.style.top.slice(0,-2)) < 0 - 10) {
+//         document.getElementById(obj.id).startTime = Date.now();
+//     }
+//   }
+
+
+
 //トップページのモーダル
   $(document).on('turbolinks:load', function() {
     $('.main-title').animate({'left':'0'},1000);
@@ -83,6 +140,7 @@
   }
 
 
+
 // #トップに戻る
   $('#back').click(function () {
       $('body,html').animate({
@@ -90,6 +148,7 @@
       }, 1500);
       return false;
   });
+
 
 
 //ハンバーガーメニュー
@@ -130,6 +189,7 @@
           event.preventDefault();
       });
   });
+
 
 
 //編集ページ
@@ -280,4 +340,79 @@
           update();
       }
       init();
-  }
+  };
+
+
+//indexのアイコンアニメーション
+      $(function () {
+        $(window).on("load", function() {
+            // バウンス呼び出し
+            bounce('#container', '.user-dots')
+            bounce('#container', '#sample2')
+            bounce('#container', '#sample3')
+        })
+
+        function bounce(container, object) {
+
+            /**
+             * 速度をランダムにするための配列
+             *  必要に応じて正負の値を追加してください。
+             *  複数の数字を入れることでよりランダムな動きになります。
+             * @type {number[]}
+             */
+            const randomSpeed = [-1.5, -1, -0.5, 0.5 , 1, 1.5]
+
+            // 移動速度
+            let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)]
+            let speedY = randomSpeed[Math.floor(Math.random() * randomSpeed.length)]
+
+            // jQueryで要素取得
+            container = $(container)
+            object = $(object)
+
+            // インターバルで描画
+            setInterval(function () {
+                // コンテナサイズ取得
+                let containerSize = {
+                    height: container.height(),
+                    width: container.width()
+                }
+
+                // オブジェクトサイズを取得
+                let objectSize = {
+                    height: object.height(),
+                    width: object.width()
+                }
+
+                // 位置情報
+                let location = {
+                    x: object.offset().left += speedX,
+                    y: object.offset().top += speedY
+                }
+
+                // CSSで位置を制御
+                object.css('left', location['x'] + 'px')
+                object.css('top', location['y'] + 'px')
+
+                // 壁判定_X軸
+                if (location['x'] < 0 || location['x'] > containerSize['width'] - objectSize['width']) {
+                    // リサイズされて範囲外に行った場合範囲内に戻す処理
+                    if (location['x'] > containerSize['width'] - objectSize['width']) {
+                        object.css('left', containerSize['width'] - objectSize['width'] + 'px')
+                    }
+                    // 壁判定によりspeedXを反転させる
+                    speedX *= -1
+                }
+
+                // 壁判定_Y軸
+                if (location['y'] < 0 || location['y'] > containerSize['height'] - objectSize['height']) {
+                    // リサイズされて範囲外に行った場合範囲内に戻す処理
+                    if (location['y'] > containerSize['height'] - objectSize['height']) {
+                        object.css('top', containerSize['height'] - objectSize['height'] + 'px')
+                    }
+                    // 壁判定によりspeedYを反転させる
+                    speedY *= -1
+                }
+            }, 1)
+        }
+    })

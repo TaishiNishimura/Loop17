@@ -42,6 +42,7 @@ html,body {
 }
 
 
+
 //indexページ題字
 #canvas-txt {
   display: flex;
@@ -263,98 +264,6 @@ html,body {
 .search-form {
   display: none;
 }
-
-
-
-//ランダムに動くユーザーアイコン
-//ユーザー顔丸
-.user-dots {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.user-image {
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-//ユーザー顔丸上の再生ボタン
-.play-btn {
-  position: absolute;
-  color: #eb6100;
-  opacity: 0;
-  z-index: 2;
-}
-
-//ユーザーのプロフィールモーダル
-.modal{
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 7777;
-}
-.modal___bg{
-    background: #fff;
-    opacity: 0.6;
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-    z-index: 8888;
-}
-.modal___content{
-    background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
-    left: 50%;
-    padding: 40px;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 60%;
-    height: 60%;
-    position: relative;
-    z-index: 9999;
-}
-.namespace {
-  position: absolute;
-  margin: 20px;
-  padding-left: 20px;
-  z-index: 2;
-}
-.underbar {
-  border-bottom: 1px solid;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #fff;
-  z-index: 2;
-}
-.audiospace {
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  z-index: 2;
-}
-.sns-link {
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  z-index: 2;
-}
-.sns-profile-links {
-  list-style: none;
-  .sns-profile-link {
-    font-size: 50px;
-    display: inline-block;
-    margin: 15px;
-    .fa-twitter-square {color:#D7F3FF;}
-    .fa-facebook{color:#D7F3FF;}
-    .fa-instagram{color:#D7F3FF;}
-    .fa-youtube{color:#D7F3FF;}
-  }
-}
-
 
 
 //マイプロフィールの顔丸
@@ -664,46 +573,101 @@ html,body {
 }
 
 
+//indexのアイコンアニメーション
+#sample1, #sample2, #sample3 {
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    border-radius: 100px;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+}
 
 
+//ランダムに動くユーザーアイコン
+//ユーザー顔丸
+.user-dots {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+//ユーザー顔丸上の再生ボタン
+.play-btn {
+  position: absolute;
+  color: #eb6100;
+  opacity: 1;
+  z-index: 2;
+}
 
-
-
-
-
-        body {
-            padding: 0;
-            margin: 0;
-        }
-        #sample1 {
-            width: 100px;
-            height: 100px;
-            background-color: blueviolet;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            border-radius: 100px;
-        }
-        #sample2 {
-            width: 100px;
-            height: 100px;
-            background-color: darkred;
-            position: fixed;
-            top: 150px;
-            left: 50%;
-            border-radius: 100px;
-        }
-        #sample3 {
-            width: 100px;
-            height: 100px;
-            background-color: black;
-            position: fixed;
-            top: 300px;
-            left: 50%;
-            border-radius: 100px;
-        }
-        #container {
-            width: 100%;
-            height: 100vh;
-        }
+//ユーザーのプロフィールモーダル
+.modal{
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 7777;
+}
+.modal___bg{
+    background: #fff;
+    opacity: 0.6;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    z-index: 8888;
+}
+.modal___content{
+    background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
+    left: 50%;
+    padding: 40px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    height: 60%;
+    position: relative;
+    z-index: 9999;
+}
+.namespace {
+  position: absolute;
+  margin: 20px;
+  padding-left: 20px;
+  z-index: 2;
+}
+.underbar {
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  z-index: 2;
+}
+.audiospace {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 2;
+}
+.sns-link {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  z-index: 2;
+}
+.sns-profile-links {
+  list-style: none;
+  .sns-profile-link {
+    font-size: 50px;
+    display: inline-block;
+    margin: 15px;
+    .fa-twitter-square {color:#D7F3FF;}
+    .fa-facebook{color:#D7F3FF;}
+    .fa-instagram{color:#D7F3FF;}
+    .fa-youtube{color:#D7F3FF;}
+  }
+}
