@@ -574,12 +574,12 @@ html,body {
 
 
 //indexのアイコンアニメーション
-#sample1, #sample2, #sample3 {
+#sample1 {
     width: 100px;
     height: 100px;
     background-color: blueviolet;
     position: fixed;
-    top: 0;
+    top: 50%;
     left: 50%;
     border-radius: 100px;
 }
@@ -592,20 +592,30 @@ html,body {
 
 //ランダムに動くユーザーアイコン
 //ユーザー顔丸
-.user-dots {
+.dots1,
+.dots2,
+.dots3,
+.dots4,
+.dots5,
+.dots6,
+.dots7,
+.dots8,
+.dots9,
+.dots10,
+.dots11,
+.dots12,
+.dots13,
+.dots14,
+.dots15,
+.dots16,
+.dots17
+{
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-//ユーザー顔丸上の再生ボタン
-.play-btn {
-  position: absolute;
-  color: #eb6100;
-  opacity: 1;
+  top: 50%;
+  left: 50%;
   z-index: 2;
 }
+
 
 //ユーザーのプロフィールモーダル
 .modal{
@@ -616,8 +626,7 @@ html,body {
     z-index: 7777;
 }
 .modal___bg{
-    background: #fff;
-    opacity: 0.6;
+    background: rgba(255,255,255,0.1);
     height: 100vh;
     position: absolute;
     width: 100%;

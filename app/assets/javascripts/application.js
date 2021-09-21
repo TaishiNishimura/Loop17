@@ -347,9 +347,24 @@
       $(function () {
         $(window).on("load", function() {
             // バウンス呼び出し
-            bounce('#container', '.user-dots')
-            bounce('#container', '#sample2')
-            bounce('#container', '#sample3')
+            bounce('#container', '.dots1')
+            bounce('#container', '.dots2')
+            bounce('#container', '.dots3')
+            bounce('#container', '.dots4')
+            bounce('#container', '.dots5')
+            bounce('#container', '.dots6')
+            bounce('#container', '.dots7')
+            bounce('#container', '.dots8')
+            bounce('#container', '.dots9')
+            bounce('#container', '.dots10')
+            bounce('#container', '.dots11')
+            bounce('#container', '.dots12')
+            bounce('#container', '.dots13')
+            bounce('#container', '.dots14')
+            bounce('#container', '.dots15')
+            bounce('#container', '.dots16')
+            bounce('#container', '.dots17')
+            bounce('#container', '#sample1')
         })
 
         function bounce(container, object) {
@@ -360,7 +375,7 @@
              *  複数の数字を入れることでよりランダムな動きになります。
              * @type {number[]}
              */
-            const randomSpeed = [-1.5, -1, -0.5, 0.5 , 1, 1.5]
+            const randomSpeed = [-0.3, -0.2, -0.1, 0.1 , 0.2, 0.3]
 
             // 移動速度
             let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)]

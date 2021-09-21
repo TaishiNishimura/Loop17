@@ -1,9 +1,8 @@
-  <% @users.shuffle.first(17).each do |user| %>
+  <% @users.shuffle.first(17).each.with_index(1) do |user,index| %>
     <%# ユーザーアイコン %>
-    <div id="user-icon-<%= user.id %>" class="user-dots">
-      <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image" %>
-      <%= link_to user_path(user),class: "play-btn", style: "display: block", remote: true do %>
-        <i class="fas fa-play-circle fa-3x"></i>
+    <div id="user-icon-<%= user.id %>" class="dots<%= index %>">
+      <%= link_to user_path(user), class: "user-image", style: "display: block", remote: true do %>
+        <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image" %>
       <% end %>
     </div>
     <div class="user-modal"></div>
