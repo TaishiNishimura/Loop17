@@ -255,6 +255,15 @@ html,body {
   }
 }
 
+//ハンバーガーメニュー内のジャンル検索
+#genres-menu {
+  cursor: pointer;
+}
+
+.search-form {
+  display: none;
+}
+
 
 
 //ランダムに動くユーザーアイコン

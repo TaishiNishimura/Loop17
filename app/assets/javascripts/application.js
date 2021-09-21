@@ -150,7 +150,6 @@ window.onload = function() {
 
 
   //ハンバーガーメニュー
-  // $(document).on('turbolinks:load', function() {
   $(function() {
       //HIRAKU
       $('#hamburger').on('click',function(event) {
@@ -177,7 +176,19 @@ window.onload = function() {
         event.stopPropagation()
       })
   });
-  // });
+
+  //ハンバーガーメニューの「ジャンル検索」を押した時
+  $(function() {
+      $('#genres-menu').on('click',function(){
+        $('#genres-menu').fadeOut(500);
+        $(this).toggleClass('active');
+        setTimeout(timer1, 500);
+          function timer1() {
+            $('.search-form').fadeToggle(1000);
+          }
+          event.preventDefault();
+      });
+  });
 
 
 
