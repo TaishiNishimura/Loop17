@@ -13,9 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
  .profile_image {
    border-radius: 50%;
  }
+
  .txt {
   color: #fff;
   text-decoration: none;
@@ -25,6 +29,7 @@
   font-weight: bold;
   animation: text-fade 300ms infinite linear;
  }
+
   .txt2 {
   color: #fff;
   text-decoration: none;

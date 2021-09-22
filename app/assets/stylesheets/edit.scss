@@ -1,0 +1,153 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//編集ページの背景ビデオ
+  #edit-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .video-content {
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    position: absolute;
+  }
+
+//ユーザー情報編集スライド
+  #user-edit-slide {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    background: #afafb0;
+    width: 1000px;
+    height: 250px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  #user-edit-box1 {
+    width: 150px;
+    height: 250px;
+    left: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  #user-edit-box2 {
+    width: 400px;
+    height: 250px;
+    left: 450px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #user-edit-box3 {
+    width: 450px;
+    height: 250px;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .edit-user-profile {
+    position: absolute;
+  }
+
+  .edit-sns-link {
+    position: absolute;
+  }
+
+  .user-alt {
+    cursor: pointer;
+    color: #fff;
+  }
+
+
+
+//オーディオ情報編集スライド
+  #audio-edit-slide {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    background: #afafb0;
+    width: 1000px;
+    height: 250px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  #audio-edit-box1 {
+    width: 150px;
+    height: 250px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  #audio-edit-box2 {
+    width: 500px;
+    height: 250px;
+    left: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #audio-edit-box3 {
+    width: 350px;
+    height: 250px;
+    left: 650px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+
+  .audio-alt {
+    cursor: pointer;
+    color: #fff;
+  }
+
+
+
+//編集ページの戻るボタン
+  .return-zone {
+    position: absolute;
+    width: 70%;
+    height: 3%;
+    top: 90%;
+    left: -1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .return-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+    opacity: 0.6;
+  }
+
+  .return-txt {
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: 0.7rem;
+    line-height: 2rem;
+    letter-spacing: 0.15em;
+    animation: text-fade 300ms infinite linear;
+  }

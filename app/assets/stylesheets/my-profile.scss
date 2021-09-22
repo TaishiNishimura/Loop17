@@ -1,0 +1,144 @@
+// Place all the styles related to the relationships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//マイプロフィールの顔丸
+.my-profile-image {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  z-index: 1;
+}
+
+
+//マイプロフィールの文字欄
+#my-profile-box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  left: 30%;
+  top: 100px;
+}
+
+//マイプロフィールの顔丸横の回転アニメーション
+#sp-circle4 {
+  z-index: 2;
+  opacity: 0.4;
+  position: absolute;
+  background: #0af;
+  width: 400px;
+  height: 400px;
+  transform-origin: 50% 47%;
+  border-radius: 40%;
+  animation: rotation 2.5s infinite linear;
+}
+
+//マイプロフィールのテキスト
+#my-profile-txt {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  animation: text-fade 300ms infinite linear;
+}
+
+#my-sns-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  z-index: 10;
+}
+
+//マイSNSリスト
+.profile-links {
+  list-style: none;
+  .profile-link {
+    font-size: 50px;
+    display: inline-block;
+    .fa-twitter-square {color:#D7F3FF;}
+    .fa-facebook{color:#D7F3FF;}
+    .fa-instagram{color:#D7F3FF;}
+    .fa-youtube{color:#D7F3FF;}
+  }
+}
+
+
+//マイプロフィールの音声再生機能
+#canvas-wrap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#audio-player-box {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+//マイプロフィールの音声タイトル回転アニメーション
+#sp-circle5 {
+  left: -10%;
+  top: 60%;
+  z-index: 10;
+  opacity: 0.4;
+  position: absolute;
+  background: #ba65fd;
+  width: 500px;
+  height: 500px;
+  transform-origin: 50% 47%;
+  border-radius: 50%;
+  animation: rotation 10s infinite linear;
+}
+
+#my-keeper-box {
+  position: relative;
+  left: 15%;
+  bottom: -15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+}
+
+//マイプロフィールのkeeper回転アニメーション
+#sp-circle6 {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.4;
+  background: #5aa5f8;
+  width: 600px;
+  height: 600px;
+  transform-origin: 50% 47%;
+  border-radius: 50%;
+  animation: rotation 10s infinite linear;
+}
+
+#my-keeper-list {
+  position: absolute;
+  z-index: 3;
+  overflow: scroll;
+  width: 200px;
+  height: 400px;
+}
+
+#my-keeper-text {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.7rem;
+  line-height: 2rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  animation: text-fade 300ms infinite linear;
+}
