@@ -115,7 +115,7 @@
              *  複数の数字を入れることでよりランダムな動きになります。
              * @type {number[]}
              */
-            const randomSpeed = [-0.3, -0.2, -0.1, 0.1 , 0.2, 0.3]
+            const randomSpeed = [-0.2, -0.15, -0.1, 0.1 , 0.15, 0.2]
 
             // 移動速度
             let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)]

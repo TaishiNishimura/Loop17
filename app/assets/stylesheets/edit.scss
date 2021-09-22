@@ -125,12 +125,9 @@
   .return-zone {
     position: absolute;
     width: 70%;
-    height: 3%;
+    height: 4%;
     top: 90%;
     left: -1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .return-bar {
@@ -144,8 +141,8 @@
   .return-txt {
     position: absolute;
     text-decoration: none;
+    left: 90%;
     color: #fff;
-    text-align: center;
     font-size: 0.7rem;
     line-height: 2rem;
     letter-spacing: 0.15em;

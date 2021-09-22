@@ -43,14 +43,14 @@
         <div id="my-keeper-box">
         <span id="sp-circle6"></span>
         <span id="my-keeper-list">
-          <div id="my-keeper-text">キープしている人</div>
+          <div class="txt" style="text-align: center;">キープしている人</div>
           <% current_user.followings.each do |user| %>
-            <div>
+            <%= link_to user_path(user), class: "user-image", style: "display: block", remote: true do %>
               <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
-              <span id="my-keeper-text">
+              <span class="txt">
                 <%= user.name %>
               </span>
-            </div>
+            <% end %>
           <% end %>
         </span>
       </div>

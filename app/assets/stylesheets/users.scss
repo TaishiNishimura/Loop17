@@ -76,7 +76,8 @@
   }
 
   .modal___bg{
-    background: rgba(255,255,255,0.1);
+    background: #fff;
+    opacity: 0.1;
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -164,14 +165,27 @@
 
 
 //アバウトページのテキスト
+  .about-heading {
+    position: absolute;
+    color: #FFFFFF;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    top: 70%;
+    left: 15%;
+    font-style: oblique;
+    animation: text-fade 300ms infinite linear
+  }
+
   .about-box {
     position: absolute;
-    left: 50%;
+    left: 60%;
     padding: 10%;
     writing-mode: vertical-rl;
     text-orientation: upright;
     color: #FFFFFF;
-    font-size: 0.7rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1rem;
     line-height: 2rem;
     letter-spacing: 0.30em;
     font-weight: bold;
@@ -184,12 +198,12 @@
   }
 
 
-//スクロールを促す標識
+//スクロールを促す矢印
   .rect {
     left: 50%;
     top: 80%;
     margin: 100px auto 0;
-    color: #00d8ee;
+    color: #5aa5f8;
     position: absolute;
     z-index: 99999;
   }
