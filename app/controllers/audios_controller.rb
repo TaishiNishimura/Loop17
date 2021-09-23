@@ -17,11 +17,15 @@ class AudiosController < ApplicationController
   end
 
   def destroy
+    audio = Audio.where(user_id: current_user.id).first
+    audio.destroy
+    redirect_to request.referer
   end
 
   def search
-    @audio = Audio.search(params[:genre_id])
-    redirect_to request.referer
+    @audios = Audio.where(genre_id: params[:genre_id])
+    @users = User.where(id: @audios.pluck('user_id'))
+    render "users/index"
   end
 
   private
