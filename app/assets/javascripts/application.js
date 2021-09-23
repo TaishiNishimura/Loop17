@@ -57,7 +57,6 @@
   });
 
 
-
 // スクロール
 // Intersection Observer
   const sections = document.querySelectorAll(".section");
@@ -104,7 +103,6 @@
             bounce('#container', '.dots15')
             bounce('#container', '.dots16')
             bounce('#container', '.dots17')
-            bounce('#container', '.ball')
         })
 
         function bounce(container, object) {

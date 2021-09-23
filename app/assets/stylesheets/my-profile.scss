@@ -85,25 +85,11 @@
   left: 5%;
 }
 
-//マイプロフィールの音声タイトル回転アニメーション
-#sp-circle5 {
-  left: -10%;
-  top: 60%;
-  z-index: 10;
-  opacity: 0.4;
-  position: absolute;
-  background: #ba65fd;
-  width: 500px;
-  height: 500px;
-  transform-origin: 50% 47%;
-  border-radius: 50%;
-  animation: rotation 10s infinite linear;
-}
-
+//マイプロフィールのkeeper一覧
 #my-keeper-box {
-  position: relative;
+  position: absolute;
   left: 15%;
-  bottom: -15%;
+  top: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,8 +97,7 @@
   height: 600px;
 }
 
-//マイプロフィールのkeeper回転アニメーション
-#sp-circle6 {
+#sp-circle5 {
   position: absolute;
   z-index: 1;
   opacity: 0.4;
@@ -134,4 +119,19 @@
 
 .user-image {
   text-decoration: none;
+}
+
+//マイプロフィールの音声タイトル回転アニメーション
+#sp-circle6 {
+  left: -10%;
+  top: 60%;
+  z-index: 10;
+  opacity: 0.4;
+  position: absolute;
+  background: #ba65fd;
+  width: 500px;
+  height: 500px;
+  transform-origin: 50% 47%;
+  border-radius: 50%;
+  animation: rotation 10s infinite linear;
 }

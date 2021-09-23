@@ -13,6 +13,21 @@
     </span>
   </div>
 
+  <div id="my-keeper-box">
+    <span id="sp-circle5"></span>
+    <span id="my-keeper-list">
+      <div class="txt" style="text-align: center;">キープしている人</div>
+      <% current_user.followings.each do |user| %>
+        <%= link_to user_path(user), class: "user-image", style: "display: block", remote: true do %>
+          <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+          <span class="txt">
+            <%= user.name %>
+          </span>
+        <% end %>
+      <% end %>
+    </span>
+  </div>
+
   <% if @audio.present? %>
     <div id="audio-player-box">
       <audio src="<%= @audio.audio %>" controls="">
@@ -21,7 +36,7 @@
     </div>
   <% end %>
 
-  <span id="sp-circle5">
+  <span id="sp-circle6">
     <% if @audio.present? %>
       ♪<%= @audio.title %>
     <% else %>

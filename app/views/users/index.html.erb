@@ -1,35 +1,24 @@
 <script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
 
   <div class="fullPageScroll">
-
     <section id="section1" class="section section1">
       <div id="canvas-wrap">
-
         <div id="canvas-txt">
           <p>Loop17</p>
         </div>
-
         <div id="container">
           <%= render'users/shuffle' %>
           <i class="fas fa-chevron-down fa-3x rect"></i>
           <%= render'users/hamburger' %>
         </div>
-
       </div>
     </section>
-
     <section id="section2" class="section section2">
-      <div id="canvas-wrap">
-      </div>
-    </section>
-
-    <section id="section3" class="section section3">
       <div id="canvas-wrap">
         <%= image_tag 'tori.jpg', class: 'bg-img' %>
       </div>
     </section>
-
-    <section id="profile" class="section section4" >
+    <section id="profile" class="section section3" >
       <div id="canvas-wrap">
         <div id="canvas-txt">
           <p>My Profile</p>
@@ -37,30 +26,10 @@
         <%= render'users/profile' %>
       </div>
     </section>
-
-    <section id="profile" class="section section5">
-      <div id="canvas-wrap">
-        <div id="my-keeper-box">
-        <span id="sp-circle6"></span>
-        <span id="my-keeper-list">
-          <div class="txt" style="text-align: center;">キープしている人</div>
-          <% current_user.followings.each do |user| %>
-            <%= link_to user_path(user), class: "user-image", style: "display: block", remote: true do %>
-              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
-              <span class="txt">
-                <%= user.name %>
-              </span>
-            <% end %>
-          <% end %>
-        </span>
-      </div>
-    </section>
-
-    <section id="about" class="section section6">
+    <section id="about" class="section section4">
       <div id="canvas-wrap">
         <%= render'users/about' %>
         <canvas id="canvas-container"></canvas>
       </div>
     </section>
-
   </div>
