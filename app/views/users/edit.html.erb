@@ -57,6 +57,11 @@
           </div>
         </div>
       </div>
+      <div id="user-edit-box4">
+        <%= link_to user_path(current_user.id), class: "destroy-user", method: :delete, "data-confirm" => "このユーザーを削除していいですか？" do %>
+          <i class="fas fa-user-slash fa-3x user-alt"></i>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
@@ -95,7 +100,7 @@
             <audio src="<%= @audio.audio %>" controls="">
           </div>
           <div>
-            <%= link_to '/audios/:id', method: :delete do %>
+            <%= link_to '/audios/:id', method: :delete, "data-confirm" => "このオーディオファイルを削除していいですか？" do %>
               <i class="fas fa-minus-circle fa-2x"></i>
             <% end %>
           </div>

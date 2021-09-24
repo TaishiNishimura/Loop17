@@ -38,20 +38,15 @@
     position: absolute;
   }
 
-  #user-edit-box2 {
-    width: 400px;
-    height: 250px;
-    left: 450px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .user-alt {
+    cursor: pointer;
+    color: #fff;
   }
 
-  #user-edit-box3 {
-    width: 450px;
+  #user-edit-box2 {
+    width: 350px;
     height: 250px;
-    left: 0;
+    left: 500px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -62,14 +57,31 @@
     position: absolute;
   }
 
+  #user-edit-box3 {
+    width: 350px;
+    height: 250px;
+    left: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .edit-sns-link {
     position: absolute;
   }
 
-  .user-alt {
-    cursor: pointer;
-    color: #fff;
+  #user-edit-box4 {
+    width: 150px;
+    height: 250px;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+
 
 
 

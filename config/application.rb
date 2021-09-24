@@ -15,7 +15,7 @@ module Loop17
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    
+
     # 言語ファイルを階層ごとに設定するための記述
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
@@ -28,5 +28,7 @@ module Loop17
     # デフォルトの言語設定
     # config.i18n.default_locale = :en
     config.i18n.default_locale = :ja
+
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
