@@ -13,12 +13,12 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 //= require audiojs
 
 //トップページのモーダル
-  $(document).on('turbolinks:load', function() {
+  $(function() {
     $('.main-title').animate({'left':'0'},1000);
     setTimeout(timer1, 1000);
     function timer1() {
@@ -341,7 +341,7 @@
 
 
 //編集ページ
-  $(document).on('turbolinks:load', function() {
+  $(function() {
     $('#user-edit-slide').animate({left:-850}, 2000);
     $('#audio-edit-slide').animate({right:-850}, 2000);
     $('.return-zone').animate({left: 0}, 2000);
