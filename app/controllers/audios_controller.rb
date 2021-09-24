@@ -8,7 +8,7 @@ class AudiosController < ApplicationController
     @audio.user_id = current_user.id
 
     unless under_17_seconds?(audio_params[:audio].tempfile)
-      redirect_to request.referer
+      redirect_to request.referer, notice: '😅17秒以内のファイルにしてください😓'
       return
     end
 
@@ -20,7 +20,7 @@ class AudiosController < ApplicationController
     @audio = Audio.where(user_id: current_user.id).first
 
     unless under_17_seconds?(audio_params[:audio].tempfile)
-      redirect_to request.referer
+      redirect_to request.referer, notice: '😅17秒以内のファイルにしてください😓'
       return
     end
 
@@ -30,8 +30,10 @@ class AudiosController < ApplicationController
 
   def destroy
     audio = Audio.where(user_id: current_user.id).first
-    audio.destroy
-    redirect_to request.referer
+    if audio.present?
+      audio.destroy
+      redirect_to request.referer
+    end
   end
 
   def search

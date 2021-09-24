@@ -1,6 +1,7 @@
 <script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
 
 <div id="edit-canvas">
+  <%= flash[:notice] %>
 
   <div class="video-content">
     <%= video_tag("/videos/bg-movie.mp4", width: "100%", autoplay: :true, loop: :true, muted: :true) %>
@@ -87,10 +88,18 @@
     <div id="audio-edit-box3">
       <% if @audio.present? %>
         <div class="txt">
-          ♪<%= @audio.title %>
-          <audio src="<%= @audio.audio %>" controls="">
+          <div>
+            ♪<%= @audio.title %>
+          </div>
+          <div>
+            <audio src="<%= @audio.audio %>" controls="">
+          </div>
+          <div>
+            <%= link_to '/audios/:id', method: :delete do %>
+              <i class="fas fa-minus-circle fa-2x"></i>
+            <% end %>
+          </div>
         </div>
-        <%= link_to '削除する', '/audios/:id', method: :delete %>
       <% end %>
     </div>
 
