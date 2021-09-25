@@ -164,7 +164,9 @@
     }
   });
 
-//ユーザーモーダル展開
+
+
+//ユーザーモーダルを展開
   $(function(){
     $('.user-modal').hide();
     $('.user-image').on('click',function(e){
