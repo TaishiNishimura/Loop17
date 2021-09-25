@@ -4,7 +4,9 @@
     <section id="section1" class="section section1">
       <div id="canvas-wrap">
         <div id="canvas-txt">
-          <p>Loop17</p>
+          <%= link_to users_path, class:"Loop17" do %>
+            <p>Loop17</p>
+          <% end %>
         </div>
         <div id="container">
           <%= render'users/shuffle' %>
@@ -17,8 +19,8 @@
       <div id="canvas-wrap">
         <ul class='bg-img-flex'>
           <li><%= image_tag 'tori.jpg', class: 'bg-img1' %></li>
-          <li><%= image_tag 'lamp1.jpg', class: 'bg-img2' %></li>
-          <li><%= image_tag 'lamp2.jpg', class: 'bg-img3' %></li>
+          <li><%#= image_tag 'lamp1.jpg', class: 'bg-img2' %></li>
+          <li><%#= image_tag 'lamp2.jpg', class: 'bg-img3' %></li>
         </ul>
       </div>
     </section>

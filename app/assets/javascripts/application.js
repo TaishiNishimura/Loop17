@@ -83,92 +83,83 @@
 
 
 //indexのアイコンアニメーション
-      $(function () {
-        $(window).on("load", function() {
-            // バウンス呼び出し
-            bounce('#container', '.dots1')
-            bounce('#container', '.dots2')
-            bounce('#container', '.dots3')
-            bounce('#container', '.dots4')
-            bounce('#container', '.dots5')
-            bounce('#container', '.dots6')
-            bounce('#container', '.dots7')
-            bounce('#container', '.dots8')
-            bounce('#container', '.dots9')
-            bounce('#container', '.dots10')
-            bounce('#container', '.dots11')
-            bounce('#container', '.dots12')
-            bounce('#container', '.dots13')
-            bounce('#container', '.dots14')
-            bounce('#container', '.dots15')
-            bounce('#container', '.dots16')
-            bounce('#container', '.dots17')
-        })
+  $(function () {
+    $(window).on("load", function() {
+      // バウンス呼び出し
+      bounce('#container', '.dots1');
+      bounce('#container', '.dots2');
+      bounce('#container', '.dots3');
+      bounce('#container', '.dots4');
+      bounce('#container', '.dots5');
+      bounce('#container', '.dots6');
+      bounce('#container', '.dots7');
+      bounce('#container', '.dots8');
+      bounce('#container', '.dots9');
+      bounce('#container', '.dots10');
+      bounce('#container', '.dots11');
+      bounce('#container', '.dots12');
+      bounce('#container', '.dots13');
+      bounce('#container', '.dots14');
+      bounce('#container', '.dots15');
+      bounce('#container', '.dots16');
+      bounce('#container', '.dots17');
+    });
 
-        function bounce(container, object) {
-
-            /**
-             * 速度をランダムにするための配列
-             *  必要に応じて正負の値を追加してください。
-             *  複数の数字を入れることでよりランダムな動きになります。
-             * @type {number[]}
-             */
-            const randomSpeed = [-0.2, -0.15, -0.1, 0.1 , 0.15, 0.2]
-
-            // 移動速度
-            let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)]
-            let speedY = randomSpeed[Math.floor(Math.random() * randomSpeed.length)]
-
-            // jQueryで要素取得
-            container = $(container)
-            object = $(object)
-
-            // インターバルで描画
-            setInterval(function () {
-                // コンテナサイズ取得
-                let containerSize = {
-                    height: container.height(),
-                    width: container.width()
-                }
-
-                // オブジェクトサイズを取得
-                let objectSize = {
-                    height: object.height(),
-                    width: object.width()
-                }
-
-                // 位置情報
-                let location = {
-                    x: object.offset().left += speedX,
-                    y: object.offset().top += speedY
-                }
-
-                // CSSで位置を制御
-                object.css('left', location['x'] + 'px')
-                object.css('top', location['y'] + 'px')
-
-                // 壁判定_X軸
-                if (location['x'] < 0 || location['x'] > containerSize['width'] - objectSize['width']) {
-                    // リサイズされて範囲外に行った場合範囲内に戻す処理
-                    if (location['x'] > containerSize['width'] - objectSize['width']) {
-                        object.css('left', containerSize['width'] - objectSize['width'] + 'px')
-                    }
-                    // 壁判定によりspeedXを反転させる
-                    speedX *= -1
-                }
-
-                // 壁判定_Y軸
-                if (location['y'] < 0 || location['y'] > containerSize['height'] - objectSize['height']) {
-                    // リサイズされて範囲外に行った場合範囲内に戻す処理
-                    if (location['y'] > containerSize['height'] - objectSize['height']) {
-                        object.css('top', containerSize['height'] - objectSize['height'] + 'px')
-                    }
-                    // 壁判定によりspeedYを反転させる
-                    speedY *= -1
-                }
-            }, 1)
+    function bounce(container, object) {
+        /**
+         * 速度をランダムにするための配列
+         *  必要に応じて正負の値を追加してください。
+         *  複数の数字を入れることでよりランダムな動きになります。
+         * @type {number[]}
+         */
+        const randomSpeed = [-0.2, -0.15, -0.1, 0.1 , 0.15, 0.2];
+        // 移動速度
+        let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)];
+        let speedY = randomSpeed[Math.floor(Math.random() * randomSpeed.length)];
+        // jQueryで要素取得
+        container = $(container)
+        object = $(object)
+        // インターバルで描画
+        setInterval(function () {
+            // コンテナサイズ取得
+            let containerSize = {
+                height: container.height(),
+                width: container.width()
+        };
+        // オブジェクトサイズを取得
+        let objectSize = {
+            height: object.height(),
+            width: object.width()
+        };
+        // 位置情報
+        let location = {
+            x: object.offset().left += speedX,
+            y: object.offset().top += speedY
+        };
+        // CSSで位置を制御
+        object.css('left', location['x'] + 'px');
+        object.css('top', location['y'] + 'px');
+        // 壁判定_X軸
+        if (location['x'] < 0 || location['x'] > containerSize['width'] - objectSize['width']) {
+            // リサイズされて範囲外に行った場合範囲内に戻す処理
+            if (location['x'] > containerSize['width'] - objectSize['width']) {
+                object.css('left', containerSize['width'] - objectSize['width'] + 'px');
+            }
+            // 壁判定によりspeedXを反転させる
+            speedX *= -1;
         }
-    })
+        // 壁判定_Y軸
+        if (location['y'] < 0 || location['y'] > containerSize['height'] - objectSize['height']) {
+            // リサイズされて範囲外に行った場合範囲内に戻す処理
+            if (location['y'] > containerSize['height'] - objectSize['height']) {
+                object.css('top', containerSize['height'] - objectSize['height'] + 'px');
+            }
+            // 壁判定によりspeedYを反転させる
+            speedY *= -1;
+        }
+      }, 1);
+    }
+  });
 
 
 
