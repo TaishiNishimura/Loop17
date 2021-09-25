@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
 
   def follow(user_id)
-    relationships.create(followed_id: user_id)
+    relationships.find_or_create_by(followed_id: user_id)
   end
 
   def unfollow(user_id)

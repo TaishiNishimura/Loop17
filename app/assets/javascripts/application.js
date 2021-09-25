@@ -164,6 +164,22 @@
     }
   });
 
+//ユーザーモーダル展開
+  $(function(){
+    $('.user-modal').hide();
+    $('.user-image').on('click',function(e){
+      var userId=$(e.target).data('user-id');
+      $('.user-modal#modal-'+userId).show(400, function(){
+        $('.user-modal#modal-'+userId+' .modal').addClass('open');
+      });
+        return false;
+    });
+    $('.modal___bg').on('click',function(){
+        $('.user-modal').hide();
+        return false;
+    });
+  });
+
 
 
 //ハンバーガーメニュー
