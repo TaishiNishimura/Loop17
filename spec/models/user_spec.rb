@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
-describe '' do
-  it "" do
-    expect(FactoryBot.build(:user)).to be_valid
-  end
-  
+#require 'rails_helper'
+#
+#Rspec.describe Audio, "モデルに関するテスト", type: :model do
+#describe '実際に保存してみる' do
+#  it "有効な投稿内容の場合は保存されるか" do
+#    expect(FactoryBot.build(:audio)).to be_valid
+#  end
+#end
