@@ -16,20 +16,20 @@
               Keepされている数: <%= user.followers.count %>
             </div>
 
-            <button class>
-              <%= render "follow_form" %>
+            <button id="ff-<%= user.id %>">
+              <%= render "follow_form", user: user %>
             </button>
 
           </div>
           <%# オーディオプレイヤー %>
           <div class="audiospace">
-            <% if @audio.present? %>
+            <% if user.audio.present? %>
             <div id="audio-player-box">
               <div class="txt">
-                ♪<%= @audio.title %>
+                ♪<%= user.audio.title %>
               </div>
-                <audio src="<%= @audio.audio %>" controls="">
-                  <a src="<%= @audio.audio %>">ダウンロード</a>
+                <audio src="<%= user.audio.audio %>" controls="">
+                  <a src="<%= user.audio.audio %>">ダウンロード</a>
                 </audio>
               </div>
             <% end %>

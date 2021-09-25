@@ -132,6 +132,9 @@
             width: object.width()
         };
         // 位置情報
+        if (object.offset() == null) {
+          return;
+        }
         let location = {
             x: object.offset().left += speedX,
             y: object.offset().top += speedY
@@ -159,13 +162,6 @@
         }
       }, 1);
     }
-  });
-
-
-
-//ユーザーモーダルを閉じる
-  $(document).on('click', '.modal___bg', function() {
-    $('.profile-modal').fadeOut();
   });
 
 

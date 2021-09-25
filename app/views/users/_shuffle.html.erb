@@ -1,9 +1,32 @@
   <% @users.shuffle.first(17).each.with_index(1) do |user,index| %>
     <%# ユーザーアイコン %>
     <div id="user-icon-<%= user.id %>" class="dots<%= index %>">
-      <%= link_to user_path(user), class: "user-image", style: "display: block", remote: true do %>
-        <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image" %>
+      <%# ここのリンクをクリックしたら下のモーダルを表示 onclick= %>
+      <%= link_to user_path(user), class: "user-image", style: "display: block" do %>
+        <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image", data: {user_id: user.id} %>
       <% end %>
     </div>
-    <div class="user-modal"></div>
+
+    <div id="modal-<%= user.id %>" class="user-modal">
+      <%= render 'users/modal', user: user %>
+    </div>
+
+    <script>
+      $(function(){
+        $('.user-image').on('click',function(e){
+          var userId=$(e.target).data('user-id');
+          $('.user-modal#modal-'+userId).show(400, function(){
+            $('.user-modal#modal-'+userId+' .modal').addClass('open');
+          });
+            return false;
+        });
+        $('.modal___bg').on('click',function(){
+            $('.user-modal').hide();
+            return false;
+        });
+      });
+    </script>
+
   <% end %>
+
+

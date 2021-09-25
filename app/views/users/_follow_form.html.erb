@@ -1,5 +1,5 @@
-  <% if current_user.following?(@user) %>
-    <%= render "unfollow" %>
+  <% if current_user.following?(user) %>
+    <%= render "users/unfollow", user: user %>
   <% else %>
-    <%= render "follow" %>
+    <%= render "users/follow", user: user %>
   <% end %>

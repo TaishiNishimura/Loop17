@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @users = User.all
-    @audio = Audio.where(user_id: current_user.id).first
   end
 
   def edit

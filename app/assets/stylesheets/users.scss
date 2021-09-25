@@ -88,12 +88,18 @@
 
 
 //ユーザーのプロフィールモーダル
-  .modal{
+  .modal {
     height: 100vh;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 7777;
+    opacity: 0.1;
+    transition-property: opacity;
+    transition-duration: 1s;
+  }
+  .modal.open {
+    opacity: 1;
   }
 
   .modal___bg{
