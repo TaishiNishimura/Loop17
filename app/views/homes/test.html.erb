@@ -1,0 +1,113 @@
+<% #TODO %>
+  <style>
+  /*#test p {*/
+  /*width: 100%;*/
+  /*z-index: 9999;*/
+  /*backgrond-color: red;*/
+  /*padding: 30px;*/
+  /*}*/
+  /*#test p:nth-child(2n-1) {*/
+  /*background-color: blue;*/
+  /*}*/
+  .scroll{
+  height:200px;
+  overflow:scroll;
+  border:1px solid black;
+  padding:30px;
+}
+
+  </style>
+<div id="test">
+  <a href="#ancher01" data-box=".scroll">01</a>
+<a href="#ancher10" data-box=".scroll">10</a>
+<a href="#ancher20" data-box=".scroll">20</a>
+<a href="#ancher30" data-box=".scroll">30</a>
+<a href="#ancher40" data-box=".scroll">40</a>
+<a href="#ancher50" data-box=".scroll">50</a>
+<a href="#ancher60" data-box=".scroll">60</a>
+<div class="scroll">
+<p id="ancher01">01</p>
+<p id="ancher02">02</p>
+<p id="ancher03">03</p>
+<p id="ancher04">04</p>
+<p id="ancher05">05</p>
+<p id="ancher06">06</p>
+<p id="ancher07">07</p>
+<p id="ancher08">08</p>
+<p id="ancher09">09</p>
+<p id="ancher10">10</p>
+<p id="ancher11">11</p>
+<p id="ancher12">12</p>
+<p id="ancher13">13</p>
+<p id="ancher14">14</p>
+<p id="ancher15">15</p>
+<p id="ancher16">16</p>
+<p id="ancher17">17</p>
+<p id="ancher18">18</p>
+<p id="ancher19">19</p>
+<p id="ancher20">20</p>
+<p id="ancher21">21</p>
+<p id="ancher22">22</p>
+<p id="ancher23">23</p>
+<p id="ancher24">24</p>
+<p id="ancher25">25</p>
+<p id="ancher26">26</p>
+<p id="ancher27">27</p>
+<p id="ancher28">28</p>
+<p id="ancher29">29</p>
+<p id="ancher30">30</p>
+<p id="ancher31">31</p>
+<p id="ancher32">32</p>
+<p id="ancher33">33</p>
+<p id="ancher34">34</p>
+<p id="ancher35">35</p>
+<p id="ancher36">36</p>
+<p id="ancher37">37</p>
+<p id="ancher38">38</p>
+<p id="ancher39">39</p>
+<p id="ancher40">40</p>
+<p id="ancher41">41</p>
+<p id="ancher42">42</p>
+<p id="ancher43">43</p>
+<p id="ancher44">44</p>
+<p id="ancher45">45</p>
+<p id="ancher46">46</p>
+<p id="ancher47">47</p>
+<p id="ancher48">48</p>
+<p id="ancher49">49</p>
+<p id="ancher50">50</p>
+<p id="ancher51">51</p>
+<p id="ancher52">52</p>
+<p id="ancher53">53</p>
+<p id="ancher54">54</p>
+<p id="ancher55">55</p>
+<p id="ancher56">56</p>
+<p id="ancher57">57</p>
+<p id="ancher58">58</p>
+<p id="ancher59">59</p>
+<p id="ancher60">60</p>
+  </div>
+</div>
+  <script>
+    $(function(){
+  $("a[href^='#']").click(function(){
+
+    //data-box属性がない場合は通常のスムーズスクロール
+    if(!$(this).data("box")){
+      $("body,html").stop().animate({
+        scrollTop:$($(this).attr("href")).offset().top
+      });
+
+    //data-box属性がある場合はdata-box内をスムーズスクロール
+    }else{
+      var $box = $($(this).data("box"));
+      var $tareget = $($(this).attr("href"));
+      var dist = $tareget.position().top - $box.position().top;
+      $box.stop().animate({
+        scrollTop: $box.scrollTop() + dist
+      });
+    }
+    return false;
+  });
+});
+  </script>
