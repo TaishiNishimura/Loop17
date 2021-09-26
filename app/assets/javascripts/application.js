@@ -106,25 +106,27 @@
     });
 
     function bounce(container, object) {
-        /**
-         * 速度をランダムにするための配列
-         *  必要に応じて正負の値を追加してください。
-         *  複数の数字を入れることでよりランダムな動きになります。
-         * @type {number[]}
-         */
-        const randomSpeed = [-0.2, -0.15, -0.1, 0.1 , 0.15, 0.2];
-        // 移動速度
-        let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)];
-        let speedY = randomSpeed[Math.floor(Math.random() * randomSpeed.length)];
-        // jQueryで要素取得
-        container = $(container)
-        object = $(object)
-        // インターバルで描画
-        setInterval(function () {
-            // コンテナサイズ取得
-            let containerSize = {
-                height: container.height(),
-                width: container.width()
+      /**
+       * 速度をランダムにするための配列
+       *  必要に応じて正負の値を追加してください。
+       *  複数の数字を入れることでよりランダムな動きになります。
+       * @type {number[]}
+       */
+      const randomSpeed = [-0.2, -0.15, -0.1, 0.1 , 0.15, 0.2];
+      // 移動速度
+      let speedX = randomSpeed[Math.floor(Math.random() * randomSpeed.length)];
+      let speedY = randomSpeed[Math.floor(Math.random() * randomSpeed.length)];
+      // jQueryで要素取得
+      container = $(container)
+      var objectName = object;
+      object = $(object)
+      // インターバルで描画
+      setInterval(function () {
+        var el = document.getElementsByClassName(objectName.replace(".", ""));
+        // コンテナサイズ取得
+        let containerSize = {
+          height: container.height(),
+          width: container.width()
         };
         // オブジェクトサイズを取得
         let objectSize = {
@@ -135,13 +137,20 @@
         if (object.offset() == null) {
           return;
         }
+
+        var y = el[0].style.top.replace("px", "") == "" ? 0 : parseFloat(el[0].style.top.replace("px", ""));
         let location = {
-            x: object.offset().left += speedX,
-            y: object.offset().top += speedY
+            x: object.offset().left + speedX,
+            y: y + speedY
         };
+
+        object.offset().left += speedX;
+        object.offset().top += speedY;
+
         // CSSで位置を制御
-        object.css('left', location['x'] + 'px');
-        object.css('top', location['y'] + 'px');
+        el[0].style.left = location.x + "px";
+        el[0].style.top = location.y + "px";
+
         // 壁判定_X軸
         if (location['x'] < 0 || location['x'] > containerSize['width'] - objectSize['width']) {
             // リサイズされて範囲外に行った場合範囲内に戻す処理
@@ -152,13 +161,18 @@
             speedX *= -1;
         }
         // 壁判定_Y軸
-        if (location['y'] < 0 || location['y'] > containerSize['height'] - objectSize['height']) {
-            // リサイズされて範囲外に行った場合範囲内に戻す処理
-            if (location['y'] > containerSize['height'] - objectSize['height']) {
-                object.css('top', containerSize['height'] - objectSize['height'] + 'px');
-            }
-            // 壁判定によりspeedYを反転させる
+        if (location['y'] <= 0) {
+          if (speedY <= 0) {
             speedY *= -1;
+          }
+        }
+        if (location['y'] > containerSize['height'] - objectSize['height']) {
+            // リサイズされて範囲外に行った場合範囲内に戻す処理
+            object.css('top', containerSize['height'] - objectSize['height'] + 'px');
+            // 壁判定によりspeedYを反転させる
+            if (speedY > 0) {
+              speedY *= -1;
+            }
         }
       }, 1);
     }
@@ -237,17 +251,6 @@
       }, 800);
       setTimeout('rect()', 1600); //アニメーションを繰り返す間隔
   }
-
-
-//トップに戻る
-  $(function() {
-    $('#back a').on('click',function(event){
-      $('body, html').animate({
-        scrollTop:0
-      }, 800);
-      event.preventDefault();
-    });
-  });
 
 
 
