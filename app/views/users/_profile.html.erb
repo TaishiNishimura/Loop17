@@ -30,9 +30,7 @@
 
   <% if @audio.present? %>
     <div id="audio-player-box">
-      <audio src="<%= @audio.audio %>" controls="">
-        <a src="<%= @audio.audio %>">ダウンロード</a>
-      </audio>
+      <audio src="<%= @audio.audio %>" controls=""></audio>
     </div>
   <% end %>
 

@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+
   before_action :authenticate_user!
 
   def index
     @users = User.all.includes([:audio])
+    @audio = Audio.where(user_id: current_user.id).first
   end
 
   def edit
@@ -19,11 +21,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to request.referer
-  end
-
-  def show
-    @user = User.find(params[:id])
-    @audio = Audio.where(user_id: @user.id).first
   end
 
   def destroy
