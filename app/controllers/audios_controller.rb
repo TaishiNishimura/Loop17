@@ -1,5 +1,4 @@
 class AudiosController < ApplicationController
-  
   def new
     @audio = Audio.new
   end
@@ -54,10 +53,10 @@ class AudiosController < ApplicationController
   end
 
   def under_17_seconds?(file_path)
-      if Mp3Info.open(file_path).length.floor < 18
-        true
-      else
-        false
-      end
+    if Mp3Info.open(file_path).length.floor < 18
+      true
+    else
+      false
+    end
   end
 end
