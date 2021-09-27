@@ -58,7 +58,7 @@
         </div>
       </div>
       <div id="user-edit-box4">
-        <%= link_to user_path(current_user.id), class: "destroy-user", method: :delete, "data-confirm" => "このユーザーを削除していいですか？" do %>
+        <%= link_to user_path(current_user.id), class: "destroy-user", method: :delete, "data-confirm" => "ユーザー情報が削除されます(この処理は戻せません)" do %>
           <i class="fas fa-user-slash fa-3x user-alt"></i>
         <% end %>
       </div>

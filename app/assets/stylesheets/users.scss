@@ -195,8 +195,14 @@
 
   #wave {
     position: absolute;
-    width: 100%;
+    top: 10%;
+    left: 0;
+    width: 110%;
     height: 100%;
+  }
+
+  #waveform {
+    transform: rotate(-4.5deg);
   }
 
 
