@@ -21,6 +21,7 @@
     <span id="my-keeper-list">
       <div class="txt" style="text-align: center;">キープしている人</div>
       <% current_user.followings.each do |user| %>
+        <%# ここのリンクをクリックしたらモーダルを表示 %>
         <%= link_to user_path(user), class: "user-image", style: "display: block" do %>
           <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", class:"user-image", data: {user_id: user.id} %>
           <span class="txt">
