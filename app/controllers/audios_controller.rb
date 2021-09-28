@@ -8,28 +8,28 @@ class AudiosController < ApplicationController
     @audio.user_id = current_user.id
 
     if audio_params[:audio] == nil
-      redirect_to request.referer, notice: 'ファイルをアップロードしてください'
+      message =  'ファイルをアップロードしてください'
     elsif !(under_17_seconds?(audio_params[:audio].tempfile))
-      redirect_to request.referer, notice: '17秒以内のファイルにしてください'
+      message =  '17秒以内のファイルにしてください'
       return
     end
 
     @audio.save
-    redirect_to request.referer
+    redirect_to request.referer, notice: message
   end
 
   def update
     @audio = Audio.where(user_id: current_user.id).first
 
     if audio_params[:audio] == nil
-      redirect_to request.referer, notice: 'ファイルをアップロードしてください'
+      message = 'ファイルをアップロードしてください'
     elsif !(under_17_seconds?(audio_params[:audio].tempfile))
-      redirect_to request.referer, notice: '17秒以内のファイルにしてください'
+      message = '17秒以内のファイルにしてください'
       return
     end
 
     @audio.update(audio_params)
-    redirect_to request.referer
+    redirect_to request.referer, notice: message
   end
 
   def destroy
