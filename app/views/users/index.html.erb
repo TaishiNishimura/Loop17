@@ -1,51 +1,65 @@
 <script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
 
   <div class="fullPageScroll">
+    <%# セクション１ %>
     <section id="section1" class="section section1">
       <div id="canvas-wrap">
+        <%# メインタイトル %>
         <div id="canvas-txt">
           <%= link_to users_path, class:"Loop17" do %>
             <p>Loop17</p>
           <% end %>
         </div>
         <div id="container">
+          <%# 動くユーザーアイコン %>
           <%= render'users/shuffle' %>
+          <%# スクロールを促す矢印 %>
           <i class="fas fa-chevron-down fa-3x rect"></i>
+          <%# ハンバーガーメニュー %>
           <%= render'users/hamburger' %>
         </div>
       </div>
     </section>
+
+    <%# セクション２ %>
     <section id="section2" class="section section2">
       <div id="canvas-wrap">
+        <%# カラスの背景画像 %>
         <section id="bg-img">
           <%= image_tag 'tori.jpg'%>
         </section>
+        <%# 波形 %>
         <section id="wave">
           <%= render 'users/wave'%>
         </section>
       </div>
     </section>
+
+    <%# セクション3 %>
     <section id="profile" class="section section3" >
       <div id="canvas-wrap">
+        <%# マイプロフィール題字 %>
         <div id="canvas-txt">
           <p>My Profile</p>
         </div>
+        <%# マイプロフィール %>
         <%= render'users/profile' %>
       </div>
     </section>
+
+    <%# セクション4 %>
     <section id="about" class="section section4">
       <div id="canvas-wrap">
-
+　　　　<%# このサイトについて %>
         <%= render'users/about' %>
-
+        <%# トップに戻る %>
         <div id="page-top-box">
           <a href="#section1">
             <div id="page-top"></div>
           </a>
         </div>
-
+        <%# アバウトセクションの背景 %>
         <canvas id="canvas-container"></canvas>
-
       </div>
     </section>
   </div>

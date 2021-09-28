@@ -9,46 +9,47 @@
     <a class="js-modal-open" href="" data-target="modal01">はじめる</a>
     <a class="js-modal-open" href="" data-target="modal02">ログイン</a></a>
   </div>
+  <%# サインインのモーダル %>
   <div id="modal01" class="top-modal js-modal">
     <div class="modal__bg js-modal-close"></div>
     <div class="modal__content">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="txt2">Sign up!</div>
-          <div class="field">
-            <div class="txt2">
-              <%= f.label :なまえ %><br />
-            </div>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <div class="field">
+          <div class="txt2">
+            <%= f.label :なまえ %><br />
           </div>
-          <div class="field">
-            <div class="txt2">
-              <%= f.label :email %><br />
-            </div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+        <div class="field">
+          <div class="txt2">
+            <%= f.label :email %><br />
           </div>
-          <div class="field">
-            <div class="txt2">
-              <%= f.label :password %>
-            </div>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "new-password" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="field">
+          <div class="txt2">
+            <%= f.label :password %>
           </div>
-          <div class="field">
-            <div class="txt2">
-              <%= f.label :password_confirmation %><br />
-            </div>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+        <div class="field">
+          <div class="txt2">
+            <%= f.label :password_confirmation %><br />
           </div>
-          <div class="actions" style="margin-top: 10px">
-            <%= f.submit "はじめる" %>
-          </div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+        <div class="actions" style="margin-top: 10px">
+          <%= f.submit "はじめる" %>
+        </div>
       <% end %>
     </div>
   </div>
-
+  <%# ログインのモーダル %>
   <div id="modal02" class="top-modal js-modal">
     <div class="modal__bg js-modal-close"></div>
       <div class="modal__content">

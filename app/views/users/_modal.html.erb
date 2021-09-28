@@ -15,7 +15,8 @@
             <div class="txt">
               Keepされている数: <%= user.followers.count %>
             </div>
-
+            
+            <%# フォローボタンを非同期にするためのパーシャルへ %>
             <button id="ff-<%= user.id %>">
               <%= render "users/follow_form", user: user %>
             </button>

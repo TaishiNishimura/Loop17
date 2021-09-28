@@ -1,17 +1,20 @@
+<%# 編集ページ %>
 <script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
 
 <div id="edit-canvas">
   <%= flash[:notice] %>
-
+  <%# 背景の埋め込み動画 %>
   <div class="video-content">
     <%= video_tag("/videos/bg-movie.mp4", width: "100%", autoplay: :true, loop: :true, muted: :true) %>
   </div>
 
+  <%# ユーザー情報編集 %>
   <div id="user-edit-slide">
     <div id="user-edit-box1">
       <i class="fas fa-user-alt fa-3x user-alt"></i>
     </div>
     <%= form_with model: @user, local: true do |f| %>
+      <%# 基本情報 %>
       <div id="user-edit-box2">
         <div class ="edit-user-profile">
           <div class="txt2">
@@ -30,7 +33,7 @@
           </div>
         </div>
       </div>
-
+      <%# SNS情報 %>
       <div id="user-edit-box3">
         <div class ="edit-sns-link">
           <div class="txt2">
@@ -57,6 +60,7 @@
           </div>
         </div>
       </div>
+      <%# 会員削除 %>
       <div id="user-edit-box4">
         <%= link_to user_path(current_user.id), class: "destroy-user", method: :delete, "data-confirm" => "ユーザー情報が削除されます(この処理は戻せません)" do %>
           <i class="fas fa-user-slash fa-3x user-alt"></i>
@@ -65,10 +69,12 @@
     <% end %>
   </div>
 
+  <%# オーディオ情報編集 %>
   <div id="audio-edit-slide">
     <div id="audio-edit-box1">
       <i class="fas fa-music fa-3x audio-alt"></i>
     </div>
+    <%# オーディオ投稿 %>
     <div id="audio-edit-box2">
       <%= form_with model: @audio, local: true do |f| %>
       <div class="txt2">
@@ -89,7 +95,7 @@
       </div>
       <% end %>
     </div>
-
+    <%# 投稿オーディオ詳細 %>
     <div id="audio-edit-box3">
       <% if @audio.present? %>
         <div class="txt">
@@ -107,9 +113,9 @@
         </div>
       <% end %>
     </div>
-
   </div>
 
+  <%# もどるボタン %>
   <div class="return-zone">
     <div class="return-bar"></div>
     <%=link_to "もどる", users_path, class:"return-txt" %>

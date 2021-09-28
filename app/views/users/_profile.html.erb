@@ -1,7 +1,9 @@
+  <%# マイプロフィール画像 %>
   <div class="my-profile-image">
     <%= attachment_image_tag current_user, :profile_image, :fill, 1000, 1000, format: 'jpeg' %>
   </div>
 
+  <%# 自己紹介の玉 %>
   <div id="my-profile-box">
     <span id="sp-circle4"></span>
     <span id="my-profile-txt">
@@ -13,6 +15,7 @@
     </span>
   </div>
 
+  <%# キープした一覧の玉 %>
   <div id="my-keeper-box">
     <span id="sp-circle5"></span>
     <span id="my-keeper-list">
@@ -28,12 +31,14 @@
     </span>
   </div>
 
+　<%# オーディオプレイヤー %>
   <% if @audio.present? %>
     <div id="audio-player-box">
       <audio src="<%= @audio.audio %>" controls=""></audio>
     </div>
   <% end %>
 
+  <%# 回転する音声タイトル %>
   <span id="sp-circle6">
     <% if @audio.present? %>
       ♪<%= @audio.title %>

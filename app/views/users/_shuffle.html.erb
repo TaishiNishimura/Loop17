@@ -1,3 +1,4 @@
+  <%# ユーザーアイコンをランダムに表示 %>
   <% @users.shuffle.first(17).each.with_index(1) do |user,index| %>
     <%# ユーザーアイコン %>
     <div id="user-icon-<%= user.id %>" class="dots<%= index %>">
@@ -6,7 +7,7 @@
         <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image", data: {user_id: user.id} %>
       <% end %>
     </div>
-
+    <%# モーダル %>
     <div id="modal-<%= user.id %>" class="user-modal">
       <%= render 'users/modal', user: user %>
     </div>

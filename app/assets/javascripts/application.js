@@ -58,7 +58,6 @@
 
 
 
-
 //indexのアイコンアニメーション
   $(function () {
     $(window).on("load", function() {
@@ -231,7 +230,7 @@
 
 
 
-//アバウトページのパーティクル
+//アバウトセクションの背景パーティクル
   window.requestAnimFrame = (function () {
   return window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
