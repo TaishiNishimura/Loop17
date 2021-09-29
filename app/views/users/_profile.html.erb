@@ -31,6 +31,13 @@
       <% end %>
     </span>
   </div>
+  <% current_user.followings.each do |user| %>
+    <%# モーダル %>
+    <div id="modal-<%= user.id %>" class="user-modal">
+      <%= render 'users/modal', user: user %>
+    </div>
+  <% end %>
+
 
 　<%# オーディオプレイヤー %>
   <% if @audio.present? %>

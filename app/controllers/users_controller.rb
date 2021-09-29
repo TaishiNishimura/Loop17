@@ -28,6 +28,10 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  #def show
+    #@user = User.find(params)
+  #end
+
   private
 
   def user_params

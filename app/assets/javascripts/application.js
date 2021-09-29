@@ -109,12 +109,13 @@
             height: object.height(),
             width: object.width()
         };
+
         // 位置情報
         if (object.offset() == null) {
           return;
         }
 
-        var y = el[0].style.top.replace("px", "") == "" ? 0 : parseFloat(el[0].style.top.replace("px", ""));
+        var y = el[0].style.top.replace("px", "") == "" ?  container.height()/2 - 20 : parseFloat(el[0].style.top.replace("px", ""));
         let location = {
             x: object.offset().left + speedX,
             y: y + speedY
@@ -163,6 +164,22 @@
       var userId=$(e.target).data('user-id');
       $('.user-modal#modal-'+userId).show(400, function(){
         $('.user-modal#modal-'+userId+' .modal').addClass('open');
+      });
+        return false;
+    });
+    $('.modal___bg').on('click',function(){
+        $('.user-modal').hide();
+        return false;
+    });
+  });
+
+  //ユーザーモーダルを展開
+  $(function(){
+    $('.user-modal').hide();
+    $('.user-shuffle-image').on('click',function(e){
+      var userId=$(e.target).data('user-id');
+      $('.user-modal#modal-shuffle-'+userId).show(400, function(){
+        $('.user-modal#modal-shuffle-'+userId+' .modal').addClass('open');
       });
         return false;
     });

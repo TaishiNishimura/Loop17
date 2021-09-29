@@ -4,11 +4,11 @@
     <div id="user-icon-<%= user.id %>" class="dots<%= index %>">
       <%# ここのリンクをクリックしたら下のモーダルを表示 %>
       <%= link_to user_path(user), class: "user-image", style: "display: block" do %>
-        <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-image", data: {user_id: user.id} %>
+        <%= attachment_image_tag user, :profile_image, :fill, 120, 120, format: 'jpeg', fallback: "no_image.jpg", class:"user-shuffle-image", data: {user_id: user.id} %>
       <% end %>
     </div>
     <%# モーダル %>
-    <div id="modal-<%= user.id %>" class="user-modal">
+    <div id="modal-shuffle-<%= user.id %>" class="user-modal">
       <%= render 'users/modal', user: user %>
     </div>
 

@@ -2,7 +2,7 @@
 
       <div class="modal profile-modal">
         <div class="modal___bg profile-modal-close"></div>
-        <div class="modal___content gloss">
+        <div class="modal___content">
           <%# プロフィール %>
           <div class= "namespace">
             <div>
@@ -15,7 +15,7 @@
             <div class="txt">
               Keepされている数: <%= user.followers.count %>
             </div>
-            
+
             <%# フォローボタンを非同期にするためのパーシャルへ %>
             <button id="ff-<%= user.id %>">
               <%= render "users/follow_form", user: user %>
