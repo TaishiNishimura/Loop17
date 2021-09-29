@@ -25,13 +25,13 @@
     <section id="section2" class="section section2">
       <div id="canvas-wrap">
         <%# カラスの背景画像 %>
-        <section id="bg-img">
+        <div id="bg-img">
           <%= image_tag 'tori.jpg'%>
-        </section>
+        </div>
         <%# 波形 %>
-        <section id="wave">
+        <div id="wave">
           <%= render 'users/wave'%>
-        </section>
+        </div>
       </div>
     </section>
 
@@ -50,16 +50,18 @@
     <%# セクション4 %>
     <section id="about" class="section section4">
       <div id="canvas-wrap">
-　　　　<%# このサイトについて %>
-        <%= render'users/about' %>
-        <%# トップに戻る %>
-        <div id="page-top-box">
-          <a href="#section1">
-            <div id="page-top"></div>
-          </a>
-        </div>
-        <%# アバウトセクションの背景 %>
-        <canvas id="canvas-container"></canvas>
+          <%# アバウトセクションの背景 %>
+          <canvas id="canvas-container"></canvas>
+          <%# このサイトについて %>
+          <%= render'users/about' %>
       </div>
     </section>
+
+    <%# トップに戻る %>
+    <div id="page-top-box">
+      <a href="#section1">
+        <div id="page-top"></div>
+      </a>
+    </div>
+
   </div>
