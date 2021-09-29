@@ -1,4 +1,5 @@
 # Loop17
+![hevx7-wxd8d (1)](https://user-images.githubusercontent.com/86339782/135220814-995477d7-047e-4df9-9480-a8dd6933642e.gif)
 
 ## サイト概要
 「ループ・セブンティーン」は、音に関するクリエイター達の溜まり場です。</br>
