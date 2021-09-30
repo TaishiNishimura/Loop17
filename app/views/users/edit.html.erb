@@ -100,7 +100,17 @@
       <% if @audio.present? %>
         <div class="txt">
           <div>
-            ♪<%= @audio.title %>
+              ♪<%= @audio.title %> |
+          <%#    <% if @audio.genre_id = 1 %>
+          <%#      ジャンル : <%= "Music" %>
+          <%#    <% elsif @audio.genre_id = 2 %>
+          <%#      ジャンル : <%= "Vocal" %>
+          <%#    <% elsif @audio.genre_id = 3 %>
+          <%#      ジャンル : <%= "Spoken & Audio" %>
+          <%#    <% elsif @audio.genre_id = 4 %>
+          <%#      ジャンル : <%= "Other" %>
+          <%#    <% else %>
+          <%#    <% end %>
           </div>
           <div>
             <audio src="<%= @audio.audio %>" controls="">

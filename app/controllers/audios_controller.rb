@@ -7,26 +7,33 @@ class AudiosController < ApplicationController
     @audio = Audio.new(audio_params)
     @audio.user_id = current_user.id
 
+    message = nil
     if audio_params[:audio] == nil
       message = '音声データが空のまま投稿されました'
     elsif !(under_17_seconds?(audio_params[:audio].tempfile))
       message = '17秒以内のファイルにしてください😓'
     end
 
-    @audio.save
+    if message == nil
+      @audio.save
+    end
+
     redirect_to request.referer, notice: message
   end
 
   def update
     @audio = Audio.where(user_id: current_user.id).first
 
+    message = nil
     if audio_params[:audio] == nil
       message = '音声データが空のまま更新されました'
     elsif !(under_17_seconds?(audio_params[:audio].tempfile))
       message = '17秒以内のファイルにしてください😓'
     end
 
-    @audio.update(audio_params)
+    if message == nil
+      @audio.update(audio_params)
+    end
     redirect_to request.referer, notice: message
   end
 
