@@ -24,6 +24,7 @@ class AudiosController < ApplicationController
 
   def update
     @audio = Audio.where(user_id: current_user.id).first
+    @audio.score = Language.get_data(audio_params[:title])
 
     message = nil
     if audio_params[:audio] == nil

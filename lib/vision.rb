@@ -7,9 +7,10 @@ module Vision
     def get_image_data(image_file)
       # APIのURL作成
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_API_KEY']}"
-
+      pp image_file.tempfile
       # 画像をbase64にエンコード
-      base64_image = Base64.encode64(open("#{Rails.root}/public/uploads/#{image_file.id}").read)
+      ##base64_image = Base64.encode64(open("#{Rails.root}/public/uploads/#{image_file.id}").read)
+      base64_image = Base64.encode64(File.read(image_file.tempfile))
 
       # APIリクエスト用のJSONパラメータ
       params = {
@@ -19,7 +20,7 @@ module Vision
           },
           features: [
             {
-              type: 'LABEL_DETECTION'
+              type: 'SAFE_SEARCH_DETECTION'
             }
           ]
         }]
@@ -37,7 +38,7 @@ module Vision
       if (error = response_body['responses'][0]['error']).present?
         raise error['message']
       else
-        response_body['responses'][0]['labelAnnotations'].pluck('description').take(3)
+        response_body['responses'][0]['safeSearchAnnotation']
       end
     end
   end

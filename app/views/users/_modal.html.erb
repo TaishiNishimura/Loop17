@@ -28,13 +28,6 @@
               <div id="audio-player-box">
                 <div class="txt">
                   ♪<%= user.audio.title %>
-                  <% if user.audio.title.present? %>
-                    <% if @audio.score <= -0.1 %>
-                      <%= " | 😓" %>
-                    <% elsif @audio.score >= 0 %>
-                      <%= " | 😋" %>
-                    <% end %>
-                  <% end %>
                 </div>
                 <audio src="<%= user.audio.audio %>" controls=""></audio>
               </div>

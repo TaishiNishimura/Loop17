@@ -18,14 +18,33 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-
-    tags = Vision.get_image_data(@user.profile_image)
-    tags.each do |tag|
-      @user.tags.create(name: tag)
+    improper = false
+    tags = Vision.get_image_data(params[:user][:profile_image])
+    #tags = []
+    tags.each do |_, v|
+      if !v.include?('UN')
+        improper = true
+        flash[:notice] = '不適切な画像が投稿されました'
+        break
+      end
     end
 
-    redirect_to request.referer
+puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+puts tags
+puts improper
+puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    if !improper && @user.update(user_params)
+      redirect_to request.referer
+    else
+      audio = @user.audio
+    if audio.present?
+      @audio = Audio.where(user_id: @user.id).first
+    else
+      @audio = Audio.new
+    end
+      render :edit
+    end
+
   end
 
   def destroy

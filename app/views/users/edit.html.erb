@@ -23,14 +23,14 @@
           <div class="txt">
             <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
           </div>
-          <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+          <%= attachment_image_tag current_user, :profile_image, :fill, 60,60, fallback: "no_image.jpg"%>
           <%= tag.name %>
           <div class="txt">
             <label for="inputImage"></label>
             <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
           </div>
           <div class="txt">
-            <%= f.submit "update" %>
+            <%= f.submit "Go!" %>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
               <%= f.label :youtube, 'Youtube URL', class: 'form-control' %>
               <%= f.text_field :youtube, placeholder: "Optional", class: "form-control" %>
             </div>
-            <%= f.submit "update" %>
+            <%= f.submit "Go!" %>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
             </div>
             <div class="ai-box-open">
               <div class="sentiment-score">
-                <% if @audio.title.present? %>
+                <% if @audio.title.present? && @audio.score.present? %>
                   AIがタイトルから感情分析を行い、ポジティブかネガティブかを「-1.0〜1.0」で判定します。</br>
                   結果は=<%= @audio.score %>
                   <% if @audio.score <= -0.1 %>
