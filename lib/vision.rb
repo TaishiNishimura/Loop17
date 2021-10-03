@@ -19,7 +19,7 @@ module Vision
           },
           features: [
             {
-              type: 'SAFE_SEARCH_DETECTION'
+              type: 'LABEL_DETECTION'
             }
           ]
         }]

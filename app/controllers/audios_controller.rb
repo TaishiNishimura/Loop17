@@ -6,6 +6,7 @@ class AudiosController < ApplicationController
   def create
     @audio = Audio.new(audio_params)
     @audio.user_id = current_user.id
+    @audio.score = Language.get_data(audio_params[:title])
 
     message = nil
     if audio_params[:audio] == nil

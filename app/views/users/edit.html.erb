@@ -24,6 +24,7 @@
             <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
           </div>
           <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+          <%= tag.name %>
           <div class="txt">
             <label for="inputImage"></label>
             <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
@@ -100,17 +101,32 @@
       <% if @audio.present? %>
         <div class="txt">
           <div>
-              ♪<%= @audio.title %> |
-          <%#    <% if @audio.genre_id = 1 %>
-          <%#      ジャンル : <%= "Music" %>
-          <%#    <% elsif @audio.genre_id = 2 %>
-          <%#      ジャンル : <%= "Vocal" %>
-          <%#    <% elsif @audio.genre_id = 3 %>
-          <%#      ジャンル : <%= "Spoken & Audio" %>
-          <%#    <% elsif @audio.genre_id = 4 %>
-          <%#      ジャンル : <%= "Other" %>
-          <%#    <% else %>
-          <%#    <% end %>
+            <div class="audio-title">
+              ♪<%= @audio.title %>
+            </div>
+            <div class="sentiment-score">
+              <% if @audio.title.present? %>
+                タイトルのAI感情分析<% @audio.score %>
+                <% if @audio.score = -1.0..0 %>
+                  <%= "😋" %>
+                <% elsif @audio.score >= 0..1.0 %>
+                  <%= "😓" %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="genre">
+              <% if @audio.genre_id.present? %>
+                <% if @audio.genre_id = 1 %>
+                  ジャンル : <%= "Music" %>
+                <% elsif @audio.genre_id = 2 %>
+                  ジャンル : <%= "Vocal" %>
+                <% elsif @audio.genre_id = 3 %>
+                  ジャンル : <%= "Spoken & Audio" %>
+                <% elsif @audio.genre_id = 4 %>
+                  ジャンル : <%= "Other" %>
+                <% end %>
+              <% end %>
+            </div>
           </div>
           <div>
             <audio src="<%= @audio.audio %>" controls="">

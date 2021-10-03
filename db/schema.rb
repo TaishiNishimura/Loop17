@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_024456) do
+ActiveRecord::Schema.define(version: 2021_10_03_013032) do
 
   create_table "audios", force: :cascade do |t|
     t.string "audio"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_024456) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "relationships", force: :cascade do |t|

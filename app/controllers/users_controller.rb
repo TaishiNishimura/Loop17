@@ -19,6 +19,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+
+    tags = Vision.get_image_data(@user.profile_image)
+    tags.each do |tag|
+      @user.tags.create(name: tag)
+    end
+
     redirect_to request.referer
   end
 
