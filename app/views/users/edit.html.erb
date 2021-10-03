@@ -72,9 +72,11 @@
 
   <%# オーディオ情報編集 %>
   <div id="audio-edit-slide">
+
     <div id="audio-edit-box1">
       <i class="fas fa-music fa-3x audio-alt"></i>
     </div>
+
     <%# オーディオ投稿 %>
     <div id="audio-edit-box2">
       <%= form_with model: @audio, local: true do |f| %>
@@ -96,49 +98,59 @@
       </div>
       <% end %>
     </div>
+
     <%# 投稿オーディオ詳細 %>
     <div id="audio-edit-box3">
-      <% if @audio.present? %>
-        <div class="txt">
-          <div>
-            <div class="audio-title">
-              ♪<%= @audio.title %>
-            </div>
-            <div class="sentiment-score">
-              <% if @audio.title.present? %>
-                AIがタイトルから感情分析を行った結果=<%= @audio.score %>
-                <% if @audio.score <= -0.1 %>
-                  <%= "😓" %>
-                <% elsif @audio.score >= 0 %>
-                  <%= "😋" %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="genre">
-              <% if @audio.genre_id.present? %>
-                <% if @audio.genre_id = 1 %>
-                  ジャンル : <%= "Music" %>
-                <% elsif @audio.genre_id = 2 %>
-                  ジャンル : <%= "Vocal" %>
-                <% elsif @audio.genre_id = 3 %>
-                  ジャンル : <%= "Spoken & Audio" %>
-                <% elsif @audio.genre_id = 4 %>
-                  ジャンル : <%= "Other" %>
-                <% end %>
-              <% end %>
-            </div>
+      <div class="txt">
+        <div>
+          <div class="audio-title">
+            ♪<%= @audio.title %>
           </div>
-          <div>
-            <audio src="<%= @audio.audio %>" controls="">
-          </div>
-          <div>
-            <%= link_to '/audios/:id', method: :delete, "data-confirm" => "このオーディオファイルを削除していいですか？" do %>
-              <i class="fas fa-minus-circle fa-2x"></i>
+          <% if @audio.title.present? %>
+            <div class="ai-box">
+              <div class='ai-title'>
+                AI診断
+              </div>
+            </div>
+            <div class="ai-box-open">
+              <div class="sentiment-score">
+                <% if @audio.title.present? %>
+                  AIがタイトルから感情分析を行い、ポジティブかネガティブかを「-1.0〜1.0」で判定します。</br>
+                  結果は=<%= @audio.score %>
+                  <% if @audio.score <= -0.1 %>
+                    <%= "😓" %>
+                  <% elsif @audio.score >= 0 %>
+                    <%= "😋" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <div class="genre">
+            <% if @audio.genre_id.present? %>
+              <% if @audio.genre_id = 1 %>
+                ジャンル : <%= "Music" %>
+              <% elsif @audio.genre_id = 2 %>
+                ジャンル : <%= "Vocal" %>
+              <% elsif @audio.genre_id = 3 %>
+                ジャンル : <%= "Spoken & Audio" %>
+              <% elsif @audio.genre_id = 4 %>
+                ジャンル : <%= "Other" %>
+              <% end %>
             <% end %>
           </div>
         </div>
-      <% end %>
+        <div>
+          <audio src="<%= @audio.audio %>" controls="">
+        </div>
+        <div>
+          <%= link_to '/audios/:id', method: :delete, "data-confirm" => "このオーディオファイルを削除していいですか？" do %>
+            <i class="fas fa-minus-circle fa-2x"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <%# もどるボタン %>

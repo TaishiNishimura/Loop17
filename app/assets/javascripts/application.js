@@ -387,3 +387,29 @@
         });
     });
   });
+
+
+
+//編集ページのAI自然言語処理
+  $(function() {
+      //開く
+      $('.ai-box').on('click',function(event) {
+          $('.ai-box').fadeOut(500);
+          $(this).toggleClass('active');
+          setTimeout(timer1, 500);
+          function timer1() {
+            $('.sentiment-score').fadeToggle(1000);
+          }
+          event.preventDefault();
+      });
+      //閉じる
+      $('.sentiment-score').on('click',function(event) {
+          $('.sentiment-score').fadeOut(500);
+          $(this).toggleClass('active');
+          setTimeout(timer1, 500);
+          function timer1() {
+            $('.ai-box').fadeToggle(1000);
+          }
+          event.preventDefault();
+      });
+  });
