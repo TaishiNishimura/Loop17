@@ -106,11 +106,11 @@
             </div>
             <div class="sentiment-score">
               <% if @audio.title.present? %>
-                タイトルのAI感情分析<% @audio.score %>
-                <% if @audio.score = -1.0..0 %>
-                  <%= "😋" %>
-                <% elsif @audio.score >= 0..1.0 %>
+                AIがタイトルから感情分析を行った結果=<%= @audio.score %>
+                <% if @audio.score <= -0.1 %>
                   <%= "😓" %>
+                <% elsif @audio.score >= 0 %>
+                  <%= "😋" %>
                 <% end %>
               <% end %>
             </div>
