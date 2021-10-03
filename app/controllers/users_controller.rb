@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     improper = false
+
     tags = Vision.get_image_data(params[:user][:profile_image])
-    #tags = []
     tags.each do |_, v|
       if !v.include?('UN')
         improper = true
@@ -42,7 +42,7 @@ puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     else
       @audio = Audio.new
     end
-      render :edit
+      render "users/edit"
     end
 
   end
