@@ -29,20 +29,21 @@ class UsersController < ApplicationController
       end
     end
 
-puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
-puts tags
-puts improper
-puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    puts tags
+    puts improper
+    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+
     if !improper && @user.update(user_params)
       redirect_to request.referer
     else
       audio = @user.audio
-    if audio.present?
-      @audio = Audio.where(user_id: @user.id).first
-    else
-      @audio = Audio.new
-    end
-      render "users/edit"
+      if audio.present?
+        @audio = Audio.where(user_id: @user.id).first
+      else
+        @audio = Audio.new
+      end
+        redirect_to request.referer
     end
 
   end
