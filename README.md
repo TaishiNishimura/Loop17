@@ -35,6 +35,12 @@
 
 ## [チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1nIgKos4-NRyV8E1LXqvqeRcJ7ZNhwlzInuGMTT1eebM/edit?usp=sharing)
 
+## 搭載したAI機能
+- Google Vision API (画像認識)</br>
+  不適切な画像投稿を防ぐ(SAFE_SEARCH_DETECTION)。
+- Google Natural Language API (自然言語処理)</br>
+  音声タイトルからポジティブ／ネガティブを判定。
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
