@@ -260,6 +260,7 @@
   })();
 
   window.onload = function() {
+    if ($('#canvas-wrap').length) {
       var canvasWrap = document.querySelector('#canvas-wrap');
       var canvas = document.querySelector('#canvas-container');
       var ctx = canvas.getContext('2d');
@@ -337,6 +338,7 @@
           update();
       }
       init();
+    }
   };
 
 
