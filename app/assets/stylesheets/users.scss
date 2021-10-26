@@ -150,6 +150,45 @@
   }
 
 
+//ローディング
+  #loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+  }
+
+
+//ローディング題字
+  #loading-canvas-txt {
+    letter-spacing: -5px;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow: visible;
+    z-index: 9999999;
+  }
+
+  @supports (-webkit-background-clip: text) {
+    #loading-canvas-txt p {
+      font-size: 120px;
+      background: -webkit-linear-gradient(left, #ba65fd, #5aa5f8, #00d8ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
 
 //indexページ題字
   #canvas-txt {
@@ -160,7 +199,7 @@
     letter-spacing: -5px;
     font-family: 'Josefin Sans', sans-serif;
     overflow: visible;
-    z-index: 99999;
+    z-index: 88888;
   }
 
   @supports (-webkit-background-clip: text) {

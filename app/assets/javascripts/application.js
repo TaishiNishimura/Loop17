@@ -416,3 +416,10 @@
       });
   });
 
+//ローディング
+  $(function () {
+    $(window).on("load", function() {
+      const l = document.getElementById('loading');
+      l.classList.add('loaded');
+    });
+  });
