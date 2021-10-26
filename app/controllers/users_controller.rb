@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     improper = false
 
+  if params[:user][:profile_image] != "{}"
     tags = Vision.get_image_data(params[:user][:profile_image])
     tags.each do |_, v|
       if !v.include?('UN')
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
     puts tags
     puts improper
     puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  end
 
     if !improper && @user.update(user_params)
       redirect_to request.referer
