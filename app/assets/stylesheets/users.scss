@@ -405,7 +405,7 @@
 
   .about-box {
     position: absolute;
-    left: 50%;
+    left: 40%;
     padding: 20%;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -413,7 +413,6 @@
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 2rem;
     letter-spacing: 0.30em;
-    font-weight: bold;
     animation: text-fade 300ms infinite linear;
   }
 
