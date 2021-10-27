@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'users/sign_in' => 'homes#top'
+  get 'users/sign_up' => 'homes#top'
+  devise_for :users,skip: [:passwords,]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
 
