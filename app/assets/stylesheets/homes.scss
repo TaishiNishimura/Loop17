@@ -90,6 +90,7 @@
     letter-spacing: 0.1em;
     color: #00d8ee;
     display: block;
+    cursor: pointer;
   }
 
   .top-modal{
@@ -112,10 +113,10 @@
     width: 450px;
     height: 450px;
     transform: translate(-50%,-50%);
-    background: #FFCD58;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 40% 60% / 40% 60%;
+    border-radius: 64% 36% 47% 53% / 45% 65% 35% 55%;
   }
