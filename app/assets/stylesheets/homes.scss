@@ -120,3 +120,25 @@
     align-items: center;
     border-radius: 64% 36% 47% 53% / 45% 65% 35% 55%;
   }
+
+
+  @media screen and (max-width: 425px) {
+    .main-title {
+      font-size: 100px;
+    }
+    .top-img {
+      position: absolute;
+      left: -80%;
+    }
+    .sub-title-box {
+      width: 60%;
+      top: 38%;
+    }
+    .content {
+      position: absolute;
+      top: auto;
+    }
+    .js-modal-open {
+      font-size: 100px;
+    }
+  }
