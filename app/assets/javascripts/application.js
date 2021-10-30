@@ -201,6 +201,22 @@
 
 
 
+//他の音声を再生した時に現在再生中の音声を止める処理
+  $(function() {
+    // catch play event
+    $('.audio-player').on('play',function(event) {
+      // stop all playing audios
+      $('.audio-player').each(function(_, element) {
+        // play only selected audio
+        if (event.currentTarget != element) {
+          element.pause();
+        }
+      });
+    });
+  });
+
+
+
 //ハンバーガーメニュー
   $(function() {
       //開く
