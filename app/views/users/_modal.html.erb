@@ -14,13 +14,13 @@
             </div>
             <div class="txt">
               Keepされている数: <%= user.followers.count %>
+
+              <%# フォローボタンを非同期にするためのパーシャルへ %>
+              <div id="ff-<%= user.id %>">
+                <%= render "users/follow_form", user: user %>
+              </div>
+
             </div>
-
-            <%# フォローボタンを非同期にするためのパーシャルへ %>
-            <button id="ff-<%= user.id %>">
-              <%= render "users/follow_form", user: user %>
-            </button>
-
           </div>
           <%# オーディオプレイヤー %>
           <div class="audiospace">
