@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.includes([:audio])
+    @audios = Audio.all.includes(:user)
     @audio = Audio.where(user_id: current_user.id).first
   end
 

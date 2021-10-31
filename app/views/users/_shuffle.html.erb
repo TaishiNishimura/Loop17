@@ -1,5 +1,5 @@
   <%# ユーザーアイコンをランダムに表示 %>
-  <% @users.shuffle.first(17).each.with_index(1) do |user,index| %>
+  <% users.shuffle.first(17).each.with_index(1) do |user,index| %>
     <%# ユーザーアイコン %>
     <div id="user-icon-<%= user.id %>" class="dots<%= index %>">
       <%# ここのリンクをクリックしたら下のモーダルを表示 %>

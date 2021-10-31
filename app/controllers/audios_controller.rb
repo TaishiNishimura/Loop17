@@ -48,9 +48,8 @@ class AudiosController < ApplicationController
   end
 
   def search
-    @audios = Audio.where(genre_id: params[:genre_id])
-    @users = User.where(id: @audios.pluck('user_id')).includes([:audio])
-    @audio = Audio.where(user_id: current_user.id).first
+    audios = Audio.where(genre_id: params[:genre_id]).pluck(:user_id)
+    @users = User.where(id: audios)
     render "users/index"
   end
 
