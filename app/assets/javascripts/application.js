@@ -60,9 +60,11 @@
 
 //ローディング
   $(function () {
-    $(window).on("load", function() {
-      const l = document.getElementById('loading');
-      l.classList.add('loaded');
+    $(window).on('load', function() {
+      if ($('#loading').length) {
+        const l = document.getElementById('loading');
+        l.classList.add('loaded');
+      }
     });
   });
 

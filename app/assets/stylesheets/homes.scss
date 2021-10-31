@@ -136,9 +136,13 @@
     }
     .content {
       position: absolute;
-      top: auto;
+      top: 100px;
+      left: 0;
     }
     .js-modal-open {
-      font-size: 100px;
+      font-size: 35px;
+    }
+    .line {
+      display:none;
     }
   }
