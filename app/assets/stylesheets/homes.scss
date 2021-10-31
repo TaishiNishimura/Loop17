@@ -70,7 +70,8 @@
     position: absolute;
     display: none;
     top: 70%;
-    left: 70%;
+    left: 60%;
+    width: 100%;
   }
 
   .line {
@@ -89,7 +90,6 @@
     text-decoration: none;
     letter-spacing: 0.1em;
     color: #00d8ee;
-    display: block;
     cursor: pointer;
   }
 
@@ -141,6 +141,7 @@
     }
     .js-modal-open {
       font-size: 35px;
+      padding: 10px;
     }
     .line {
       display:none;
