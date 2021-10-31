@@ -430,3 +430,24 @@
     z-index: -99;
   }
 
+
+
+  @media screen and (max-width: 425px) {
+    .modal___content {
+      padding: 0;
+      width: 90%;
+      height: 50%;
+    }
+    .audiospace {
+      top: 75%;
+      left: 5%;
+    }
+    .sns-link {
+      top: 0;
+      transform: scale(0.5, 0.5);
+    }
+    .my-profile-image {
+      transform: scale(0.5, 0.5);
+      left: -100%;
+    }
+  }
