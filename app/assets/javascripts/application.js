@@ -372,51 +372,53 @@
 
 
 //編集ページ
-  $(function() {
-    $('#user-edit-slide').animate({left:-850}, 2000);
-    $('#audio-edit-slide').animate({right:-850}, 2000);
-    $('.return-zone').animate({left: 0}, 2000);
+  if (window.matchMedia("(min-width: 425px)").matches) {
     $(function() {
-        $('.user-alt').on('mouseover',function() {
-          $(this).css({'color':'#7a7c7d'},500);
-        });
-        $('.user-alt').on('mouseout',function() {
-          $(this).css({'color':'#fff'},500);
-        });
-    });
-    $(function() {
-        $('.audio-alt').on('mouseover',function() {
-          $(this).css({'color':'#7a7c7d'},500);
-        });
-        $('.audio-alt').on('mouseout',function() {
-          $(this).css({'color':'#fff'},500);
-        });
-    });
+      $('#user-edit-slide').animate({left:-850}, 2000);
+      $('#audio-edit-slide').animate({right:-850}, 2000);
+      $('.return-zone').animate({left: 0}, 2000);
+      $(function() {
+          $('.user-alt').on('mouseover',function() {
+            $(this).css({'color':'#7a7c7d'},500);
+          });
+          $('.user-alt').on('mouseout',function() {
+            $(this).css({'color':'#fff'},500);
+          });
+      });
+      $(function() {
+          $('.audio-alt').on('mouseover',function() {
+            $(this).css({'color':'#7a7c7d'},500);
+          });
+          $('.audio-alt').on('mouseout',function() {
+            $(this).css({'color':'#fff'},500);
+          });
+      });
 //編集ページのuserスライド
-    $(function() {
-        $('.user-alt').on('click',function() {
-        if($('#user-edit-slide').hasClass('off')){
-          $('#user-edit-slide').removeClass('off');
-          $('#user-edit-slide').animate({'marginLeft':'850px'},500).addClass('on');
-        }else{
-          $('#user-edit-slide').addClass('off');
-          $('#user-edit-slide').animate({'marginLeft':'0px'},500);
-        }
-        });
-    });
+      $(function() {
+          $('.user-alt').on('click',function() {
+          if($('#user-edit-slide').hasClass('off')){
+            $('#user-edit-slide').removeClass('off');
+            $('#user-edit-slide').animate({'marginLeft':'850px'},500).addClass('on');
+          }else{
+            $('#user-edit-slide').addClass('off');
+            $('#user-edit-slide').animate({'marginLeft':'0px'},500);
+          }
+          });
+      });
 //編集ページのaudioスライド
-    $(function() {
-        $('.audio-alt').on('click',function(){
-        if($('#audio-edit-slide').hasClass('off')){
-          $('#audio-edit-slide').removeClass('off');
-          $('#audio-edit-slide').animate({'marginRight':'850px'},500).addClass('on');
-        }else{
-          $('#audio-edit-slide').addClass('off');
-          $('#audio-edit-slide').animate({'marginRight':'0px'},500);
-        }
-        });
+      $(function() {
+          $('.audio-alt').on('click',function(){
+          if($('#audio-edit-slide').hasClass('off')){
+            $('#audio-edit-slide').removeClass('off');
+            $('#audio-edit-slide').animate({'marginRight':'850px'},500).addClass('on');
+          }else{
+            $('#audio-edit-slide').addClass('off');
+            $('#audio-edit-slide').animate({'marginRight':'0px'},500);
+          }
+          });
+      });
     });
-  });
+  }
 
 
 

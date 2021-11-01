@@ -433,6 +433,13 @@
 
 
   @media screen and (max-width: 425px) {
+    .loading {
+      width: 20vh;
+      height: 20vh;
+    }
+    #loading-canvas-txt p {
+      font-size: 80px;
+    }
     .modal___content {
       padding: 0;
       width: 90%;
