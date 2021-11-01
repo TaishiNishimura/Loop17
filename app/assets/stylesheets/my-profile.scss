@@ -138,3 +138,48 @@
   .user-image {
     text-decoration: none;
   }
+
+  @media screen and (max-width: 425px) {
+    .sns-link {
+      top: 0;
+      transform: scale(0.5, 0.5);
+    }
+    .my-profile-image {
+      transform: scale(0.5, 0.5);
+      left: -100%;
+    }
+    #my-profile-box {
+      top: 200px;
+    }
+    #sp-circle4 {
+      width: 300px;
+      height: 300px;
+    }
+    #my-profile-box {
+      width: 300px;
+      height: 300px;
+    }
+    #audio-player-box {
+      top: 90%;
+      z-index: 99;
+    }
+    #sp-circle5 {
+      width: 350px;
+      height: 350px;
+    }
+    #sp-circle6 {
+      top: 85%;
+      width: 350px;
+      height: 350px;
+    }
+    #my-keeper-box {
+      top: 105%;
+      width: 350px;
+      height: 350px;
+    }
+    #my-keeper-list {
+      width: 200px;
+      height: 200px;
+      z-index: 99;
+    }
+  }

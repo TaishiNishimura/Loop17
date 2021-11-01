@@ -438,16 +438,21 @@
       width: 90%;
       height: 50%;
     }
-    .audiospace {
-      top: 75%;
-      left: 5%;
+    .about-box {
+      left: 0;
+      padding: 0;
+      top: 35%;
+      width: 95%;
+      height: 45%;
+      line-height: 1.5rem;
     }
-    .sns-link {
-      top: 0;
-      transform: scale(0.5, 0.5);
+    .about-heading {
+    font-size: 2rem;
     }
-    .my-profile-image {
-      transform: scale(0.5, 0.5);
-      left: -100%;
+    .about-txt-heading {
+      font-size: 0.8rem;
+    }
+    .about-txt {
+      font-size: 0.5rem;
     }
   }
