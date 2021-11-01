@@ -129,6 +129,10 @@
     z-index: 2;
   }
 
+  .audio-player-box {
+    position: absolute;
+  }
+
   .sns-link {
     position: absolute;
     left: 50%;
@@ -166,7 +170,7 @@
 
 //ローディング題字
   #loading-canvas-txt {
-    letter-spacing: -5px;
+    letter-spacing: -3px;
     font-family: 'Josefin Sans', sans-serif;
     overflow: visible;
     z-index: 9999999;
@@ -438,12 +442,24 @@
       height: 20vh;
     }
     #loading-canvas-txt p {
-      font-size: 80px;
+      font-size: 70px;
     }
     .modal___content {
       padding: 0;
       width: 90%;
       height: 50%;
+      top: 45%;
+    }
+    .sns-link {
+      top: -10%;
+      transform: scale(0.7, 0.7);
+      width: 20%;
+      height: auto;
+      left: 65%;
+    }
+    .audiospace {
+      top: 75%;
+      left: 5%;
     }
     .about-box {
       left: 0;
@@ -454,7 +470,7 @@
       line-height: 1.5rem;
     }
     .about-heading {
-    font-size: 2rem;
+      font-size: 2rem;
     }
     .about-txt-heading {
       font-size: 0.8rem;

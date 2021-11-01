@@ -25,6 +25,7 @@
           $('.content').fadeIn(1500);
           $('.top-img').animate({'top':'30%'},1500);
           $('.sub-title-box').animate({'left':'30%'},1500);
+          $('.video-content-top').animate({'top':'45%'},1500);
     }
     $(function(){
       $('.js-modal-open').each(function(){
@@ -35,6 +36,7 @@
           setTimeout(timer1, 500);
           $('.top-img').animate({'top':'100%'},500);
           $('.sub-title-box').animate({'left':'100%'},500);
+          $('.video-content-top').animate({'top':'100%'},500);
           function timer1() {
           $('.content').fadeOut(1000);
           $(modal).fadeIn(1000);
@@ -50,6 +52,7 @@
         $('.top-img').animate({'top':'30%'},500);
         $('.sub-title-box').animate({'left':'30%'},500);
         $('.content').fadeIn();
+        $('.video-content-top').animate({'top':'45%'},500);
         }
         return false;
       });

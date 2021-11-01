@@ -204,8 +204,6 @@
 
   @media screen and (max-width: 425px) {
     #edit-canvas {
-      width: 100vh;
-      height: 100vh;
       overflow: auto;
       display: flex;
       justify-content: center;
@@ -217,7 +215,7 @@
     #user-edit-slide {
       top: 100px;
       height: 700px;
-      width: 425px;
+      width: 90%;
       left: 0;
     }
     #user-edit-box1 {
@@ -239,8 +237,8 @@
     #audio-edit-slide {
       top: 850px;
       height: 700px;
-      width: 425px;
-      left: 0;
+      width: 90%;
+      right: 0;
     }
     #audio-edit-box1 {
       height: 100px;
@@ -252,15 +250,15 @@
       left: 100px;
     }
     #audio-edit-box3 {
-      left: 40px;
+      left: 30px;
       top: 60%;
     }
     .return-zone {
-      width: 425px;
+      width: 70%;
       top: 5%;
       left: 0px;
     }
     .return-txt {
-      left: 10%;
+      left: 80%;
     }
   }

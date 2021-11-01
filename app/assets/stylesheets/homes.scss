@@ -63,14 +63,24 @@
     animation: text-fade 300ms infinite linear;
   }
 
+// 動画再生
+  .video-content-top {
+    width: 40%;
+    height: auto;
+    top: 100%;
+    left: 50%;
+    margin: 30px;
+    position: absolute;
+  }
+
 
 
 //「はじめる」と「ログイン」リンク
   .content{
     position: absolute;
     display: none;
-    top: 70%;
-    left: 60%;
+    top: 90%;
+    left: 55%;
     width: 100%;
   }
 

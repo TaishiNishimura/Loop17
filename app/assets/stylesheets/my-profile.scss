@@ -80,7 +80,7 @@
 
 
 //マイプロフィールの音声再生機能
-  #audio-player-box {
+  #audio-player-box2 {
     position: absolute;
     top: 50%;
     left: 5%;
@@ -140,10 +140,6 @@
   }
 
   @media screen and (max-width: 425px) {
-    .sns-link {
-      top: 0;
-      transform: scale(0.5, 0.5);
-    }
     .my-profile-image {
       transform: scale(0.5, 0.5);
       left: -100%;
@@ -159,7 +155,7 @@
       width: 300px;
       height: 300px;
     }
-    #audio-player-box {
+    #audio-player-box2 {
       top: 90%;
       z-index: 99;
     }
