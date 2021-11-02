@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+  .section3 {
+    background-color: #F8F8FF;
+  }
+
+
+
 //マイプロフィールの顔丸
   .my-profile-image {
     position: absolute;
@@ -169,7 +175,7 @@
       height: 200px;
     }
     #my-keeper-box {
-      top: 95%;
+      top: 90%;
       width: 350px;
       height: 350px;
     }
