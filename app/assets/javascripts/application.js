@@ -22,10 +22,10 @@
     $('.main-title').animate({'left':'0'},1000);
     setTimeout(timer1, 1000);
     function timer1() {
-          $('.content').fadeIn(1500);
-          $('.top-img').animate({'top':'30%'},1500);
-          $('.sub-title-box').animate({'left':'30%'},1500);
-          $('.video-content-top').animate({'top':'45%'},1500);
+      $('.content').fadeIn(1500);
+      $('.top-img').animate({'top':'40%'},1500);
+      $('.sub-title-box').animate({'left':'40%'},1500);
+      $('.video-content-top').animate({'top':'45%'},1500);
     }
     $(function(){
       $('.js-modal-open').each(function(){
