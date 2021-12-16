@@ -49,8 +49,8 @@
         setTimeout(timer1, 1000);
         function timer1() {
         $('.main-title').slideDown();
-        $('.top-img').animate({'top':'30%'},500);
-        $('.sub-title-box').animate({'left':'30%'},500);
+        $('.top-img').animate({'top':'40%'},500);
+        $('.sub-title-box').animate({'left':'40%'},500);
         $('.content').fadeIn();
         $('.video-content-top').animate({'top':'45%'},500);
         }

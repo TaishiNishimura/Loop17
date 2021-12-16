@@ -1,15 +1,28 @@
 <div class="top-container">
   <div class="main-title">Loop17</div>
+
+  <!--波-->
+  <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(155,155,255" opacity="0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(155,155,255)" opacity="0.5" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(155,155,255)" opacity="0.3" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(155,155,255)" />
+      </g>
+    </svg>
+  </div>
+
   <%= image_tag 'top_img.jpg', class: 'top-img' %>
   <div class="sub-title-box">
     <div class="sub-title">#17秒チャレンジ</div>
   </div>
-  <div class="video-content-top">
-    <%= video_tag("/videos/preview_index.mp4", width: "100%", autoplay: :true, loop: :true, muted: :true, playsinline: true ) %>
-  </div>
   <div class="content">
     <a class="js-modal-open" href="" data-target="modal01">はじめる</a>
-    <a class="js-modal-open" href="" data-target="modal02">ログイン</a></a>
+    <a class="js-modal-open" href="" data-target="modal02">ログイン</a>
   </div>
   <%# サインアップのモーダル %>
   <div id="modal01" class="top-modal js-modal">
@@ -61,13 +74,13 @@
             <div class="txt2">
               <%= f.label :email %><br />
             </div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", value: "a@a" %>
           </div>
           <div class="field">
             <div class="txt2">
               <%= f.label :password %><br />
             </div>
-            <%= f.password_field :password, autocomplete: "current-password" %>
+            <%= f.password_field :password, autocomplete: "current-password", value: "aaaa" %>
           </div>
           <% if devise_mapping.rememberable? %>
             <div class="field">

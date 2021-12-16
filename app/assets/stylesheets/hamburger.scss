@@ -5,8 +5,8 @@
 //ハンバーガーメニュー
   #hamburger {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     left: 89%;
     top: 5%;
     z-index: 99999;
@@ -37,8 +37,8 @@
     opacity: 0.4;
     position: absolute;
     background: #0af;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     transform-origin: 50% 47%;
     border-radius: 40%;
     animation: rotation 3s infinite linear;
